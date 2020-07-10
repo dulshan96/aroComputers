@@ -1,6 +1,7 @@
 package lk.aroComputers.aro.asset.userManagement.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import lk.aroComputers.aro.asset.employee.entity.Employee;
 import lk.aroComputers.aro.util.audit.AuditEntity;
 import lombok.AllArgsConstructor;

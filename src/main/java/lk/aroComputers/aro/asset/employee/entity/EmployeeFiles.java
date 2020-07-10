@@ -1,5 +1,6 @@
 package lk.aroComputers.aro.asset.employee.entity;
 
+
 import lk.aroComputers.aro.util.audit.AuditEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -26,9 +27,6 @@ public class EmployeeFiles extends AuditEntity {
     @Lob
     private byte[] pic;
 
-    @ManyToOne
-    private Employee employee;
-
     public EmployeeFiles(String name, String mimeType, byte[] pic, String newName,String newId) {
         this.name = name;
         this.mimeType = mimeType;
@@ -36,5 +34,8 @@ public class EmployeeFiles extends AuditEntity {
         this.newName = newName;
         this.newId = newId;
     }
+
+    @ManyToOne
+    private Employee employee;
 
 }

@@ -1,5 +1,6 @@
 package lk.aroComputers.aro.asset.userManagement.dao;
 
+
 import lk.aroComputers.aro.asset.employee.entity.Employee;
 import lk.aroComputers.aro.asset.userManagement.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
