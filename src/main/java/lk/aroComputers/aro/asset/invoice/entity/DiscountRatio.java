@@ -15,6 +15,10 @@ import java.math.BigDecimal;
 import java.util.List;
 
 @Entity
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 
 @JsonFilter("DiscountRatio")
 public class DiscountRatio extends AuditEntity {
