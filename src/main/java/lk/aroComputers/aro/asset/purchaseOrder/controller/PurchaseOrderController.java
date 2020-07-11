@@ -1,16 +1,18 @@
 package lk.aroComputers.aro.asset.purchaseOrder.controller;
 
 
+
 import lk.aroComputers.aro.asset.commonAsset.service.CommonService;
 import lk.aroComputers.aro.asset.purchaseOrder.entity.Enum.PurchaseOrderStatus;
 import lk.aroComputers.aro.asset.purchaseOrder.entity.PurchaseOrder;
+import lk.aroComputers.aro.asset.purchaseOrder.service.PurchaseOrderItemService;
 import lk.aroComputers.aro.asset.purchaseOrder.service.PurchaseOrderService;
 import lk.aroComputers.aro.asset.supplier.entity.Supplier;
+import lk.aroComputers.aro.asset.supplier.service.SupplierItemService;
 import lk.aroComputers.aro.asset.supplier.service.SupplierService;
 import lk.aroComputers.aro.util.service.EmailService;
 import lk.aroComputers.aro.util.service.MakeAutoGenerateNumberService;
 import lk.aroComputers.aro.util.service.OperatorService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -23,61 +25,71 @@ import javax.validation.Valid;
 @RequestMapping("/purchaseOrder")
 public class PurchaseOrderController {
     private final PurchaseOrderService purchaseOrderService;
+    private final PurchaseOrderItemService purchaseOrderItemService;
     private final SupplierService supplierService;
     private final CommonService commonService;
     private final MakeAutoGenerateNumberService makeAutoGenerateNumberService;
     private final EmailService emailService;
     private final OperatorService operatorService;
+    private final SupplierItemService supplierItemService;
 
-    @Autowired
-    public PurchaseOrderController(PurchaseOrderService purchaseOrderService, SupplierService supplierService, CommonService commonService, MakeAutoGenerateNumberService makeAutoGenerateNumberService, EmailService emailService, OperatorService operatorService) {
+    public PurchaseOrderController(PurchaseOrderService supplierItemService, PurchaseOrderService purchaseOrderService, PurchaseOrderItemService purchaseOrderItemService, SupplierService supplierService, CommonService commonService, MakeAutoGenerateNumberService makeAutoGenerateNumberService, EmailService emailService, OperatorService operatorService, SupplierItemService supplierItemService1) {
         this.purchaseOrderService = purchaseOrderService;
+        this.purchaseOrderItemService = purchaseOrderItemService;
         this.supplierService = supplierService;
         this.commonService = commonService;
         this.makeAutoGenerateNumberService = makeAutoGenerateNumberService;
         this.emailService = emailService;
         this.operatorService = operatorService;
+        this.supplierItemService = supplierItemService1;
     }
 
     @GetMapping
-    public String Form(Model model) {
-        model.addAttribute("purchaseOrder", new PurchaseOrder());
+    public String list(Model model) {
+        model.addAttribute("purchaseOrder", purchaseOrderService.findAll());
+        model.addAttribute("searchAreaShow", true);
+        return "purchaseOrder/purchaseOrder";
+    }
+
+    @GetMapping("/add")
+    public String addForm(Model model) {
+        model.addAttribute("purchaseOrder", new Supplier());
         model.addAttribute("searchAreaShow", true);
         return "purchaseOrder/addPurchaseOrder";
     }
 
     @PostMapping("/find")
     public String search(@Valid @ModelAttribute Supplier supplier, Model model) {
-        return commonService
-                .supplierItemAndPurchaseOrderSearch(supplier, model, "purchaseOrder/addPurchaseOrder");
-    }
+        return commonService.purchaseOrder(supplier, model, "purchaseOrder/addPurchaseOrder");
+          }
+
 
     @GetMapping("/{id}")
     public String view(@PathVariable Integer id, Model model) {
-        commonService.supplierItemAndPurchaseOrderView(model, id);
-        return "purchaseOrder/addPurchaseOrder";
+        return commonService.purchaseOrder( model, id);
+
     }
 
     @PostMapping
-    public String supplierItemPersist(@Valid @ModelAttribute PurchaseOrder purchaseOrder, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
+    public String purchaseOrderPersist(@Valid @ModelAttribute PurchaseOrder purchaseOrder, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
         if (bindingResult.hasErrors()) {
-            return "redirect:/supplierItem/" + purchaseOrder.getId();
+            return "redirect:/purchaseOrder/" + purchaseOrder.getId();
         }
-        purchaseOrder.getPurchaseOrderItems()
-                .forEach(purchaseOrderItem -> {
-                    purchaseOrderItem.setPurchaseOrder(purchaseOrder);
+       /* purchaseOrder.getPurchaseOrderSuppliers()
+                .forEach(purchaseOrderSupplier -> {
+                    purchaseOrderSupplier.setPurchaseOrder(purchaseOrder);
                     //todo need to create batch number
-                });
+                });*/
         purchaseOrder.setPurchaseOrderStatus(PurchaseOrderStatus.NOT_COMPLETED);
         if (purchaseOrder.getId() != null) {
             if (purchaseOrderService.lastPurchaseOrder() == null) {
                 //need to generate new one
-                purchaseOrder.setCode("KMPO" + makeAutoGenerateNumberService.numberAutoGen(null).toString());
+                purchaseOrder.setCode("JNPO" + makeAutoGenerateNumberService.numberAutoGen(null).toString());
             } else {
                 System.out.println("last customer not null");
                 //if there is customer in db need to get that customer's code and increase its value
                 String previousCode = purchaseOrderService.lastPurchaseOrder().getCode().substring(3);
-                purchaseOrder.setCode("KMPO" + makeAutoGenerateNumberService.numberAutoGen(previousCode).toString());
+                purchaseOrder.setCode("JNPO" + makeAutoGenerateNumberService.numberAutoGen(previousCode).toString());
             }
         }
         PurchaseOrder purchaseOrderSaved = purchaseOrderService.persist(purchaseOrder);
@@ -123,5 +135,25 @@ public class PurchaseOrderController {
     }
 
     //todo -> need to  manage item price displaying option and amount calculation
+    @GetMapping("/supplier/{id}")
+    public String addPriceToSupplierItem(@PathVariable int id, Model model) {
+        Supplier supplier = supplierService.findById(id);
+        // supplier.setSupplierItems(purchaseOrders);
+        model.addAttribute("supplierDetail", supplier);
+        model.addAttribute("supplierDetailShow", false);
+        model.addAttribute("purchaseOrderItemEdit", false);
+
+
+        model.addAttribute("items", commonService.activeItemsFromSupplier(supplier));
+        return "purchaseOrder/addPurchaseOrder";
+    }
+
+ /*   @GetMapping
+    public String list(Model model) {
+        model.addAttribute("purchaseOrder", purchaseOrderItemService.findByPurchaseOrderAndItem(PurchaseOrder, Item));
+        return "purchaseOrder/purchaseOrder";
+    }
+*/
 
 }
+

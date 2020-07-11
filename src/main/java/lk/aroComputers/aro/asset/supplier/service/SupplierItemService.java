@@ -2,7 +2,10 @@ package lk.aroComputers.aro.asset.supplier.service;
 
 
 
+import lk.aroComputers.aro.asset.item.entity.Item;
 import lk.aroComputers.aro.asset.supplier.dao.SupplierItemDao;
+import lk.aroComputers.aro.asset.supplier.entity.Enum.ItemSupplierStatus;
+import lk.aroComputers.aro.asset.supplier.entity.Supplier;
 import lk.aroComputers.aro.asset.supplier.entity.SupplierItem;
 import lk.aroComputers.aro.util.interfaces.AbstractService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +35,9 @@ public class SupplierItemService implements AbstractService<SupplierItem, Intege
     }
 
     public SupplierItem persist(SupplierItem supplierItem) {
+        if (supplierItem.getId()==null){
+            supplierItem.setItemSupplierStatus(ItemSupplierStatus.CURRENTLY_BUYING);
+        }
         return supplierItemDao.save(supplierItem);
     }
 
@@ -49,4 +55,15 @@ public class SupplierItemService implements AbstractService<SupplierItem, Intege
         return supplierItemDao.findAll(supplierItemExample);
     }
 
+    public SupplierItem findBySupplierAndItem(Supplier supplier, Item item) {
+        return supplierItemDao.findBySupplierAndItem(supplier, item);
+    }
+
+    public List<SupplierItem> findBySupplier(Supplier supplier) {
+        return supplierItemDao.findBySupplier(supplier);
+    }
+
+    public List<SupplierItem> findBySupplierAndItemSupplierStatus(Supplier supplier, ItemSupplierStatus itemSupplierStatus) {
+  return supplierItemDao.findBySupplierAndItemSupplierStatus(supplier,itemSupplierStatus);
+    }
 }

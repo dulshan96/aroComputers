@@ -1,6 +1,7 @@
 package lk.aroComputers.aro.asset.supplier.controller;
 
 
+
 import lk.aroComputers.aro.asset.supplier.entity.Supplier;
 import lk.aroComputers.aro.asset.supplier.service.SupplierService;
 import lk.aroComputers.aro.util.interfaces.AbstractController;
@@ -38,11 +39,6 @@ public  class SupplierController implements AbstractController<Supplier, Integer
         return "supplier/supplier";
     }
 
-    @Override
-    public String findById(Integer id, Model model) {
-        return null;
-    }
-
     @GetMapping("/add")
     public String Form(Model model) {
         return commonThings(model, new Supplier(), true);
@@ -70,8 +66,8 @@ public  class SupplierController implements AbstractController<Supplier, Integer
             } else {
                 System.out.println("last supplier not null");
                 //if there is supplier in db need to get that supplier's code and increase its value
-                String previousCode = DBSupplier.getCode().substring(2);
-                supplier.setCode("SS"+makeAutoGenerateNumberService.numberAutoGen(previousCode).toString());
+                String previousCode = DBSupplier.getCode().substring(3);
+                supplier.setCode("JNS"+makeAutoGenerateNumberService.numberAutoGen(previousCode).toString());
             }
             //send welcome message and email
             if (supplier.getEmail() != null) {
@@ -95,7 +91,7 @@ public  class SupplierController implements AbstractController<Supplier, Integer
     }
 
     @GetMapping("/{id}")
-    public String view(@PathVariable Integer id, Model model) {
+    public String findById(@PathVariable Integer id, Model model) {
         model.addAttribute("supplierDetail", supplierService.findById(id));
         return "supplier/supplier-detail";
     }

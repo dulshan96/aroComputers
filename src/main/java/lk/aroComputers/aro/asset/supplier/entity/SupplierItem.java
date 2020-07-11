@@ -1,17 +1,16 @@
 package lk.aroComputers.aro.asset.supplier.entity;
 
-import com.fasterxml.jackson.annotation.JsonFilter;
 
+import com.fasterxml.jackson.annotation.JsonFilter;
 import lk.aroComputers.aro.asset.item.entity.Item;
+import lk.aroComputers.aro.asset.supplier.entity.Enum.ItemSupplierStatus;
 import lk.aroComputers.aro.util.audit.AuditEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
@@ -22,8 +21,11 @@ import java.math.BigDecimal;
 @JsonFilter("SupplierItem")
 public class SupplierItem extends AuditEntity {
 
-    @Column(nullable = false, precision = 10, scale = 2)
+    @Column(precision = 10, scale = 2)
     private BigDecimal price;
+
+    @Enumerated(EnumType.STRING)
+    private ItemSupplierStatus itemSupplierStatus;
 
     @ManyToOne
     private Item item;
