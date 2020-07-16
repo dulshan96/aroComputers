@@ -49,7 +49,7 @@ public class BrandController {
             model.addAttribute("brand", brand);
             return "brand/addBrand";
         }
-        brandService.persist(brand);
+        redirectAttributes.addFlashAttribute("brandDetail", brandService.persist(brand));
         return "redirect:/brand";
     }
 
