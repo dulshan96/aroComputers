@@ -46,7 +46,7 @@ public class BrandController {
     public String persist(@Valid @ModelAttribute Brand brand, BindingResult bindingResult, RedirectAttributes redirectAttributes, Model model) {
         if (bindingResult.hasErrors()) {
             model.addAttribute("addStatus", true);
-            model.addAttribute("brand", bindingResult);
+            model.addAttribute("brand", brand);
             return "brand/addBrand";
         }
         brandService.persist(brand);
