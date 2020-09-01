@@ -29,7 +29,7 @@ $(document).ready(function () {
     });
     /* Patient and employee Nic Validation - end*/
     //input type date can not be selected future date
-    $('[type="date"]').prop('max', function () {
+    $('.to').prop('max', function () {
         return new Date().toJSON().split('T')[0];
     });
 
@@ -38,10 +38,9 @@ $(document).ready(function () {
 
 // regex
 let nicRegex = /^([0-9]{9}[vV|xX])|^([0-9]{12})$/;
-let mobileRegex = /^([0][7][\d]{8}$)|^([7][\d]{8})$/;
-let landRegex = /^0((11)|(2(1|[3-7]))|(3[1-8])|(4(1|5|7))|(5(1|2|4|5|7))|(6(3|[5-7]))|([8-9]1))([2-4]|5|7|9)[0-9]{6}$/;
+let mobileRegex = /^([0][7][0125678][\d]{7}$)|^([7][0125678][\d]{7})$/;
+let landRegex = /^0((11)|(2(1|[3-7]))|(3[1-8])|(4([157]))|(5([12457]))|(6(3|[5-7]))|([8-9]1))([2-4]|5|7|9)[0-9]{6}$/;
 let nameRegex = /^[a-zA-Z .-]{5}[ a-zA-Z.-]+$/;
-let discountRegex = /^[a-zA-Z .-]{3}[ a-zA-Z.-]+$/;
 let numberRegex = /^([eE][hH][sS][\d]+)$/;
 let invoiceNumberRegex = /^[0-9]{10}$/;
 
@@ -261,27 +260,16 @@ $("#nic").bind("keyup", function () {
 });
 
 
-//Discount validation
-$("#discount").bind("keyup", function () {
-    let discount = $(this).val();
-    if (discountRegex.test(discount)) {
+//Name validation
+$("#name").bind("keyup", function () {
+    let name = $(this).val();
+    if (nameRegex.test(name)) {
         backgroundColourChangeGood($(this));
-    } else if (discount.length === 0) {
+    } else if (name.length === 0) {
         backgroundColourChangeNothingToChange($(this));
     } else {
         backgroundColourChangeBad($(this));
     }
-});
-    //Name validation
-    $("#name").bind("keyup", function () {
-        let name = $(this).val();
-        if (nameRegex.test(name)) {
-            backgroundColourChangeGood($(this));
-        } else if (name.length === 0) {
-            backgroundColourChangeNothingToChange($(this));
-        } else {
-            backgroundColourChangeBad($(this));
-        }
 });
 //calling Name validation
 $("#callingName").bind("keyup", function () {
@@ -643,3 +631,9 @@ $(".reveal").on('click', function () {
         $pwd.attr('type', 'password');
     }
 });
+
+/*When edit employee if there is a nic number need to select relevant gender*/
+if ($("#nic").val() !== null || $("#nic").val() === undefined){
+    $("input:radio[name=gender]").filter(`[value=${calculateGender($("#nic").val())}]`).prop('checked',true);
+}
+
