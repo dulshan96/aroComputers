@@ -2,6 +2,15 @@ package lk.aroComputers.asset.employee.entity;
 
 
 import com.fasterxml.jackson.annotation.JsonFilter;
+import lk.aroComputers.asset.branch.entity.Branch;
+import lk.aroComputers.asset.commonAsset.model.Enum.BloodGroup;
+import lk.aroComputers.asset.commonAsset.model.Enum.CivilStatus;
+import lk.aroComputers.asset.commonAsset.model.Enum.Gender;
+import lk.aroComputers.asset.commonAsset.model.Enum.Title;
+import lk.aroComputers.asset.commonAsset.model.FileInfo;
+import lk.aroComputers.asset.employee.entity.Enum.Designation;
+import lk.aroComputers.asset.employee.entity.Enum.EmployeeStatus;
+import lk.aroComputers.util.audit.AuditEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

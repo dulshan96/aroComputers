@@ -1,6 +1,7 @@
 package lk.aroComputers.asset.employee.entity;
 
 
+import lk.aroComputers.util.audit.AuditEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

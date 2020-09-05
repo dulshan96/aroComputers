@@ -1,14 +1,22 @@
 package lk.aroComputers.asset.commonAsset.service;
 
 
-
+import lk.aroComputers.asset.employee.controller.EmployeeRestController;
+import lk.aroComputers.asset.item.entity.Item;
+import lk.aroComputers.asset.item.service.ItemService;
+import lk.aroComputers.asset.supplier.entity.Supplier;
+import lk.aroComputers.asset.supplier.service.SupplierService;
+import lk.aroComputers.asset.supplierItem.entity.Enum.ItemSupplierStatus;
+import lk.aroComputers.asset.supplierItem.entity.SupplierItem;
+import lk.aroComputers.asset.supplierItem.service.SupplierItemService;
+import lk.aroComputers.util.service.MakeAutoGenerateNumberService;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.web.servlet.mvc.method.annotation.MvcUriComponentsBuilder;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Collectors;
-import java.util.*;
 
 @Service
 public class CommonService {
@@ -17,7 +25,8 @@ public class CommonService {
     private final ItemService itemService;
     private final SupplierItemService supplierItemService;
 
-    public CommonService(MakeAutoGenerateNumberService makeAutoGenerateNumberService, SupplierService supplierService, ItemService itemService, SupplierItemService supplierItemService) {
+    public CommonService(MakeAutoGenerateNumberService makeAutoGenerateNumberService, SupplierService supplierService
+            , ItemService itemService, SupplierItemService supplierItemService) {
         this.makeAutoGenerateNumberService = makeAutoGenerateNumberService;
         this.supplierService = supplierService;
         this.itemService = itemService;
@@ -25,8 +34,8 @@ public class CommonService {
     }
 
     public List< Supplier > commonSupplierSearch(Supplier supplier) {
-        List<Supplier> suppliers;
-        if (supplier.getContactOne() != null) {
+        List< Supplier > suppliers;
+        if ( supplier.getContactOne() != null ) {
             String contactNumber = makeAutoGenerateNumberService.phoneNumberLengthValidator(supplier.getContactOne());
 //all match with supplier contact number one
             supplier.setContactOne(contactNumber);
@@ -40,22 +49,22 @@ public class CommonService {
         } else {
             suppliers = supplierService.search(supplier);
         }
-        if (supplier.getContactOne() != null) {
+        if ( supplier.getContactOne() != null ) {
             suppliers = suppliers.stream()
                     .filter(supplier1 ->
-                            supplier.getContactOne().equals(supplier1.getContactTwo()) ||
-                                    supplier.getContactOne().equals(supplier1.getContactOne()))
+                                    supplier.getContactOne().equals(supplier1.getContactTwo()) ||
+                                            supplier.getContactOne().equals(supplier1.getContactOne()))
                     .collect(Collectors.toList());
         }
         return suppliers;
     }
 
     public String supplierItem(Supplier supplier, Model model, String htmlFileLocation) {
-        List<Supplier> suppliers = commonSupplierSearch(supplier);
+        List< Supplier > suppliers = commonSupplierSearch(supplier);
 
         model.addAttribute("searchAreaShow", false);
 
-        if (suppliers.size() == 1) {
+        if ( suppliers.size() == 1 ) {
             model.addAttribute("supplierDetail", suppliers.get(0));
             return "redirect:/supplierItem/supplier/" + suppliers.get(0).getId();
         }
@@ -65,12 +74,12 @@ public class CommonService {
     }
 
     public String purchaseOrder(Supplier supplier, Model model, String htmlFileLocation) {
-        List<Supplier> suppliers = commonSupplierSearch(supplier);
+        List< Supplier > suppliers = commonSupplierSearch(supplier);
 
         System.out.println(" i am here" + suppliers.size());
 
         model.addAttribute("searchAreaShow", false);
-        if (suppliers.size() == 1) {
+        if ( suppliers.size() == 1 ) {
             model.addAttribute("supplierDetail", suppliers.get(0));
             model.addAttribute("items", activeItemsFromSupplier(suppliers.get(0)));
             model.addAttribute("purchaseOrderItemEdit", false);
@@ -103,9 +112,10 @@ public class CommonService {
     }
 
     public List< Item > activeItemsFromSupplier(Supplier supplier) {
-        List< SupplierItem > supplierItems = supplierItemService.findBySupplierAndItemSupplierStatus(supplier, ItemSupplierStatus.CURRENTLY_BUYING);
-        List<Item> items = new ArrayList<>();
-        for (SupplierItem supplierItem : supplierItems) {
+        List< SupplierItem > supplierItems = supplierItemService.findBySupplierAndItemSupplierStatus(supplier,
+                                                                                                     ItemSupplierStatus.CURRENTLY_BUYING);
+        List< Item > items = new ArrayList<>();
+        for ( SupplierItem supplierItem : supplierItems ) {
             items.add(supplierItem.getItem());
         }
         return items;

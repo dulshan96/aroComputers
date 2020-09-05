@@ -1,5 +1,8 @@
 package lk.aroComputers.asset.branch.service;
 
+import lk.aroComputers.asset.branch.dao.BranchDao;
+import lk.aroComputers.asset.branch.entity.Branch;
+import lk.aroComputers.util.interfaces.AbstractService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.data.domain.Example;
@@ -35,7 +38,7 @@ public class BranchService implements AbstractService< Branch, Integer> {
         return false;
     }
 
-    public List<Branch> search(Branch branch) {
+    public List< Branch > search(Branch branch) {
         ExampleMatcher matcher = ExampleMatcher
                 .matching()
                 .withIgnoreCase()

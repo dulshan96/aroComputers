@@ -1,5 +1,11 @@
 package lk.aroComputers.asset.item.service;
 
+import lk.aroComputers.asset.category.entity.Category;
+import lk.aroComputers.asset.item.dao.ItemDao;
+import lk.aroComputers.asset.item.entity.Enum.ItemStatus;
+import lk.aroComputers.asset.item.entity.Item;
+import lk.aroComputers.asset.ledger.dao.LedgerDao;
+import lk.aroComputers.util.interfaces.AbstractService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.data.domain.Example;

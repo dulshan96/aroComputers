@@ -1,4 +1,6 @@
 package lk.aroComputers.asset.userManagement.entity;
+
+import lk.aroComputers.asset.userManagement.entity.Enum.UserSessionLogStatus;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

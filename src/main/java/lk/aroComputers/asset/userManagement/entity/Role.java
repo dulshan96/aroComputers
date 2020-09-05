@@ -1,7 +1,7 @@
 package lk.aroComputers.asset.userManagement.entity;
 
 
-
+import lk.aroComputers.util.audit.AuditEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

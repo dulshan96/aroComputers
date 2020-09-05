@@ -1,5 +1,20 @@
 package lk.aroComputers.asset.employee.controller;
 
+import lk.aroComputers.asset.commonAsset.model.Enum.BloodGroup;
+import lk.aroComputers.asset.commonAsset.model.Enum.CivilStatus;
+import lk.aroComputers.asset.commonAsset.model.Enum.Gender;
+import lk.aroComputers.asset.commonAsset.model.Enum.Title;
+import lk.aroComputers.asset.commonAsset.service.CommonService;
+import lk.aroComputers.asset.employee.entity.Employee;
+import lk.aroComputers.asset.employee.entity.EmployeeFiles;
+import lk.aroComputers.asset.employee.entity.Enum.Designation;
+import lk.aroComputers.asset.employee.entity.Enum.EmployeeStatus;
+import lk.aroComputers.asset.employee.service.EmployeeFilesService;
+import lk.aroComputers.asset.employee.service.EmployeeService;
+import lk.aroComputers.asset.userManagement.entity.User;
+import lk.aroComputers.asset.userManagement.service.UserService;
+import lk.aroComputers.util.service.DateTimeAgeService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;

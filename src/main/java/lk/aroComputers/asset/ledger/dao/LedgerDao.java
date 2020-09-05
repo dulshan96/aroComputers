@@ -1,5 +1,7 @@
 package lk.aroComputers.asset.ledger.dao;
 
+import lk.aroComputers.asset.item.entity.Item;
+import lk.aroComputers.asset.ledger.entity.Ledger;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

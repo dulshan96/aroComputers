@@ -1,5 +1,8 @@
 package lk.aroComputers.asset.userManagement.service;
 
+import lk.aroComputers.asset.userManagement.CustomerUserDetails;
+import lk.aroComputers.asset.userManagement.dao.UserDao;
+import lk.aroComputers.asset.userManagement.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

@@ -1,4 +1,8 @@
 package lk.aroComputers.asset.discountRatio.controller;
+
+import lk.aroComputers.asset.discountRatio.entity.DiscountRatio;
+import lk.aroComputers.asset.discountRatio.entity.Enum.DiscountRatioStatus;
+import lk.aroComputers.asset.discountRatio.service.DiscountRatioService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;

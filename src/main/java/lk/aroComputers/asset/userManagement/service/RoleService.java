@@ -1,5 +1,8 @@
 package lk.aroComputers.asset.userManagement.service;
 
+import lk.aroComputers.asset.userManagement.dao.RoleDao;
+import lk.aroComputers.asset.userManagement.entity.Role;
+import lk.aroComputers.util.interfaces.AbstractService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.*;
 import org.springframework.data.domain.Example;
