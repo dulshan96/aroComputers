@@ -1,8 +1,8 @@
-package lk.aroComputers.asset.branch.service;
+package lk.aro_computers.asset.branch.service;
 
-import lk.aroComputers.asset.branch.dao.BranchDao;
-import lk.aroComputers.asset.branch.entity.Branch;
-import lk.aroComputers.util.interfaces.AbstractService;
+import lk.aro_computers.asset.branch.dao.BranchDao;
+import lk.aro_computers.asset.branch.entity.Branch;
+import lk.aro_computers.util.interfaces.AbstractService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.data.domain.Example;
