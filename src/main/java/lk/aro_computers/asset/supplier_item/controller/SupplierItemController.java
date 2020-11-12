@@ -1,18 +1,18 @@
-package lk.aroComputers.asset.supplierItem.controller;
+package lk.aro_computers.asset.supplier_item.controller;
 
 
-import lk.aroComputers.asset.PurchaseOrder.commonModel.PurchaseOrderItemLedger;
-import lk.aroComputers.asset.commonAsset.service.CommonService;
-import lk.aroComputers.asset.item.entity.Item;
-import lk.aroComputers.asset.item.service.ItemService;
-import lk.aroComputers.asset.ledger.dao.LedgerDao;
-import lk.aroComputers.asset.ledger.entity.Ledger;
-import lk.aroComputers.asset.supplier.entity.Supplier;
-import lk.aroComputers.asset.supplier.service.SupplierService;
-import lk.aroComputers.asset.supplierItem.entity.Enum.ItemSupplierStatus;
-import lk.aroComputers.asset.supplierItem.entity.SupplierItem;
-import lk.aroComputers.asset.supplierItem.service.SupplierItemService;
-import lk.aroComputers.util.audit.AuditEntity;
+import lk.aro_computers.asset.purchase_order.commonModel.PurchaseOrderItemLedger;
+import lk.aro_computers.asset.common_asset.service.CommonService;
+import lk.aro_computers.asset.item.entity.Item;
+import lk.aro_computers.asset.item.service.ItemService;
+import lk.aro_computers.asset.ledger.dao.LedgerDao;
+import lk.aro_computers.asset.ledger.entity.Ledger;
+import lk.aro_computers.asset.supplier.entity.Supplier;
+import lk.aro_computers.asset.supplier.service.SupplierService;
+import lk.aro_computers.asset.supplier_item.entity.Enum.ItemSupplierStatus;
+import lk.aro_computers.asset.supplier_item.entity.SupplierItem;
+import lk.aro_computers.asset.supplier_item.service.SupplierItemService;
+import lk.aro_computers.util.audit.AuditEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

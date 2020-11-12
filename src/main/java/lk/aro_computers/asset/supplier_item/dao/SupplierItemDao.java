@@ -1,9 +1,9 @@
-package lk.aroComputers.asset.supplierItem.dao;
+package lk.aro_computers.asset.supplier_item.dao;
 
-import lk.aroComputers.asset.item.entity.Item;
-import lk.aroComputers.asset.supplier.entity.Supplier;
-import lk.aroComputers.asset.supplierItem.entity.Enum.ItemSupplierStatus;
-import lk.aroComputers.asset.supplierItem.entity.SupplierItem;
+import lk.aro_computers.asset.item.entity.Item;
+import lk.aro_computers.asset.supplier.entity.Supplier;
+import lk.aro_computers.asset.supplier_item.entity.Enum.ItemSupplierStatus;
+import lk.aro_computers.asset.supplier_item.entity.SupplierItem;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

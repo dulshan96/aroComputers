@@ -1,11 +1,11 @@
-package lk.aroComputers.asset.supplier.entity;
+package lk.aro_computers.asset.supplier.entity;
 
 
 import com.fasterxml.jackson.annotation.JsonFilter;
-import lk.aroComputers.asset.PurchaseOrder.entity.PurchaseOrder;
-import lk.aroComputers.asset.supplierItem.entity.Enum.ItemSupplierStatus;
-import lk.aroComputers.asset.supplierItem.entity.SupplierItem;
-import lk.aroComputers.util.audit.AuditEntity;
+import lk.aro_computers.asset.purchase_order.entity.PurchaseOrder;
+import lk.aro_computers.asset.supplier_item.entity.Enum.ItemSupplierStatus;
+import lk.aro_computers.asset.supplier_item.entity.SupplierItem;
+import lk.aro_computers.util.audit.AuditEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
