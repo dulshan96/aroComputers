@@ -1,13 +1,13 @@
-package lk.aroComputers.asset.category.controller;
+package lk.aro_computers.asset.category.controller;
 
 
 import com.fasterxml.jackson.databind.ser.FilterProvider;
 import com.fasterxml.jackson.databind.ser.impl.SimpleBeanPropertyFilter;
 import com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider;
-import lk.aroComputers.asset.category.entity.Category;
-import lk.aroComputers.asset.category.service.CategoryService;
-import lk.aroComputers.asset.item.entity.Enum.MainCategory;
-import lk.aroComputers.util.interfaces.AbstractController;
+import lk.aro_computers.asset.category.entity.Category;
+import lk.aro_computers.asset.category.service.CategoryService;
+import lk.aro_computers.asset.item.entity.Enum.MainCategory;
+import lk.aro_computers.util.interfaces.AbstractController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.converter.json.MappingJacksonValue;
 import org.springframework.stereotype.Controller;

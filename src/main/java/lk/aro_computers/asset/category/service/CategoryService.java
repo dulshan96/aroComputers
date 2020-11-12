@@ -1,9 +1,9 @@
-package lk.aroComputers.asset.category.service;
+package lk.aro_computers.asset.category.service;
 
 
-import lk.aroComputers.asset.category.dao.CategoryDao;
-import lk.aroComputers.asset.category.entity.Category;
-import lk.aroComputers.util.interfaces.AbstractService;
+import lk.aro_computers.asset.category.dao.CategoryDao;
+import lk.aro_computers.asset.category.entity.Category;
+import lk.aro_computers.util.interfaces.AbstractService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.data.domain.Example;

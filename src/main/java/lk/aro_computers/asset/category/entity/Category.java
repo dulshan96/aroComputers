@@ -1,9 +1,9 @@
-package lk.aroComputers.asset.category.entity;
+package lk.aro_computers.asset.category.entity;
 
 
 import com.fasterxml.jackson.annotation.JsonFilter;
-import lk.aroComputers.asset.item.entity.Enum.MainCategory;
-import lk.aroComputers.asset.item.entity.Item;
+import lk.aro_computers.asset.item.entity.Enum.MainCategory;
+import lk.aro_computers.asset.item.entity.Item;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
