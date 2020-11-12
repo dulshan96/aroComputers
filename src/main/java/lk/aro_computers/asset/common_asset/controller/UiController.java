@@ -1,8 +1,8 @@
-package lk.aroComputers.asset.commonAsset.controller;
+package lk.aro_computers.asset.common_asset.controller;
 
 
-import lk.aroComputers.asset.userManagement.service.UserService;
-import lk.aroComputers.util.service.DateTimeAgeService;
+import lk.aro_computers.asset.user_management.service.UserService;
+import lk.aro_computers.util.service.DateTimeAgeService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
