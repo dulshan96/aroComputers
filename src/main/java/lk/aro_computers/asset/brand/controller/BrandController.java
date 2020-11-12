@@ -1,8 +1,8 @@
-package lk.aroComputers.asset.brand.controller;
+package lk.aro_computers.asset.brand.controller;
 
 
-import lk.aroComputers.asset.brand.entity.Brand;
-import lk.aroComputers.asset.brand.service.BrandService;
+import lk.aro_computers.asset.brand.entity.Brand;
+import lk.aro_computers.asset.brand.service.BrandService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

@@ -1,10 +1,10 @@
-package lk.aroComputers.asset.brand.service;
+package lk.aro_computers.asset.brand.service;
 
 
 
-import lk.aroComputers.asset.brand.dao.BrandDao;
-import lk.aroComputers.asset.brand.entity.Brand;
-import lk.aroComputers.util.interfaces.AbstractService;
+import lk.aro_computers.asset.brand.dao.BrandDao;
+import lk.aro_computers.asset.brand.entity.Brand;
+import lk.aro_computers.util.interfaces.AbstractService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.data.domain.Example;

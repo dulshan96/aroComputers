@@ -1,10 +1,10 @@
-package lk.aroComputers.asset.brand.entity;
+package lk.aro_computers.asset.brand.entity;
 
 
 import com.fasterxml.jackson.annotation.JsonFilter;
 
-import lk.aroComputers.asset.item.entity.Item;
-import lk.aroComputers.util.audit.AuditEntity;
+import lk.aro_computers.asset.item.entity.Item;
+import lk.aro_computers.util.audit.AuditEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -28,6 +28,7 @@ public class Brand extends AuditEntity {
     @NotNull
     @Size(min = 1, message = "This name length should be more than one character")
     private String name;
+
     @OneToMany(mappedBy = "brand")
     private List<Item> items;
 }
