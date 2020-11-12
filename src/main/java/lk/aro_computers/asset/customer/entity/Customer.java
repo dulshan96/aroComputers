@@ -1,9 +1,9 @@
-package lk.aroComputers.asset.customer.entity;
+package lk.aro_computers.asset.customer.entity;
 
 
 import com.fasterxml.jackson.annotation.JsonFilter;
-import lk.aroComputers.asset.commonAsset.model.Enum.Title;
-import lk.aroComputers.util.audit.AuditEntity;
+import lk.aro_computers.asset.common_asset.model.enums.Title;
+import lk.aro_computers.util.audit.AuditEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

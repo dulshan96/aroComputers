@@ -1,7 +1,7 @@
-package lk.aroComputers.asset.customer.dao;
+package lk.aro_computers.asset.customer.dao;
 
 
-import lk.aroComputers.asset.customer.entity.Customer;
+import lk.aro_computers.asset.customer.entity.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
