@@ -1,7 +1,7 @@
-package lk.aroComputers.asset.userManagement.dao;
+package lk.aro_computers.asset.user_management.dao;
 
-import lk.aroComputers.asset.employee.entity.Employee;
-import lk.aroComputers.asset.userManagement.entity.User;
+import lk.aro_computers.asset.employee.entity.Employee;
+import lk.aro_computers.asset.user_management.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

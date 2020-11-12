@@ -1,8 +1,8 @@
-package lk.aroComputers.asset.userManagement.dao;
+package lk.aro_computers.asset.user_management.dao;
 
-import lk.aroComputers.asset.userManagement.entity.Enum.UserSessionLogStatus;
-import lk.aroComputers.asset.userManagement.entity.User;
-import lk.aroComputers.asset.userManagement.entity.UserSessionLog;
+import lk.aro_computers.asset.user_management.entity.Enum.UserSessionLogStatus;
+import lk.aro_computers.asset.user_management.entity.User;
+import lk.aro_computers.asset.user_management.entity.UserSessionLog;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

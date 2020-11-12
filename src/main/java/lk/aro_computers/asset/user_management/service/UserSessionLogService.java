@@ -1,10 +1,10 @@
-package lk.aroComputers.asset.userManagement.service;
+package lk.aro_computers.asset.user_management.service;
 
-import lk.aroComputers.asset.userManagement.dao.UserSessionLogDao;
-import lk.aroComputers.asset.userManagement.entity.Enum.UserSessionLogStatus;
-import lk.aroComputers.asset.userManagement.entity.User;
-import lk.aroComputers.asset.userManagement.entity.UserSessionLog;
-import lk.aroComputers.util.interfaces.AbstractService;
+import lk.aro_computers.asset.user_management.dao.UserSessionLogDao;
+import lk.aro_computers.asset.user_management.entity.Enum.UserSessionLogStatus;
+import lk.aro_computers.asset.user_management.entity.User;
+import lk.aro_computers.asset.user_management.entity.UserSessionLog;
+import lk.aro_computers.util.interfaces.AbstractService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.*;
 import org.springframework.stereotype.Service;
