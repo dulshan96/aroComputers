@@ -1,8 +1,8 @@
-package lk.aroComputers.asset.item.dao;
+package lk.aro_computers.asset.item.dao;
 
 
 
-import lk.aroComputers.asset.item.entity.Item;
+import lk.aro_computers.asset.item.entity.Item;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

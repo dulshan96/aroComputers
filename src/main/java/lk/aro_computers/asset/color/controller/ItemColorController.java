@@ -1,9 +1,9 @@
-package lk.aroComputers.asset.color.controller;
+package lk.aro_computers.asset.color.controller;
 
 
 
-import lk.aroComputers.asset.color.entity.ItemColor;
-import lk.aroComputers.asset.color.service.ItemColorService;
+import lk.aro_computers.asset.color.entity.ItemColor;
+import lk.aro_computers.asset.color.service.ItemColorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

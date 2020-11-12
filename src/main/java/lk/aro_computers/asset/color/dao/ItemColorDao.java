@@ -1,8 +1,8 @@
-package lk.aroComputers.asset.color.dao;
+package lk.aro_computers.asset.color.dao;
 
 
 
-import lk.aroComputers.asset.color.entity.ItemColor;
+import lk.aro_computers.asset.color.entity.ItemColor;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

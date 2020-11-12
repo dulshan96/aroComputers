@@ -1,15 +1,15 @@
-package lk.aroComputers.asset.item.controller;
+package lk.aro_computers.asset.item.controller;
 
 
-import lk.aroComputers.asset.brand.service.BrandService;
-import lk.aroComputers.asset.category.controller.CategoryController;
-import lk.aroComputers.asset.color.service.ItemColorService;
-import lk.aroComputers.asset.item.entity.Enum.ItemStatus;
-import lk.aroComputers.asset.item.entity.Enum.MainCategory;
-import lk.aroComputers.asset.item.entity.Item;
-import lk.aroComputers.asset.item.service.ItemService;
+import lk.aro_computers.asset.brand.service.BrandService;
+import lk.aro_computers.asset.category.controller.CategoryController;
+import lk.aro_computers.asset.color.service.ItemColorService;
+import lk.aro_computers.asset.item.entity.Enum.ItemStatus;
+import lk.aro_computers.asset.item.entity.Enum.MainCategory;
+import lk.aro_computers.asset.item.entity.Item;
+import lk.aro_computers.asset.item.service.ItemService;
 
-import lk.aroComputers.util.service.MakeAutoGenerateNumberService;
+import lk.aro_computers.util.service.MakeAutoGenerateNumberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
