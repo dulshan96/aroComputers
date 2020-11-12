@@ -1,10 +1,10 @@
-package lk.aroComputers.asset.payment.entity;
+package lk.aro_computers.asset.payment.entity;
 
 
 import com.fasterxml.jackson.annotation.JsonFilter;
-import lk.aroComputers.asset.PurchaseOrder.entity.PurchaseOrder;
-import lk.aroComputers.asset.invoice.entity.Enum.PaymentMethod;
-import lk.aroComputers.util.audit.AuditEntity;
+import lk.aro_computers.asset.purchase_order.entity.PurchaseOrder;
+import lk.aro_computers.asset.invoice.entity.Enum.PaymentMethod;
+import lk.aro_computers.util.audit.AuditEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
