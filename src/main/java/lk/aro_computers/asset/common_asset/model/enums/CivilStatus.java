@@ -1,4 +1,4 @@
-package lk.aroComputers.asset.commonAsset.model.Enum;
+package lk.aro_computers.asset.common_asset.model.enums;
 
 
 import lombok.AllArgsConstructor;

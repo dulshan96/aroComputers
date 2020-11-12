@@ -1,10 +1,9 @@
 package lk.aro_computers.asset.employee.controller;
 
 
-import lk.aro_computers.asset.common_asset.model.Enum.BloodGroup;
-import lk.aro_computers.asset.common_asset.model.Enum.CivilStatus;
-import lk.aro_computers.asset.common_asset.model.Enum.Gender;
-import lk.aro_computers.asset.common_asset.model.Enum.Title;
+import lk.aro_computers.asset.common_asset.model.enums.CivilStatus;
+import lk.aro_computers.asset.common_asset.model.enums.Gender;
+import lk.aro_computers.asset.common_asset.model.enums.Title;
 import lk.aro_computers.asset.common_asset.service.CommonService;
 import lk.aro_computers.asset.employee.entity.Employee;
 import lk.aro_computers.asset.employee.entity.EmployeeFiles;
@@ -58,7 +57,6 @@ public class EmployeeController {
         model.addAttribute("civilStatus", CivilStatus.values());
         model.addAttribute("employeeStatus", EmployeeStatus.values());
         model.addAttribute("designation", Designation.values());
-        model.addAttribute("bloodGroup", BloodGroup.values());
         return "employee/addEmployee";
     }
 

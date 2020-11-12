@@ -1,9 +1,9 @@
 package lk.aro_computers;
 
 
-import lk.aro_computers.asset.common_asset.model.Enum.CivilStatus;
-import lk.aro_computers.asset.common_asset.model.Enum.Gender;
-import lk.aro_computers.asset.common_asset.model.Enum.Title;
+import lk.aro_computers.asset.common_asset.model.enums.CivilStatus;
+import lk.aro_computers.asset.common_asset.model.enums.Gender;
+import lk.aro_computers.asset.common_asset.model.enums.Title;
 import lk.aro_computers.asset.employee.entity.Employee;
 import lk.aro_computers.asset.employee.entity.enums.Designation;
 import lk.aro_computers.asset.employee.entity.enums.EmployeeStatus;
