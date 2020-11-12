@@ -1,6 +1,4 @@
-package lk.aroComputers.asset.employee.entity.Enum;
-
-
+package lk.aro_computers.asset.employee.entity.enums;
 
 public enum EmployeeStatus {
     WORKING("Working"),
