@@ -1,4 +1,4 @@
-package lk.aroComputers.configuration;
+package lk.aro_computers.configuration;
 
 
 import org.slf4j.Logger;

@@ -1,4 +1,4 @@
-package lk.aroComputers.util.service;
+package lk.aro_computers.util.service;
 
 
 import org.springframework.stereotype.Service;

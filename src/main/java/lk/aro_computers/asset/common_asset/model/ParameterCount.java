@@ -1,4 +1,4 @@
-package lk.aroComputers.asset.commonAsset.model;
+package lk.aro_computers.asset.common_asset.model;
 
 
 import lombok.AllArgsConstructor;

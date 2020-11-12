@@ -1,4 +1,4 @@
-package lk.aroComputers.asset.userManagement.entity;
+package lk.aro_computers.asset.user_management.entity;
 
 
 import lombok.Getter;
