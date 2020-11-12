@@ -1,21 +1,21 @@
-package lk.aroComputers.asset.PurchaseOrder.controller;
+package lk.aro_computers.asset.purchase_order.controller;
 
 
-import lk.aroComputers.asset.PurchaseOrder.entity.Enum.PurchaseOrderPriority;
-import lk.aroComputers.asset.PurchaseOrder.entity.Enum.PurchaseOrderStatus;
-import lk.aroComputers.asset.PurchaseOrder.entity.PurchaseOrder;
-import lk.aroComputers.asset.PurchaseOrder.entity.PurchaseOrderItem;
-import lk.aroComputers.asset.PurchaseOrder.service.PurchaseOrderItemService;
-import lk.aroComputers.asset.PurchaseOrder.service.PurchaseOrderService;
-import lk.aroComputers.asset.commonAsset.service.CommonService;
-import lk.aroComputers.asset.ledger.dao.LedgerDao;
-import lk.aroComputers.asset.supplier.entity.Supplier;
-import lk.aroComputers.asset.supplier.service.SupplierService;
-import lk.aroComputers.asset.supplierItem.controller.SupplierItemController;
-import lk.aroComputers.asset.supplierItem.service.SupplierItemService;
-import lk.aroComputers.util.service.EmailService;
-import lk.aroComputers.util.service.MakeAutoGenerateNumberService;
-import lk.aroComputers.util.service.OperatorService;
+import lk.aro_computers.asset.purchase_order.entity.Enum.PurchaseOrderPriority;
+import lk.aro_computers.asset.purchase_order.entity.Enum.PurchaseOrderStatus;
+import lk.aro_computers.asset.purchase_order.entity.PurchaseOrder;
+import lk.aro_computers.asset.purchase_order.entity.PurchaseOrderItem;
+import lk.aro_computers.asset.purchase_order.service.PurchaseOrderItemService;
+import lk.aro_computers.asset.purchase_order.service.PurchaseOrderService;
+import lk.aro_computers.asset.common_asset.service.CommonService;
+import lk.aro_computers.asset.ledger.dao.LedgerDao;
+import lk.aro_computers.asset.supplier.entity.Supplier;
+import lk.aro_computers.asset.supplier.service.SupplierService;
+import lk.aro_computers.asset.supplier_item.controller.SupplierItemController;
+import lk.aro_computers.asset.supplier_item.service.SupplierItemService;
+import lk.aro_computers.util.service.EmailService;
+import lk.aro_computers.util.service.MakeAutoGenerateNumberService;
+import lk.aro_computers.util.service.OperatorService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
