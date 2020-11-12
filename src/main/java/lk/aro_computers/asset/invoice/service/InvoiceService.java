@@ -1,8 +1,8 @@
-package lk.aroComputers.asset.invoice.service;
+package lk.aro_computers.asset.invoice.service;
 
-import lk.aroComputers.asset.invoice.dao.InvoiceDao;
-import lk.aroComputers.asset.invoice.entity.Invoice;
-import lk.aroComputers.util.interfaces.AbstractService;
+import lk.aro_computers.asset.invoice.dao.InvoiceDao;
+import lk.aro_computers.asset.invoice.entity.Invoice;
+import lk.aro_computers.util.interfaces.AbstractService;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.stereotype.Service;

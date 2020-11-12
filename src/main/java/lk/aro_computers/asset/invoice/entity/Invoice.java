@@ -1,14 +1,14 @@
-package lk.aroComputers.asset.invoice.entity;
+package lk.aro_computers.asset.invoice.entity;
 
 
 import com.fasterxml.jackson.annotation.JsonFilter;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import lk.aroComputers.asset.customer.entity.Customer;
-import lk.aroComputers.asset.discountRatio.entity.DiscountRatio;
-import lk.aroComputers.asset.invoice.entity.Enum.InvoicePrintOrNot;
-import lk.aroComputers.asset.invoice.entity.Enum.InvoiceValidOrNot;
-import lk.aroComputers.asset.invoice.entity.Enum.PaymentMethod;
-import lk.aroComputers.util.audit.AuditEntity;
+import lk.aro_computers.asset.customer.entity.Customer;
+import lk.aro_computers.asset.discount_ratio.entity.DiscountRatio;
+import lk.aro_computers.asset.invoice.entity.Enum.InvoicePrintOrNot;
+import lk.aro_computers.asset.invoice.entity.Enum.InvoiceValidOrNot;
+import lk.aro_computers.asset.invoice.entity.Enum.PaymentMethod;
+import lk.aro_computers.util.audit.AuditEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
