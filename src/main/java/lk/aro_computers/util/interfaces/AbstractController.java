@@ -1,4 +1,4 @@
-package lk.aroComputers.util.interfaces;
+package lk.aro_computers.util.interfaces;
 
 
 import org.springframework.ui.Model;
