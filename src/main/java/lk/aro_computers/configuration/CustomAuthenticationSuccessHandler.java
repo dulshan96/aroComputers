@@ -1,10 +1,10 @@
-package lk.aroComputers.configuration;
+package lk.aro_computers.configuration;
 
-import lk.aroComputers.asset.userManagement.entity.Enum.UserSessionLogStatus;
-import lk.aroComputers.asset.userManagement.entity.User;
-import lk.aroComputers.asset.userManagement.entity.UserSessionLog;
-import lk.aroComputers.asset.userManagement.service.UserService;
-import lk.aroComputers.asset.userManagement.service.UserSessionLogService;
+import lk.aro_computers.asset.user_management.entity.Enum.UserSessionLogStatus;
+import lk.aro_computers.asset.user_management.entity.User;
+import lk.aro_computers.asset.user_management.entity.UserSessionLog;
+import lk.aro_computers.asset.user_management.service.UserService;
+import lk.aro_computers.asset.user_management.service.UserSessionLogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
