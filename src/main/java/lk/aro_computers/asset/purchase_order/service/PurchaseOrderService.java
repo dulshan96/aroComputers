@@ -1,7 +1,7 @@
 package lk.aro_computers.asset.purchase_order.service;
 
 import lk.aro_computers.asset.purchase_order.dao.PurchaseOrderDao;
-import lk.aro_computers.asset.purchase_order.entity.Enum.PurchaseOrderStatus;
+import lk.aro_computers.asset.purchase_order.entity.enums.PurchaseOrderStatus;
 import lk.aro_computers.asset.purchase_order.entity.PurchaseOrder;
 import lk.aro_computers.asset.supplier.entity.Supplier;
 import lk.aro_computers.util.interfaces.AbstractService;

@@ -1,7 +1,7 @@
 package lk.aro_computers.asset.supplier_item.controller;
 
 
-import lk.aro_computers.asset.purchase_order.commonModel.PurchaseOrderItemLedger;
+import lk.aro_computers.asset.purchase_order.common_model.PurchaseOrderItemLedger;
 import lk.aro_computers.asset.common_asset.service.CommonService;
 import lk.aro_computers.asset.item.entity.Item;
 import lk.aro_computers.asset.item.service.ItemService;
@@ -9,7 +9,7 @@ import lk.aro_computers.asset.ledger.dao.LedgerDao;
 import lk.aro_computers.asset.ledger.entity.Ledger;
 import lk.aro_computers.asset.supplier.entity.Supplier;
 import lk.aro_computers.asset.supplier.service.SupplierService;
-import lk.aro_computers.asset.supplier_item.entity.Enum.ItemSupplierStatus;
+import lk.aro_computers.asset.supplier_item.entity.enums.ItemSupplierStatus;
 import lk.aro_computers.asset.supplier_item.entity.SupplierItem;
 import lk.aro_computers.asset.supplier_item.service.SupplierItemService;
 import lk.aro_computers.util.audit.AuditEntity;

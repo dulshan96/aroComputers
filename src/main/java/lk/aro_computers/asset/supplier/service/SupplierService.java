@@ -2,7 +2,7 @@ package lk.aro_computers.asset.supplier.service;
 
 import lk.aro_computers.asset.supplier.dao.SupplierDao;
 import lk.aro_computers.asset.supplier.entity.Supplier;
-import lk.aro_computers.asset.supplier_item.entity.Enum.ItemSupplierStatus;
+import lk.aro_computers.asset.supplier_item.entity.enums.ItemSupplierStatus;
 import lk.aro_computers.util.interfaces.AbstractService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheConfig;

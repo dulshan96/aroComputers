@@ -3,7 +3,7 @@ package lk.aro_computers.asset.good_received_note.entity;
 
 import com.fasterxml.jackson.annotation.JsonFilter;
 import lk.aro_computers.asset.purchase_order.entity.PurchaseOrder;
-import lk.aro_computers.asset.good_received_note.entity.Enum.GoodReceivedNoteState;
+import lk.aro_computers.asset.good_received_note.entity.enums.GoodReceivedNoteState;
 import lk.aro_computers.asset.ledger.entity.Ledger;
 import lk.aro_computers.util.audit.AuditEntity;
 import lombok.*;

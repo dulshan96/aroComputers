@@ -2,8 +2,8 @@ package lk.aro_computers.asset.purchase_order.entity;
 
 
 import com.fasterxml.jackson.annotation.JsonFilter;
-import lk.aro_computers.asset.purchase_order.entity.Enum.PurchaseOrderPriority;
-import lk.aro_computers.asset.purchase_order.entity.Enum.PurchaseOrderStatus;
+import lk.aro_computers.asset.purchase_order.entity.enums.PurchaseOrderPriority;
+import lk.aro_computers.asset.purchase_order.entity.enums.PurchaseOrderStatus;
 import lk.aro_computers.asset.payment.entity.Payment;
 import lk.aro_computers.asset.supplier.entity.Supplier;
 import lk.aro_computers.util.audit.AuditEntity;

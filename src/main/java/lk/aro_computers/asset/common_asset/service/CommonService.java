@@ -6,7 +6,7 @@ import lk.aro_computers.asset.item.entity.Item;
 import lk.aro_computers.asset.item.service.ItemService;
 import lk.aro_computers.asset.supplier.entity.Supplier;
 import lk.aro_computers.asset.supplier.service.SupplierService;
-import lk.aro_computers.asset.supplier_item.entity.Enum.ItemSupplierStatus;
+import lk.aro_computers.asset.supplier_item.entity.enums.ItemSupplierStatus;
 import lk.aro_computers.asset.supplier_item.entity.SupplierItem;
 import lk.aro_computers.asset.supplier_item.service.SupplierItemService;
 import lk.aro_computers.util.service.MakeAutoGenerateNumberService;

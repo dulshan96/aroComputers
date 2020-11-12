@@ -3,7 +3,7 @@ package lk.aro_computers.asset.payment.entity;
 
 import com.fasterxml.jackson.annotation.JsonFilter;
 import lk.aro_computers.asset.purchase_order.entity.PurchaseOrder;
-import lk.aro_computers.asset.invoice.entity.Enum.PaymentMethod;
+import lk.aro_computers.asset.invoice.entity.enums.PaymentMethod;
 import lk.aro_computers.util.audit.AuditEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

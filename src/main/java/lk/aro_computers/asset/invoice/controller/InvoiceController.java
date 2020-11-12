@@ -2,9 +2,9 @@ package lk.aro_computers.asset.invoice.controller;
 
 import lk.aro_computers.asset.customer.service.CustomerService;
 import lk.aro_computers.asset.discount_ratio.service.DiscountRatioService;
-import lk.aro_computers.asset.invoice.entity.Enum.InvoicePrintOrNot;
-import lk.aro_computers.asset.invoice.entity.Enum.InvoiceValidOrNot;
-import lk.aro_computers.asset.invoice.entity.Enum.PaymentMethod;
+import lk.aro_computers.asset.invoice.entity.enums.InvoicePrintOrNot;
+import lk.aro_computers.asset.invoice.entity.enums.InvoiceValidOrNot;
+import lk.aro_computers.asset.invoice.entity.enums.PaymentMethod;
 import lk.aro_computers.asset.invoice.entity.Invoice;
 import lk.aro_computers.asset.invoice.service.InvoiceService;
 import lk.aro_computers.asset.item.service.ItemService;

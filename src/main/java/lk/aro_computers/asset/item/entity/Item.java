@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonFilter;
 import lk.aro_computers.asset.brand.entity.Brand;
 import lk.aro_computers.asset.category.entity.Category;
 import lk.aro_computers.asset.color.entity.ItemColor;
-import lk.aro_computers.asset.item.entity.Enum.ItemStatus;
+import lk.aro_computers.asset.item.entity.enums.ItemStatus;
 import lk.aro_computers.asset.ledger.entity.Ledger;
 import lk.aro_computers.asset.purchase_order.entity.PurchaseOrderItem;
 import lk.aro_computers.asset.supplier_item.entity.SupplierItem;

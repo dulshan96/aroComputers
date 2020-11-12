@@ -1,6 +1,6 @@
 package lk.aro_computers.asset.purchase_order.dao;
 
-import lk.aro_computers.asset.purchase_order.entity.Enum.PurchaseOrderStatus;
+import lk.aro_computers.asset.purchase_order.entity.enums.PurchaseOrderStatus;
 import lk.aro_computers.asset.purchase_order.entity.PurchaseOrder;
 import lk.aro_computers.asset.supplier.entity.Supplier;
 import org.springframework.data.jpa.repository.JpaRepository;

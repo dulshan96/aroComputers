@@ -1,4 +1,4 @@
-package lk.aro_computers.asset.purchase_order.commonModel;
+package lk.aro_computers.asset.purchase_order.common_model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

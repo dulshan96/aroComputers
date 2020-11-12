@@ -1,8 +1,8 @@
 package lk.aro_computers.asset.purchase_order.controller;
 
 
-import lk.aro_computers.asset.purchase_order.entity.Enum.PurchaseOrderPriority;
-import lk.aro_computers.asset.purchase_order.entity.Enum.PurchaseOrderStatus;
+import lk.aro_computers.asset.purchase_order.entity.enums.PurchaseOrderPriority;
+import lk.aro_computers.asset.purchase_order.entity.enums.PurchaseOrderStatus;
 import lk.aro_computers.asset.purchase_order.entity.PurchaseOrder;
 import lk.aro_computers.asset.purchase_order.entity.PurchaseOrderItem;
 import lk.aro_computers.asset.purchase_order.service.PurchaseOrderItemService;

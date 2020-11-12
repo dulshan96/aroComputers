@@ -1,4 +1,4 @@
-package lk.aro_computers.asset.supplier_item.entity.Enum;
+package lk.aro_computers.asset.supplier_item.entity.enums;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

@@ -1,10 +1,10 @@
 package lk.aro_computers.asset.good_received_note.controller;
 
 
-import lk.aro_computers.asset.purchase_order.entity.Enum.PurchaseOrderStatus;
+import lk.aro_computers.asset.purchase_order.entity.enums.PurchaseOrderStatus;
 import lk.aro_computers.asset.purchase_order.entity.PurchaseOrder;
 import lk.aro_computers.asset.purchase_order.service.PurchaseOrderService;
-import lk.aro_computers.asset.good_received_note.entity.Enum.GoodReceivedNoteState;
+import lk.aro_computers.asset.good_received_note.entity.enums.GoodReceivedNoteState;
 import lk.aro_computers.asset.good_received_note.entity.GoodReceivedNote;
 import lk.aro_computers.asset.good_received_note.service.GoodReceivedNoteService;
 import lk.aro_computers.asset.ledger.entity.Ledger;

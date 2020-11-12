@@ -2,7 +2,7 @@ package lk.aro_computers.asset.discount_ratio.entity;
 
 
 import com.fasterxml.jackson.annotation.JsonFilter;
-import lk.aro_computers.asset.discount_ratio.entity.Enum.DiscountRatioStatus;
+import lk.aro_computers.asset.discount_ratio.entity.enums.DiscountRatioStatus;
 import lk.aro_computers.asset.invoice.entity.Invoice;
 import lk.aro_computers.util.audit.AuditEntity;
 import lombok.AllArgsConstructor;

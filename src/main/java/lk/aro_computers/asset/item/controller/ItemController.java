@@ -4,8 +4,8 @@ package lk.aro_computers.asset.item.controller;
 import lk.aro_computers.asset.brand.service.BrandService;
 import lk.aro_computers.asset.category.controller.CategoryController;
 import lk.aro_computers.asset.color.service.ItemColorService;
-import lk.aro_computers.asset.item.entity.Enum.ItemStatus;
-import lk.aro_computers.asset.item.entity.Enum.MainCategory;
+import lk.aro_computers.asset.item.entity.enums.ItemStatus;
+import lk.aro_computers.asset.item.entity.enums.MainCategory;
 import lk.aro_computers.asset.item.entity.Item;
 import lk.aro_computers.asset.item.service.ItemService;
 

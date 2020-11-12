@@ -3,7 +3,7 @@ package lk.aro_computers.asset.discount_ratio.service;
 
 import lk.aro_computers.asset.discount_ratio.dao.DiscountRatioDao;
 import lk.aro_computers.asset.discount_ratio.entity.DiscountRatio;
-import lk.aro_computers.asset.discount_ratio.entity.Enum.DiscountRatioStatus;
+import lk.aro_computers.asset.discount_ratio.entity.enums.DiscountRatioStatus;
 import lk.aro_computers.util.interfaces.AbstractService;
 import org.springframework.stereotype.Service;
 

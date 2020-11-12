@@ -1,4 +1,4 @@
-package lk.aro_computers.asset.discount_ratio.entity.Enum;
+package lk.aro_computers.asset.discount_ratio.entity.enums;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
