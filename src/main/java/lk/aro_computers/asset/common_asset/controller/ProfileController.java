@@ -1,9 +1,9 @@
-package lk.aroComputers.asset.commonAsset.controller;
+package lk.aro_computers.asset.common_asset.controller;
 
 
-import lk.aroComputers.asset.userManagement.entity.PasswordChange;
-import lk.aroComputers.asset.userManagement.entity.User;
-import lk.aroComputers.asset.userManagement.service.UserService;
+import lk.aro_computers.asset.user_management.entity.PasswordChange;
+import lk.aro_computers.asset.user_management.entity.User;
+import lk.aro_computers.asset.user_management.service.UserService;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;

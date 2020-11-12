@@ -1,7 +1,7 @@
-package lk.aroComputers.asset.userManagement.controller;
+package lk.aro_computers.asset.user_management.controller;
 
-import lk.aroComputers.asset.userManagement.entity.Role;
-import lk.aroComputers.asset.userManagement.service.RoleService;
+import lk.aro_computers.asset.user_management.entity.Role;
+import lk.aro_computers.asset.user_management.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

@@ -1,6 +1,6 @@
-package lk.aroComputers.asset.userManagement.dao;
+package lk.aro_computers.asset.user_management.dao;
 
-import lk.aroComputers.asset.userManagement.entity.Role;
+import lk.aro_computers.asset.user_management.entity.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

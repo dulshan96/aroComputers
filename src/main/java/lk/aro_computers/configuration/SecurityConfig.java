@@ -1,6 +1,6 @@
-package lk.aroComputers.configuration;
+package lk.aro_computers.configuration;
 
-import lk.aroComputers.asset.userManagement.service.UserDetailsServiceImpl;
+import lk.aro_computers.asset.user_management.service.UserDetailsServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;

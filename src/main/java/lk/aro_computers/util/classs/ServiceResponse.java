@@ -1,4 +1,4 @@
-package lk.aroComputers.util.classs;
+package lk.aro_computers.util.classs;
 
 
 import lombok.AllArgsConstructor;
