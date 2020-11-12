@@ -1,14 +1,14 @@
-package lk.aroComputers.asset.goodReceivedNote.controller;
+package lk.aro_computers.asset.good_received_note.controller;
 
 
-import lk.aroComputers.asset.PurchaseOrder.entity.Enum.PurchaseOrderStatus;
-import lk.aroComputers.asset.PurchaseOrder.entity.PurchaseOrder;
-import lk.aroComputers.asset.PurchaseOrder.service.PurchaseOrderService;
-import lk.aroComputers.asset.goodReceivedNote.entity.Enum.GoodReceivedNoteState;
-import lk.aroComputers.asset.goodReceivedNote.entity.GoodReceivedNote;
-import lk.aroComputers.asset.goodReceivedNote.service.GoodReceivedNoteService;
-import lk.aroComputers.asset.ledger.entity.Ledger;
-import lk.aroComputers.asset.ledger.service.LedgerService;
+import lk.aro_computers.asset.purchase_order.entity.Enum.PurchaseOrderStatus;
+import lk.aro_computers.asset.purchase_order.entity.PurchaseOrder;
+import lk.aro_computers.asset.purchase_order.service.PurchaseOrderService;
+import lk.aro_computers.asset.good_received_note.entity.Enum.GoodReceivedNoteState;
+import lk.aro_computers.asset.good_received_note.entity.GoodReceivedNote;
+import lk.aro_computers.asset.good_received_note.service.GoodReceivedNoteService;
+import lk.aro_computers.asset.ledger.entity.Ledger;
+import lk.aro_computers.asset.ledger.service.LedgerService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;

@@ -1,4 +1,4 @@
-package lk.aroComputers.asset.goodReceivedNote.entity.Enum;
+package lk.aro_computers.asset.good_received_note.entity.Enum;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

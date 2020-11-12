@@ -1,11 +1,11 @@
-package lk.aroComputers.asset.goodReceivedNote.entity;
+package lk.aro_computers.asset.good_received_note.entity;
 
 
 import com.fasterxml.jackson.annotation.JsonFilter;
-import lk.aroComputers.asset.PurchaseOrder.entity.PurchaseOrder;
-import lk.aroComputers.asset.goodReceivedNote.entity.Enum.GoodReceivedNoteState;
-import lk.aroComputers.asset.ledger.entity.Ledger;
-import lk.aroComputers.util.audit.AuditEntity;
+import lk.aro_computers.asset.purchase_order.entity.PurchaseOrder;
+import lk.aro_computers.asset.good_received_note.entity.Enum.GoodReceivedNoteState;
+import lk.aro_computers.asset.ledger.entity.Ledger;
+import lk.aro_computers.util.audit.AuditEntity;
 import lombok.*;
 
 import javax.persistence.*;

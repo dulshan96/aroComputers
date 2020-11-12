@@ -1,10 +1,10 @@
-package lk.aroComputers.asset.goodReceivedNote.service;
+package lk.aro_computers.asset.good_received_note.service;
 
 
-import lk.aroComputers.asset.PurchaseOrder.entity.PurchaseOrder;
-import lk.aroComputers.asset.goodReceivedNote.dao.GoodReceivedNoteDao;
-import lk.aroComputers.asset.goodReceivedNote.entity.GoodReceivedNote;
-import lk.aroComputers.util.interfaces.AbstractService;
+import lk.aro_computers.asset.purchase_order.entity.PurchaseOrder;
+import lk.aro_computers.asset.good_received_note.dao.GoodReceivedNoteDao;
+import lk.aro_computers.asset.good_received_note.entity.GoodReceivedNote;
+import lk.aro_computers.util.interfaces.AbstractService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.data.domain.Example;
