@@ -1,4 +1,4 @@
-package lk.aroComputers.util.audit;
+package lk.aro_computers.util.audit;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;

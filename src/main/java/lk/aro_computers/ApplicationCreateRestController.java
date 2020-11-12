@@ -1,17 +1,17 @@
-package lk.aroComputers;
+package lk.aro_computers;
 
 
-import lk.aroComputers.asset.commonAsset.model.Enum.CivilStatus;
-import lk.aroComputers.asset.commonAsset.model.Enum.Gender;
-import lk.aroComputers.asset.commonAsset.model.Enum.Title;
-import lk.aroComputers.asset.employee.entity.Employee;
-import lk.aroComputers.asset.employee.entity.Enum.Designation;
-import lk.aroComputers.asset.employee.entity.Enum.EmployeeStatus;
-import lk.aroComputers.asset.employee.service.EmployeeService;
-import lk.aroComputers.asset.userManagement.entity.Role;
-import lk.aroComputers.asset.userManagement.entity.User;
-import lk.aroComputers.asset.userManagement.service.RoleService;
-import lk.aroComputers.asset.userManagement.service.UserService;
+import lk.aro_computers.asset.common_asset.model.Enum.CivilStatus;
+import lk.aro_computers.asset.common_asset.model.Enum.Gender;
+import lk.aro_computers.asset.common_asset.model.Enum.Title;
+import lk.aro_computers.asset.employee.entity.Employee;
+import lk.aro_computers.asset.employee.entity.enums.Designation;
+import lk.aro_computers.asset.employee.entity.enums.EmployeeStatus;
+import lk.aro_computers.asset.employee.service.EmployeeService;
+import lk.aro_computers.asset.user_management.entity.Role;
+import lk.aro_computers.asset.user_management.entity.User;
+import lk.aro_computers.asset.user_management.service.RoleService;
+import lk.aro_computers.asset.user_management.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -52,7 +52,7 @@ public class ApplicationCreateRestController {
         employee.setMobileTwo("0760870052");
         employee.setTitle((Title) Title.Mr);
         employee.setGender(Gender.MALE);
-        employee.setDesignation(Designation.Owner);
+        employee.setDesignation(Designation.LA);
         employee.setCivilStatus(CivilStatus.UNMARRIED);
         employee.setEmployeeStatus(EmployeeStatus.WORKING);
         employee.setDateOfBirth(LocalDate.now().minusYears(18));
