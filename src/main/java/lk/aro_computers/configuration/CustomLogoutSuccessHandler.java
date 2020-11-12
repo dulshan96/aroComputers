@@ -1,6 +1,6 @@
 package lk.aro_computers.configuration;
 
-import lk.aro_computers.asset.user_management.entity.Enum.UserSessionLogStatus;
+import lk.aro_computers.asset.user_management.entity.enums.UserSessionLogStatus;
 import lk.aro_computers.asset.user_management.entity.User;
 import lk.aro_computers.asset.user_management.entity.UserSessionLog;
 import lk.aro_computers.asset.user_management.service.UserService;

@@ -1,7 +1,7 @@
 package lk.aro_computers.asset.user_management.service;
 
 import lk.aro_computers.asset.user_management.dao.UserSessionLogDao;
-import lk.aro_computers.asset.user_management.entity.Enum.UserSessionLogStatus;
+import lk.aro_computers.asset.user_management.entity.enums.UserSessionLogStatus;
 import lk.aro_computers.asset.user_management.entity.User;
 import lk.aro_computers.asset.user_management.entity.UserSessionLog;
 import lk.aro_computers.util.interfaces.AbstractService;
