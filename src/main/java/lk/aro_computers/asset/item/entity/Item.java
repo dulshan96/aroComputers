@@ -17,7 +17,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 import java.math.BigDecimal;
 import java.util.List;
@@ -33,7 +32,6 @@ public class Item extends AuditEntity {
     @Size( min = 5, message = "Your name can not be accepted" )
     private String name;
 
-    @NotEmpty
     private String rop;
 
     @Column( unique = true )
