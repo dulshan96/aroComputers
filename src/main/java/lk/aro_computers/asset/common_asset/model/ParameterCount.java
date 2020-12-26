@@ -1,6 +1,5 @@
 package lk.aro_computers.asset.common_asset.model;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

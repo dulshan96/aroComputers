@@ -5,15 +5,16 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDateTime;
+import java.util.List;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class FileInfo {
-    private String filename;
-    private LocalDateTime createAt;
-    private String url;
-}
+public class NameCount {
+    private String name;
+    private String nameOne;
+    private Integer count;
 
+    private List< ParameterCount > parameterCounts;
+}

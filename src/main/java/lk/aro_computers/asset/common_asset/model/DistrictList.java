@@ -5,15 +5,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDateTime;
-
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class FileInfo {
-    private String filename;
-    private LocalDateTime createAt;
-    private String url;
-}
+public class DistrictList {
 
+    private String name;
+    private String district;
+}
