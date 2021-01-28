@@ -1,13 +1,14 @@
 package lk.aro_computers.asset.discount_ratio.service;
 
 
+import lk.aro_computers.asset.common_asset.model.enums.LiveDead;
 import lk.aro_computers.asset.discount_ratio.dao.DiscountRatioDao;
 import lk.aro_computers.asset.discount_ratio.entity.DiscountRatio;
-import lk.aro_computers.asset.discount_ratio.entity.enums.DiscountRatioStatus;
 import lk.aro_computers.util.interfaces.AbstractService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class DiscountRatioService implements AbstractService< DiscountRatio, Integer > {
@@ -18,7 +19,9 @@ private final DiscountRatioDao discountRatioDao;
     }
 
     public List< DiscountRatio > findAll() {
-        return discountRatioDao.findAll();
+        return discountRatioDao.findAll().stream()
+            .filter(x -> LiveDead.ACTIVE.equals(x.getLiveDead()))
+            .collect(Collectors.toList());
     }
 
     public DiscountRatio findById(Integer id) {
@@ -27,12 +30,15 @@ private final DiscountRatioDao discountRatioDao;
 
     public DiscountRatio persist(DiscountRatio discountRatio) {
         if ( discountRatio.getId() == null ){
-            discountRatio.setDiscountRatioStatus(DiscountRatioStatus.ACTIVE);
+            discountRatio.setLiveDead(LiveDead.ACTIVE);
         }
         return discountRatioDao.save(discountRatio);
     }
 
     public boolean delete(Integer id) {
+        DiscountRatio discountRatio =  discountRatioDao.getOne(id);
+        discountRatio.setLiveDead(LiveDead.STOP);
+        discountRatioDao.save(discountRatio);
         return false;
     }
 

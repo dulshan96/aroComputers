@@ -1,6 +1,18 @@
 package lk.aro_computers.asset.employee.controller;
 
 
+import lk.aro_computers.asset.common_asset.model.enums.*;
+import lk.aro_computers.asset.common_asset.service.CommonService;
+import lk.aro_computers.asset.employee.entity.Employee;
+import lk.aro_computers.asset.employee.entity.EmployeeFiles;
+import lk.aro_computers.asset.employee.entity.enums.Designation;
+import lk.aro_computers.asset.employee.entity.enums.EmployeeStatus;
+import lk.aro_computers.asset.employee.service.EmployeeFilesService;
+import lk.aro_computers.asset.employee.service.EmployeeService;
+import lk.aro_computers.asset.user_management.user.entity.User;
+import lk.aro_computers.asset.user_management.user.service.UserService;
+import lk.aro_computers.util.service.DateTimeAgeService;
+import lk.aro_computers.util.service.MakeAutoGenerateNumberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
@@ -129,9 +141,9 @@ public class EmployeeController {
     if ( employee.getId() == null ) {
       Employee lastEmployee = employeeService.lastEmployee();
       if ( lastEmployee.getCode() == null ) {
-        employee.setCode("SSME" + makeAutoGenerateNumberService.numberAutoGen(null).toString());
+        employee.setCode("JNSE" + makeAutoGenerateNumberService.numberAutoGen(null).toString());
       } else {
-        employee.setCode("SSME" + makeAutoGenerateNumberService.numberAutoGen(lastEmployee.getCode().substring(4)).toString());
+        employee.setCode("JNSE" + makeAutoGenerateNumberService.numberAutoGen(lastEmployee.getCode().substring(4)).toString());
       }
     }
 

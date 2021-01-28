@@ -1,5 +1,6 @@
 package lk.aro_computers.asset.ledger.dao;
 
+
 import lk.aro_computers.asset.item.entity.Item;
 import lk.aro_computers.asset.ledger.entity.Ledger;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -16,6 +17,8 @@ public interface LedgerDao extends JpaRepository< Ledger, Integer> {
 
     Ledger findByItemAndAndExpiredDateAndSellPrice(Item item, LocalDate eDate, BigDecimal sellPrice);
 
-    List< Ledger > findByCreatedAtIsBetween(LocalDateTime form, LocalDateTime to);
+    List<Ledger> findByExpiredDateBetween(LocalDate from, LocalDate to);
+
+    List< Ledger > findByCreatedAtBetween(LocalDateTime form, LocalDateTime to);
 
 }

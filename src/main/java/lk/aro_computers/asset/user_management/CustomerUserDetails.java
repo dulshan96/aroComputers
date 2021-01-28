@@ -1,6 +1,6 @@
 package lk.aro_computers.asset.user_management;
 
-import lk.aro_computers.asset.user_management.entity.User;
+import lk.aro_computers.asset.user_management.user.entity.User;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;

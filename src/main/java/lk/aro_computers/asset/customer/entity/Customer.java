@@ -1,7 +1,7 @@
 package lk.aro_computers.asset.customer.entity;
 
-
 import com.fasterxml.jackson.annotation.JsonFilter;
+import lk.aro_computers.asset.common_asset.model.enums.LiveDead;
 import lk.aro_computers.asset.common_asset.model.enums.Title;
 import lk.aro_computers.util.audit.AuditEntity;
 import lombok.AllArgsConstructor;
@@ -45,4 +45,8 @@ public class Customer extends AuditEntity {
 
     @Column(unique = true)
     private String email;
+
+    @Enumerated(EnumType.STRING)
+    private LiveDead liveDead;
+
 }

@@ -1,9 +1,8 @@
 package lk.aro_computers.asset.good_received_note.service;
 
-
-import lk.aro_computers.asset.purchase_order.entity.PurchaseOrder;
 import lk.aro_computers.asset.good_received_note.dao.GoodReceivedNoteDao;
 import lk.aro_computers.asset.good_received_note.entity.GoodReceivedNote;
+import lk.aro_computers.asset.purchase_order.entity.PurchaseOrder;
 import lk.aro_computers.util.interfaces.AbstractService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheConfig;
@@ -15,7 +14,7 @@ import java.util.List;
 
 @Service
 @CacheConfig(cacheNames = "goodReceivedNote")
-public class GoodReceivedNoteService implements AbstractService< GoodReceivedNote, Integer> {
+public class GoodReceivedNoteService implements AbstractService<GoodReceivedNote, Integer> {
     private final GoodReceivedNoteDao goodReceivedNoteDao;
 
     @Autowired
@@ -23,33 +22,31 @@ public class GoodReceivedNoteService implements AbstractService< GoodReceivedNot
         this.goodReceivedNoteDao = goodReceivedNoteDao;
     }
 
-    @Override
+
     public List<GoodReceivedNote> findAll() {
         return goodReceivedNoteDao.findAll();
     }
 
-    @Override
+
     public GoodReceivedNote findById(Integer id) {
         return goodReceivedNoteDao.getOne(id);
     }
 
-    @Override
-    public GoodReceivedNote persist(GoodReceivedNote goodReceivedNote) {
-        return goodReceivedNoteDao.save(goodReceivedNote);
+    public GoodReceivedNote persist(GoodReceivedNote goodReceivingNote) {
+
+        return goodReceivedNoteDao.save(goodReceivingNote);
     }
 
-    @Override
     public boolean delete(Integer id) {
-        goodReceivedNoteDao.deleteById(id);
-        return true;
+
+        return false;
     }
 
-    @Override
     public List<GoodReceivedNote> search(GoodReceivedNote goodReceivedNote) {
         ExampleMatcher matcher = ExampleMatcher
-                .matching()
-                .withIgnoreCase()
-                .withStringMatcher(ExampleMatcher.StringMatcher.CONTAINING);
+            .matching()
+            .withIgnoreCase()
+            .withStringMatcher(ExampleMatcher.StringMatcher.CONTAINING);
         Example<GoodReceivedNote> goodReceivedNoteExample = Example.of(goodReceivedNote, matcher);
         return goodReceivedNoteDao.findAll(goodReceivedNoteExample);
     }

@@ -1,5 +1,6 @@
 package lk.aro_computers.asset.item.service;
 
+import lk.aro_computers.asset.common_asset.model.enums.LiveDead;
 import lk.aro_computers.asset.item.dao.ItemDao;
 import lk.aro_computers.asset.item.entity.Item;
 import lk.aro_computers.util.interfaces.AbstractService;
@@ -10,6 +11,7 @@ import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @CacheConfig( cacheNames = "item" )
@@ -22,7 +24,9 @@ public class ItemService implements AbstractService<Item, Integer> {
     }
 
     public List<Item> findAll() {
-        return itemDao.findAll();
+        return itemDao.findAll().stream()
+            .filter(x -> LiveDead.ACTIVE.equals(x.getLiveDead()))
+            .collect(Collectors.toList());
     }
 
     public Item findById(Integer id) {
@@ -30,11 +34,15 @@ public class ItemService implements AbstractService<Item, Integer> {
     }
 
     public Item persist(Item item) {
+        if(item.getId()==null){
+            item.setLiveDead(LiveDead.ACTIVE);}
         return itemDao.save(item);
     }
 
     public boolean delete(Integer id) {
-        itemDao.deleteById(id);
+        Item item =  itemDao.getOne(id);
+        item.setLiveDead(LiveDead.STOP);
+        itemDao.save(item);
         return false;
     }
 

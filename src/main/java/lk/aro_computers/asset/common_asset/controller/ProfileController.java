@@ -1,9 +1,9 @@
 package lk.aro_computers.asset.common_asset.controller;
 
-
 import lk.aro_computers.asset.user_management.entity.PasswordChange;
-import lk.aro_computers.asset.user_management.entity.User;
-import lk.aro_computers.asset.user_management.service.UserService;
+import lk.aro_computers.asset.user_management.user.entity.User;
+import lk.aro_computers.asset.user_management.user.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -22,11 +22,11 @@ public class ProfileController {
     private final UserService userService;
     private final PasswordEncoder passwordEncoder;
 
+    @Autowired
     public ProfileController(UserService userService, PasswordEncoder passwordEncoder) {
         this.userService = userService;
         this.passwordEncoder = passwordEncoder;
     }
-
 
     @GetMapping( value = "/profile" )
     public String userProfile(Model model, Principal principal) {

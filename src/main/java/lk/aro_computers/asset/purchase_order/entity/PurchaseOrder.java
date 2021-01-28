@@ -1,10 +1,11 @@
 package lk.aro_computers.asset.purchase_order.entity;
 
-
 import com.fasterxml.jackson.annotation.JsonFilter;
+import lk.aro_computers.asset.common_asset.model.enums.LiveDead;
+import lk.aro_computers.asset.payment.entity.Payment;
 import lk.aro_computers.asset.purchase_order.entity.enums.PurchaseOrderPriority;
 import lk.aro_computers.asset.purchase_order.entity.enums.PurchaseOrderStatus;
-import lk.aro_computers.asset.payment.entity.Payment;
+import lk.aro_computers.asset.purchase_order_item.entity.PurchaseOrderItem;
 import lk.aro_computers.asset.supplier.entity.Supplier;
 import lk.aro_computers.util.audit.AuditEntity;
 import lombok.AllArgsConstructor;
@@ -38,6 +39,9 @@ public class PurchaseOrder extends AuditEntity {
 
     @Enumerated(EnumType.STRING)
     private PurchaseOrderStatus purchaseOrderStatus;
+
+    @Enumerated(EnumType.STRING)
+    private LiveDead liveDead;
 
     @ManyToOne
     private Supplier supplier;

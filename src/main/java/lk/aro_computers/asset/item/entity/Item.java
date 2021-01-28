@@ -3,12 +3,11 @@ package lk.aro_computers.asset.item.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonFilter;
-import lk.aro_computers.asset.brand.entity.Brand;
 import lk.aro_computers.asset.category.entity.Category;
-import lk.aro_computers.asset.color.entity.ItemColor;
+import lk.aro_computers.asset.common_asset.model.enums.LiveDead;
 import lk.aro_computers.asset.item.entity.enums.ItemStatus;
 import lk.aro_computers.asset.ledger.entity.Ledger;
-import lk.aro_computers.asset.purchase_order.entity.PurchaseOrderItem;
+import lk.aro_computers.asset.purchase_order_item.entity.PurchaseOrderItem;
 import lk.aro_computers.asset.supplier_item.entity.SupplierItem;
 import lk.aro_computers.util.audit.AuditEntity;
 import lombok.AllArgsConstructor;
@@ -17,6 +16,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 import java.math.BigDecimal;
 import java.util.List;
@@ -26,12 +26,13 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@JsonFilter( "Item" )
+@JsonFilter("Item")
 public class Item extends AuditEntity {
 
-    @Size( min = 5, message = "Your name can not be accepted" )
+    @Size( min = 5, message = "Your name cannot be accepted" )
     private String name;
 
+    @NotEmpty
     private String rop;
 
     @Column( unique = true )
@@ -43,17 +44,14 @@ public class Item extends AuditEntity {
     @Enumerated( EnumType.STRING )
     private ItemStatus itemStatus;
 
+    @Enumerated(EnumType.STRING)
+    private LiveDead liveDead;
+
     @ManyToOne
     private Category category;
 
-    @ManyToOne
-    private Brand brand;
-
-    @ManyToOne
-    private ItemColor itemColor;
-
     @OneToMany( mappedBy = "item" )
-    private List< SupplierItem > supplierItems;
+    private List< SupplierItem > supplierItem;
 
     @OneToMany( mappedBy = "item" )
     @JsonBackReference
