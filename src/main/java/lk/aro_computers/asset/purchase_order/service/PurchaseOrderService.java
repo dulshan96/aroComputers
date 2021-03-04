@@ -1,8 +1,10 @@
 package lk.aro_computers.asset.purchase_order.service;
 
+
+import lk.aro_computers.asset.common_asset.model.enums.LiveDead;
 import lk.aro_computers.asset.purchase_order.dao.PurchaseOrderDao;
-import lk.aro_computers.asset.purchase_order.entity.enums.PurchaseOrderStatus;
 import lk.aro_computers.asset.purchase_order.entity.PurchaseOrder;
+import lk.aro_computers.asset.purchase_order.entity.enums.PurchaseOrderStatus;
 import lk.aro_computers.asset.supplier.entity.Supplier;
 import lk.aro_computers.util.interfaces.AbstractService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +13,9 @@ import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @CacheConfig( cacheNames = "purchaseOrder" )
@@ -24,7 +28,9 @@ public class PurchaseOrderService implements AbstractService< PurchaseOrder, Int
     }
 
     public List< PurchaseOrder > findAll() {
-        return purchaseOrderDao.findAll();
+        return purchaseOrderDao.findAll().stream()
+            .filter(x -> LiveDead.ACTIVE.equals(x.getLiveDead()))
+            .collect(Collectors.toList());
     }
 
     public PurchaseOrder findById(Integer id) {
@@ -32,11 +38,15 @@ public class PurchaseOrderService implements AbstractService< PurchaseOrder, Int
     }
 
     public PurchaseOrder persist(PurchaseOrder purchaseOrder) {
+        if(purchaseOrder.getId()==null){
+            purchaseOrder.setLiveDead(LiveDead.ACTIVE);}
         return purchaseOrderDao.save(purchaseOrder);
     }
 
     public boolean delete(Integer id) {
-        purchaseOrderDao.deleteById(id);
+        PurchaseOrder purchaseOrder =  purchaseOrderDao.getOne(id);
+        purchaseOrder.setLiveDead(LiveDead.STOP);
+        purchaseOrderDao.save(purchaseOrder);
         return false;
     }
 
@@ -61,5 +71,9 @@ public class PurchaseOrderService implements AbstractService< PurchaseOrder, Int
     public List< PurchaseOrder > findByPurchaseOrderStatusAndSupplier(PurchaseOrderStatus purchaseOrderStatus,
                                                                       Supplier supplier) {
         return purchaseOrderDao.findByPurchaseOrderStatusAndSupplier(purchaseOrderStatus, supplier);
+    }
+
+    public List< PurchaseOrder> findByCreatedAtIsBetween(LocalDateTime form, LocalDateTime to) {
+    return purchaseOrderDao.findByCreatedAtIsBetween(form, to);
     }
 }

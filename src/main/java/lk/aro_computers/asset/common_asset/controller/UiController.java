@@ -1,8 +1,8 @@
 package lk.aro_computers.asset.common_asset.controller;
 
-
-import lk.aro_computers.asset.user_management.service.UserService;
+import lk.aro_computers.asset.user_management.user.service.UserService;
 import lk.aro_computers.util.service.DateTimeAgeService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,11 +13,11 @@ public class UiController {
     private final UserService userService;
     private final DateTimeAgeService dateTimeAgeService;
 
+    @Autowired
     public UiController(UserService userService, DateTimeAgeService dateTimeAgeService) {
         this.userService = userService;
         this.dateTimeAgeService = dateTimeAgeService;
     }
-
 
     @GetMapping(value = {"/", "/index"})
     public String index() {
@@ -60,13 +60,7 @@ public class UiController {
         return "login/login";
     }
 
-    @GetMapping(value = {"/unicodeTamil"})
-    public String getUnicodeTamil() {
-        return "fragments/unicodeTamil";
-    }
 
-    @GetMapping(value = {"/unicodeSinhala"})
-    public String getUnicodeSinhala() {
-        return "fragments/unicodeSinhala";
-    }
+
+
 }

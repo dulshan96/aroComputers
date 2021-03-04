@@ -1,18 +1,16 @@
 package lk.aro_computers.asset.common_asset.service;
 
 
-import lk.aro_computers.asset.employee.controller.EmployeeRestController;
 import lk.aro_computers.asset.item.entity.Item;
 import lk.aro_computers.asset.item.service.ItemService;
 import lk.aro_computers.asset.supplier.entity.Supplier;
 import lk.aro_computers.asset.supplier.service.SupplierService;
-import lk.aro_computers.asset.supplier_item.entity.enums.ItemSupplierStatus;
 import lk.aro_computers.asset.supplier_item.entity.SupplierItem;
+import lk.aro_computers.asset.supplier_item.entity.enums.ItemSupplierStatus;
 import lk.aro_computers.asset.supplier_item.service.SupplierItemService;
 import lk.aro_computers.util.service.MakeAutoGenerateNumberService;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
-import org.springframework.web.servlet.mvc.method.annotation.MvcUriComponentsBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,17 +23,16 @@ public class CommonService {
     private final ItemService itemService;
     private final SupplierItemService supplierItemService;
 
-    public CommonService(MakeAutoGenerateNumberService makeAutoGenerateNumberService, SupplierService supplierService
-            , ItemService itemService, SupplierItemService supplierItemService) {
+    public CommonService(MakeAutoGenerateNumberService makeAutoGenerateNumberService, SupplierService supplierService, ItemService itemService, SupplierItemService supplierItemService) {
         this.makeAutoGenerateNumberService = makeAutoGenerateNumberService;
         this.supplierService = supplierService;
         this.itemService = itemService;
         this.supplierItemService = supplierItemService;
     }
 
-    public List< Supplier > commonSupplierSearch(Supplier supplier) {
-        List< Supplier > suppliers;
-        if ( supplier.getContactOne() != null ) {
+    public List<Supplier> commonSupplierSearch(Supplier supplier) {
+        List<Supplier> suppliers;
+        if (supplier.getContactOne() != null) {
             String contactNumber = makeAutoGenerateNumberService.phoneNumberLengthValidator(supplier.getContactOne());
 //all match with supplier contact number one
             supplier.setContactOne(contactNumber);
@@ -49,22 +46,22 @@ public class CommonService {
         } else {
             suppliers = supplierService.search(supplier);
         }
-        if ( supplier.getContactOne() != null ) {
+        if (supplier.getContactOne() != null) {
             suppliers = suppliers.stream()
-                    .filter(supplier1 ->
-                                    supplier.getContactOne().equals(supplier1.getContactTwo()) ||
-                                            supplier.getContactOne().equals(supplier1.getContactOne()))
-                    .collect(Collectors.toList());
+                .filter(supplier1 ->
+                            supplier.getContactOne().equals(supplier1.getContactTwo()) ||
+                                supplier.getContactOne().equals(supplier1.getContactOne()))
+                .collect(Collectors.toList());
         }
         return suppliers;
     }
 
     public String supplierItem(Supplier supplier, Model model, String htmlFileLocation) {
-        List< Supplier > suppliers = commonSupplierSearch(supplier);
+        List<Supplier> suppliers = commonSupplierSearch(supplier);
 
         model.addAttribute("searchAreaShow", false);
 
-        if ( suppliers.size() == 1 ) {
+        if (suppliers.size() == 1) {
             model.addAttribute("supplierDetail", suppliers.get(0));
             return "redirect:/supplierItem/supplier/" + suppliers.get(0).getId();
         }
@@ -74,12 +71,10 @@ public class CommonService {
     }
 
     public String purchaseOrder(Supplier supplier, Model model, String htmlFileLocation) {
-        List< Supplier > suppliers = commonSupplierSearch(supplier);
-
-        System.out.println(" i am here" + suppliers.size());
+        List<Supplier> suppliers = commonSupplierSearch(supplier);
 
         model.addAttribute("searchAreaShow", false);
-        if ( suppliers.size() == 1 ) {
+        if (suppliers.size() == 1) {
             model.addAttribute("supplierDetail", suppliers.get(0));
             model.addAttribute("items", activeItemsFromSupplier(suppliers.get(0)));
             model.addAttribute("purchaseOrderItemEdit", false);
@@ -112,33 +107,12 @@ public class CommonService {
     }
 
     public List< Item > activeItemsFromSupplier(Supplier supplier) {
-        List< SupplierItem > supplierItems = supplierItemService.findBySupplierAndItemSupplierStatus(supplier,
-                                                                                                     ItemSupplierStatus.CURRENTLY_BUYING);
-        List< Item > items = new ArrayList<>();
-        for ( SupplierItem supplierItem : supplierItems ) {
+        List< SupplierItem > supplierItems = supplierItemService.findBySupplierAndItemSupplierStatus(supplier, ItemSupplierStatus.CURRENTLY_BUYING);
+        List<Item> items = new ArrayList<>();
+        for (SupplierItem supplierItem : supplierItems) {
             items.add(supplierItem.getItem());
         }
         return items;
-    }
-
-    //common things to employee and offender - start
-    public void commonUrlBuilder(Model model) {
-        model.addAttribute("addStatus", true);
-        // model.addAttribute("designations", Designation.values());
-/*        model.addAttribute("provinces", Province.values());
-        model.addAttribute("districtUrl", MvcUriComponentsBuilder
-                .fromMethodName(WorkingPlaceRestController.class, "getDistrict", "")
-                .build()
-                .toString());
-        model.addAttribute("stationUrl", MvcUriComponentsBuilder
-                .fromMethodName(WorkingPlaceRestController.class, "getStation", "")
-                .build()
-                .toString());*/
-        Object[] arg = {"designation", "id"};
-        model.addAttribute("employeeUrl", MvcUriComponentsBuilder
-                .fromMethodName(EmployeeRestController.class, "getEmployeeByWorkingPlace", arg)
-                .build()
-                .toString());
     }
 
 

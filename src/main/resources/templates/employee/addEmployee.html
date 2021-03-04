@@ -1,44 +1,42 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<html lang="en"  >
 <head data-th-replace="~{fragments/header :: headerFragment}" >
   <meta charset="UTF-8" >
-  <title >Thymeleaf Springboot </title >
 </head >
 <body >
 <nav data-th-replace="~{fragments/navBar :: navBarFragment}" ></nav >
-<!--<nav data-th-replace="~{fragments/sideBar :: sideBarFragment}"></nav>-->
 
-
-<div class="container  form-Border" >
-  <div class="row text-center formManagement border-info" >
-    <div class="col" >
-      <a class="btn btn-outline-info" href="/home" >
-        Back To Home
-      </a >
-    </div >
-
-    <div class="col" >
-      <a href="/employee" class="btn btn-info" >
-        View Employees
-      </a >
-    </div >
-  </div >
-  <div class="row text-center" >
-    <div class="col" >
-      <h4 class="text-info text-center" >
-        <strong >
-          <span data-th-text="${addStatus==true?'New Employee':'Update Employee Details'}" ></span >
-        </strong >
-      </h4 >
-    </div >
-  </div >
-</div >
 <!--Form Content - start -->
-<div class="container-fluid bg-light formBorder" >
+<div class="container-fluid" style="margin:30px 30px 30px 0px;" >
   <div class="col-sm-12 flex-column " >
-    <form id="form" class="form-horizontal" data-th-action="${addStatus==true?'/employee/add':'/employee/update'}"
+    <form id="form" class="form-horizontal" data-th-action="${addStatus==true?'/employee/save':'/employee/update'}"
           data-th-object="${employee}" method="POST" enctype="multipart/form-data" >
       <div class="row" >
+        <div class="container  form-Border" >
+          <div class="row text-center formManagement border-info" >
+            <div class="col" >
+              <a class="btn btn-success" href="/home" >
+                Back To Home
+              </a >
+            </div >
+
+            <div class="col" >
+              <a href="/employee" class="btn btn-success" >
+                View Employees
+              </a >
+            </div >
+          </div >
+          <div class="row text-center" >
+            <div class="col" >
+              <h4 class="text-light text-center" >
+                <strong >
+                  <span data-th-text="${addStatus==true?'New Employee':'Update Employee Details'}" ></span >
+                </strong >
+              </h4 >
+            </div >
+          </div >
+        </div >
+
         <!--Left Side-->
         <div class="form-group col-md-6 col-sm-6 text-left flex-column" >
           <!--Id-->
@@ -48,17 +46,18 @@
             </div >
             <div class="col-md-8" >
               <input id="id" data-th-field="*{id}" class="form-control" type="text" readonly />
+              <input type="text" data-th-field="*{liveDead}" hidden>
             </div >
           </div >
           <!--Payrole number-->
-          <div class="form-row text-right" >
+          <div class="form-row text-right" data-th-if="${addStatus==false}">
             <div class="col-md-4" >
               <label class="control-label" for="name" >Employee code :</label >
             </div >
             <div class="col-md-8" >
               <input id="code" data-th-field="*{code}" class="form-control" tabindex="4"
                      type="text" required />
-              <span id="code" data-th-errors="*{code}"
+              <span id="codeE" data-th-errors="*{code}"
                     data-th-if="${#fields.hasErrors('code')}" class="error" >Error Employee code
                             </span >
             </div >
@@ -107,7 +106,7 @@
               <label class="control-label" for="nic" >NIC No :</label >
             </div >
             <div class="col-md-8" >
-              <input id="nic" data-th-field="*{nic}" class="form-control" tabindex="6" type="text"
+              <input data-th-field="*{nic}" class="form-control" tabindex="6" type="text"
                      maxlength="12"
                      minlength="10" required />
               <span class="error" id="nicError" data-th-errors="*{nic}"
@@ -120,13 +119,18 @@
               <label class="control-label" for="gender" >Gender :</label >
             </div >
             <div class="col-md-8" >
-              <select id="gender" data-th-field="*{gender}" class="form-control" tabindex="7" required >
-                <option value="" >Please select</option >
-                <option data-th-each="genders : ${gender}"
-                        data-th-text="${genders.gender}"
-                        data-th-value="${genders}"
-                        data-th-selected="${genders==employee.gender?'selected':'unselected'}" ></option >
-              </select >
+              <div class="custom-control custom-checkbox custom-control-inline "
+                   data-th-each="genders,index : ${gender}">
+                <input class="custom-control-input gender" required
+                       data-th-name="${'gender'}"
+                       data-th-value="${genders}"
+                       data-th-id="${index.index}+${genders}" type="radio"
+                       data-th-checked="${genders==gender}"/>
+                <label class="custom-control-label"
+                       data-th-for="${index.index}+${genders}"
+                       data-th-text="${genders.gender}"> radio
+                </label>
+              </div>
             </div >
           </div >
           <!--Date of birth-->
@@ -230,7 +234,7 @@
                      maxlength="10" min="9" />
               <span class="error" data-th-errors="*{mobileTwo}"
                     data-th-if="${#fields.hasErrors('mobileTwo')}"
-                    id="mobileTwoError" >Error Mobile  Number</span >
+                    id="mobileTwoError" >Error Mobile Number</span >
             </div >
           </div >
           <!--Land Number-->
@@ -310,7 +314,7 @@
               <div class="col-md-3" ></div >
               <div class="col-md-3 ml-5" >
                 <!--photo details-->
-                <img class="img-fluid ml-5" data-th-if="${addStatus==false}" data-th-src="${file.url}"
+                <img class="img-fluid ml-5" data-th-if="${addStatus==false && file!=null}" data-th-src="${file.url}"
                      id="image" alt=""
                      style="height: 100px; width: 100%;" >
                 <img class="img-fluid ml-5" data-th-if="${addStatus==true}" src="" id="image" alt=""
@@ -368,6 +372,10 @@
 <div data-th-replace="~{fragments/script :: scriptFragment}" ></div >
 
 <script >
+    $(document).ready(function () {
+        imageSrcAttributeCheck();
+    });
+
     function readURL(input) {
         if (input.files && input.files[0]) {
             let reader = new FileReader();
@@ -382,8 +390,18 @@
 
     //display selected image
     $("#imgUpload").change(function () {
+        $("#image").toggle('show');
         readURL(this);
+
     });
+
+    //image is not -> showing area hide
+    function imageSrcAttributeCheck() {
+        let attribute = $("#image").attr("src");
+        if (attribute === '') {
+            $("#image").toggle('hide');
+        }
+    }
 </script >
 </body >
 </html >

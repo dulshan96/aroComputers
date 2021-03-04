@@ -1,7 +1,7 @@
 package lk.aro_computers.asset.supplier_item.entity;
 
-
 import com.fasterxml.jackson.annotation.JsonFilter;
+import lk.aro_computers.asset.common_asset.model.enums.LiveDead;
 import lk.aro_computers.asset.item.entity.Item;
 import lk.aro_computers.asset.supplier.entity.Supplier;
 import lk.aro_computers.asset.supplier_item.entity.enums.ItemSupplierStatus;
@@ -19,19 +19,22 @@ import java.math.BigDecimal;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@JsonFilter("SupplierItem")
+@JsonFilter( "SupplierItem" )
 public class SupplierItem extends AuditEntity {
 
-    @Column(precision = 10, scale = 2)
-    private BigDecimal price;
+  @Column( precision = 10, scale = 2 )
+  private BigDecimal price;
 
-    @Enumerated(EnumType.STRING)
-    private ItemSupplierStatus itemSupplierStatus;
+  @Enumerated( EnumType.STRING )
+  private ItemSupplierStatus itemSupplierStatus;
 
-    @ManyToOne
-    private Item item;
+  @Enumerated( EnumType.STRING )
+  private LiveDead liveDead;
 
-    @ManyToOne
-    private Supplier supplier;
+  @ManyToOne( cascade = CascadeType.MERGE )
+  private Item item;
+
+  @ManyToOne( cascade = CascadeType.ALL )
+  private Supplier supplier;
 
 }

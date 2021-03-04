@@ -1,14 +1,14 @@
 package lk.aro_computers.asset.good_received_note.controller;
 
-
-import lk.aro_computers.asset.purchase_order.entity.enums.PurchaseOrderStatus;
-import lk.aro_computers.asset.purchase_order.entity.PurchaseOrder;
-import lk.aro_computers.asset.purchase_order.service.PurchaseOrderService;
-import lk.aro_computers.asset.good_received_note.entity.enums.GoodReceivedNoteState;
+import lk.aro_computers.asset.common_asset.model.enums.LiveDead;
 import lk.aro_computers.asset.good_received_note.entity.GoodReceivedNote;
+import lk.aro_computers.asset.good_received_note.entity.enums.GoodReceivedNoteState;
 import lk.aro_computers.asset.good_received_note.service.GoodReceivedNoteService;
 import lk.aro_computers.asset.ledger.entity.Ledger;
 import lk.aro_computers.asset.ledger.service.LedgerService;
+import lk.aro_computers.asset.purchase_order.entity.PurchaseOrder;
+import lk.aro_computers.asset.purchase_order.entity.enums.PurchaseOrderStatus;
+import lk.aro_computers.asset.purchase_order.service.PurchaseOrderService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-@RequestMapping( "/goodReceivedNote" )
+@RequestMapping("/goodReceivedNote")
 public class GoodReceivedNoteController {
     private final GoodReceivedNoteService goodReceivedNoteService;
     private final PurchaseOrderService purchaseOrderService;
@@ -65,14 +65,17 @@ public class GoodReceivedNoteController {
                 //before update need to check price and expire date
                 if ( ledgerDB.getExpiredDate() == ledger.getExpiredDate() && ledgerDB.getSellPrice().equals(ledger.getSellPrice()) ) {
                     ledgerDB.setQuantity(ledgerDB.getQuantity() + ledger.getQuantity());
+
                     ledgerDB.setGoodReceivedNote(goodReceivedNote);
                     ledgers.add(ledgerDB);
                 } else {
                     ledger.setGoodReceivedNote(goodReceivedNote);
+                    ledger.setLiveDead(LiveDead.ACTIVE);
                     ledgers.add(ledger);
                 }
             }
             ledger.setGoodReceivedNote(goodReceivedNote);
+            ledger.setLiveDead(LiveDead.ACTIVE);
             ledgers.add(ledger);
 
         }
