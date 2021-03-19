@@ -54,6 +54,10 @@ public class ItemController implements AbstractController< Item, Integer > {
     return "item/item";
   }
 
+  @Override
+  public String findById(Integer id, Model model) {
+    return null;
+  }
 
   @GetMapping( "/add" )
   public String addForm(Model model) {

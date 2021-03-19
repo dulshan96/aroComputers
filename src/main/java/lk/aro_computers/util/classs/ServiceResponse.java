@@ -1,6 +1,5 @@
 package lk.aro_computers.util.classs;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

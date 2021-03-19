@@ -42,6 +42,10 @@ public  class CategoryController implements AbstractController<Category, Integer
         return "category/category";
     }
 
+    @Override
+    public String findById(Integer id, Model model) {
+        return null;
+    }
 
     @GetMapping("/add")
     public String addForm(Model model) {
