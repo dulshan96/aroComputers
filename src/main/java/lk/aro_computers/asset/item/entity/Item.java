@@ -3,7 +3,9 @@ package lk.aro_computers.asset.item.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonFilter;
+import lk.aro_computers.asset.brand.entity.Brand;
 import lk.aro_computers.asset.category.entity.Category;
+import lk.aro_computers.asset.item_color.entity.ItemColor;
 import lk.aro_computers.asset.common_asset.model.enums.LiveDead;
 import lk.aro_computers.asset.item.entity.enums.ItemStatus;
 import lk.aro_computers.asset.ledger.entity.Ledger;
@@ -49,6 +51,12 @@ public class Item extends AuditEntity {
 
     @ManyToOne
     private Category category;
+
+    @ManyToOne
+    private Brand brand;
+
+    @ManyToOne
+    private ItemColor itemColor;
 
     @OneToMany( mappedBy = "item" )
     private List< SupplierItem > supplierItem;

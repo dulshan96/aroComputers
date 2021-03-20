@@ -1,6 +1,5 @@
 package lk.aro_computers.util.controller;
 
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +9,7 @@ import javax.servlet.ServletContext;
 
 @Controller
 public class MimeTypeFileHandelController {
-    private static Logger logger = LoggerFactory.getLogger(MimeTypeFileHandelController.class);
+    private static final Logger logger = LoggerFactory.getLogger(MimeTypeFileHandelController.class);
     private final ServletContext context;
 
     @Autowired

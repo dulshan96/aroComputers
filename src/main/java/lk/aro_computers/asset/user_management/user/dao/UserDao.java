@@ -1,5 +1,6 @@
 package lk.aro_computers.asset.user_management.user.dao;
 
+
 import lk.aro_computers.asset.common_asset.model.enums.LiveDead;
 import lk.aro_computers.asset.employee.entity.Employee;
 import lk.aro_computers.asset.user_management.user.entity.User;
@@ -11,7 +12,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface UserDao extends JpaRepository<User, Integer > {
+public interface UserDao extends JpaRepository< User, Integer > {
 
     @Query( value = "select id from User where employee_id=?1", nativeQuery = true )
     Integer findByEmployeeId(@Param("employee_id") Integer id);
