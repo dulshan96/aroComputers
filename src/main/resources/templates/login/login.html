@@ -1,51 +1,41 @@
 <!DOCTYPE html>
-<html lang="en" >
-<head  >
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header :: headerFragment}">
     <meta charset="UTF-8">
-    <title>Thymeleaf Springboot </title>
-    <link  data-th-href="@{/css/myCss.css}" media="all" rel="stylesheet" type="text/css"/>
+    <title>Thymeleaf Springboot</title>
 
 </head>
 <body id="loginPage">
-<div class="col full-height loginback" >
-    <h1>Login Here</h1>
-
-    <div class="col-sm-8">
-        <form  data-th-action="${'/login'}" method="post">
-            <br/>
-            <fieldset>
-                <div class="form-label-group">
-                    <input type="text" id="username" data-th-name="${'username'}" class="form-control" placeholder="username"
-                           required>
-                    <label for="username">Username</label>
+<div class="container px-4 py-4 mx-auto">
+    <div class="card card0">
+        <div class="d-flex flex-lg-row flex-column-reverse">
+            <div class="card card1">
+                <div class="row justify-content-center my-auto">
+                    <div class="col-md-8 col-10 my-5">
+                        <form  data-th-action="${'/login'}" method="post">
+                            <div class="row justify-content-center px-3 mb-3"> <img id="login1" data-th-src="@{/img/login1.png}"> </div>
+                            <h3 class="msg-info">Please login to your account</h3>
+                            <div class="form-group"> <label class="form-control-label text-muted">Username</label> <input type="text" id="username" data-th-name="${'username'}" class="form-control" placeholder="Type your username" required> </div>
+                            <div class="form-group"> <label class="form-control-label text-muted">Password</label> <input type="password" id="inputPassword" data-th-name="${'password'}" class="form-control" placeholder="Type your password" required> </div>
+                            <div class="row justify-content-center my-3 px-3"> <button class="btn-block btn-color" type="submit" id="btnLogin">Login</button> </div>
+                            <div class="row justify-content-center my-2"> <a href="/login/passwordChange"><small class="text-muted">Forgot Password?</small></a> </div>
+                            <div class="container-fluid "  data-th-if="${param.error}"> <p class="bg-white text-capitalize text-danger text-lg-center">Invalid username or password. </p> </div>
+                            <div class="container-fluid "><p id="errorMessage"  data-th-text="${err}" class="bg-white text-capitalize text-danger text-lg-center"></p></div>
+                        </form>
+                    </div>
                 </div>
-                <div class="form-label-group">
-                    <input type="password" id="inputPassword" data-th-name="${'password'}" class="form-control"
-                           placeholder="password"
-                           required>
-                    <label for="inputPassword">Password</label>
-                </div>
-                <div class="form-group text-right">
-                    <button class="btn btn-primary " type="submit" id="btnLogin">LOGIN</button>
-                </div>
-            </fieldset>
-            <div class="container-fluid "  data-th-if="${param.error}">
-                <p class="bg-white text-capitalize text-danger text-lg-center">Invalid username or password. </p>
             </div>
-            <div class="container-fluid ">
-                <p id="errorMessage"  data-th-text="${err}" class="bg-white text-capitalize text-danger text-lg-center"></p>
+            <div class="card card2">
+                <div class="my-auto mx-md-5 px-md-5 right">
+                    <h3 class="text-white">We are more than just a company</h3> <small class="text-white">“All parts should go together without forcing.  You must remember that the parts you are reassembling were disassembled by you.  Therefore, if you can’t get them together again, there must be a reason.  By all means, do not use a hammer.”.</small><br>
+                    <em class="text-white">IBM Manual, 1925</em>
+                </div>
             </div>
-        </form>
+        </div>
     </div>
-
 </div>
-
 <div   data-th-replace="~{fragments/footer :: footerFragment}"></div>
 <!--script include-->
 <script  data-th-replace="~{fragments/script :: scriptFragment}"></script>
-
 </body>
 </html>
-
-
-
