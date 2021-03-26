@@ -7,11 +7,7 @@
 </head >
 <body class="sb-nav-fixed" >
 <nav data-th-replace="~{fragments/navBar :: navBarFragment}" ></nav >
-<div id="layoutSidenav" >
-  <div data-th-replace="~{fragments/sideNav :: sideNavFragment}" >
-  </div >
-  <div id="layoutSidenav_content" >
-    <main >
+
 
       <div class="container-fluid" >
         <!--selected ledger items-->
@@ -202,7 +198,6 @@
         </div >
       </div >
 
-    </main >
     <!--/* footer is */-->
     <div data-th-replace="~{fragments/footer :: footerFragment}" ></div >
     <!--/* script is included */-->
@@ -218,7 +213,5 @@
             $("#total").val(total);
         });
     </script >
-  </div >
-</div >
 </body >
 </html >

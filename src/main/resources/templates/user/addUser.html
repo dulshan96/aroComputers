@@ -6,11 +6,7 @@
 </head >
 <body class="sb-nav-fixed" >
 <nav data-th-replace="~{fragments/navBar :: navBarFragment}" ></nav >
-<div id="layoutSidenav" >
-  <div data-th-replace="~{fragments/sideNav :: sideNavFragment}" >
-  </div >
-  <div id="layoutSidenav_content" >
-    <main >
+
       <!--Employee find-->
       <div class="container-fluid " id="employeeFindForm" data-th-if="${employeeDetailShow==false}" >
         <div class="col-sm-12 flex-column " >
@@ -18,7 +14,7 @@
                 enctype="multipart/form-data" >
             <div class="form-row" >
               <div class="container-fluid " >
-                <div class="row text-center formManagement border-info" >
+                <div class="row text-center   " >
                   <div class="col" >
                     <a class="btn btn-success" href="/home" >
                       <i class="fa fa-home" style="font-size: 20px" ></i > &nbsp; Home
@@ -186,12 +182,11 @@
 
 
       </div >
-    </main >
+
     <div data-th-replace="~{fragments/footer :: footerFragment}" ></div >
     <!--script include-->
-    <script data-th-replace="~{fragments/script :: scriptFragment}" ></script >
-  </div >
-</div >
+    <div data-th-replace="~{fragments/script :: scriptFragment}" ></div >
+
 <script >
     $(".alert").alert();
 </script >

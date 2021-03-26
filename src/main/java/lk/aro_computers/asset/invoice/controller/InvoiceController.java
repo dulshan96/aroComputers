@@ -3,6 +3,7 @@ package lk.aro_computers.asset.invoice.controller;
 
 import com.itextpdf.text.DocumentException;
 import lk.aro_computers.asset.customer.service.CustomerService;
+import lk.aro_computers.asset.discount_ratio.entity.enums.DiscountRatioStatus;
 import lk.aro_computers.asset.discount_ratio.service.DiscountRatioService;
 import lk.aro_computers.asset.invoice.entity.Invoice;
 import lk.aro_computers.asset.invoice.entity.enums.InvoicePrintOrNot;
@@ -80,7 +81,7 @@ public class InvoiceController {
     model.addAttribute("invoicePrintOrNots", InvoicePrintOrNot.values());
     model.addAttribute("paymentMethods", PaymentMethod.values());
     model.addAttribute("customers", customerService.findAll());
-    model.addAttribute("discountRatios", discountRatioService.findAll());
+    model.addAttribute("discountRatios", discountRatioService.findAll().stream().filter(x->x.getDiscountRatioStatus().equals(DiscountRatioStatus.ACTIVE)).collect(Collectors.toList()));
     model.addAttribute("ledgerItemURL", MvcUriComponentsBuilder
             .fromMethodName(LedgerController.class, "findId", "")
             .build()
