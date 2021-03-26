@@ -6,11 +6,7 @@
 </head >
 <body class="sb-nav-fixed" >
 <nav data-th-replace="~{fragments/navBar :: navBarFragment}" ></nav >
-<div id="layoutSidenav" >
-  <div data-th-replace="~{fragments/sideNav :: sideNavFragment}" >
-  </div >
-  <div id="layoutSidenav_content" >
-    <main >
+
       <!--Form Content-->
       <div class="container-fluid  " >
         <div class="col-sm-12 flex-column " >
@@ -79,6 +75,40 @@
                     <select id="subCategory" data-th-name="${'category'}" class="form-control" tabindex="4"
                             style="font-size: large" required >
                       <option value="" disabled >Please select</option >
+                    </select >
+                  </div >
+                </div >
+                <!--Brand -->
+                <div class="form-row text-right" >
+                  <div class="col-md-4" >
+                    <label class="control-label" for="brand" >Brand :</label >
+                  </div >
+                  <div class="col-md-4" >
+                    <select id="brand" data-th-field="*{brand}" class="form-control" tabindex="4" style="font-size: large"
+                            required >
+                      <option value="" disabled >Please select</option >
+                      <option data-th-each="brand : ${brands}"
+                              data-th-text="${brand.name}"
+                              data-th-value="${brand.id}"
+                      >
+                      </option >
+                    </select >
+                  </div >
+                </div >
+                <!--Item Color -->
+                <div class="form-row text-right" >
+                  <div class="col-md-4" >
+                    <label class="control-label" for="itemColor" >Brand :</label >
+                  </div >
+                  <div class="col-md-4" >
+                    <select id="itemColor" data-th-field="*{itemColor}" class="form-control" tabindex="4" style="font-size: large"
+                            required >
+                      <option value="" disabled >Please select</option >
+                      <option data-th-each="itemColor : ${itemColors}"
+                              data-th-text="${itemColor.name}"
+                              data-th-value="${itemColor.id}"
+                      >
+                      </option >
                     </select >
                   </div >
                 </div >
