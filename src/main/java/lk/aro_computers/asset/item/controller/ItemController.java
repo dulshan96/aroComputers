@@ -7,6 +7,7 @@ import lk.aro_computers.asset.common_asset.model.enums.LiveDead;
 import lk.aro_computers.asset.item.entity.Item;
 import lk.aro_computers.asset.item.entity.enums.ItemStatus;
 import lk.aro_computers.asset.item.entity.enums.MainCategory;
+import lk.aro_computers.asset.item.entity.enums.WarrantyPeriod;
 import lk.aro_computers.asset.item.service.ItemService;
 import lk.aro_computers.asset.item_color.service.ItemColorService;
 import lk.aro_computers.util.interfaces.AbstractController;
@@ -45,6 +46,7 @@ public class ItemController implements AbstractController< Item, Integer > {
     model.addAttribute("statuses", ItemStatus.values());
     model.addAttribute("item", item);
     model.addAttribute("itemColors", itemColorService.findAll());
+    model.addAttribute("warrantyPeriod", WarrantyPeriod.values());
     model.addAttribute("brands",brandService.findAll() );
     model.addAttribute("addStatus", addState);
     model.addAttribute("mainCategories", MainCategory.values());

@@ -46,9 +46,9 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr th:each="brand, rowCount : ${brands}">
-                    <th th:text="${rowCount.count}"></th>
-                    <th th:text="${brand.name}"></th>
+                <tr  data-th-each="brand, rowCount : ${brands}">
+                    <th  data-th-text="${rowCount.count}"></th>
+                    <th  data-th-text="${brand.name}"></th>
                     <th>
                         <a id="brandEdit" th:href="${'/brand/edit/' + brand.id}" class="btn btn-success btn-sm"><i
                                 class="fa fa-edit" style="font-size: 15px"></i>&nbsp;Edit</a>

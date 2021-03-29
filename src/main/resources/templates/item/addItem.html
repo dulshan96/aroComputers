@@ -111,7 +111,23 @@
                       </option >
                     </select >
                   </div >
-                </div >
+                </div ><!--Warranty Period-->
+                <div class="form-row text-right">
+                  <div class="col-md-4">
+                    <label class="control-label" for="warrantyPeriod">Warranty Period :</label>
+                  </div>
+                  <div class="col-md-4">
+                    <select id="warrantyPeriod" class="form-control" tabindex="4"
+                            required>
+                      <option value="" disabled>Please select</option>
+                      <option  data-th-each="warrantyPeriod : ${warrantyPeriod}"
+                               data-th-text="${warrantyPeriod.warrantyPeriod}"
+                               data-th-value="${warrantyPeriod}"
+                      >
+                      </option>
+                    </select>
+                  </div>
+                </div>
                 <!--Name-->
                 <div class="form-row text-right" >
                   <div class="col-md-4" >
@@ -203,9 +219,6 @@
           </form >
         </div >
       </div >
-    </main >
-  </div >
-</div >
 
 <div data-th-replace="~{fragments/footer :: footerFragment}" ></div >
 <!--script include-->
