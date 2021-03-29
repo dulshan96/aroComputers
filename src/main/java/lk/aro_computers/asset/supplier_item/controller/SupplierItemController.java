@@ -146,9 +146,11 @@ public class SupplierItemController {
   @ResponseBody
   public PurchaseOrderItemLedger purchaseOrderSupplierItem(@RequestParam( "supplierId" ) Integer supplierId,
                                                            @RequestParam( "itemId" ) Integer itemId) {
+    Supplier supplier = supplierService.findById(supplierId);
+    Item item = itemService.findById(itemId);
+
     SupplierItem supplierItem = supplierItemService.findBySupplierAndItemItemSupplierStatus(
-        supplierService.findByIdAndItemSupplierStatus(supplierId, ItemSupplierStatus.CURRENTLY_BUYING),
-        itemService.findById(itemId), ItemSupplierStatus.CURRENTLY_BUYING);
+        supplier,item, ItemSupplierStatus.CURRENTLY_BUYING);
     PurchaseOrderItemLedger purchaseOrderItemLedger = new PurchaseOrderItemLedger();
     /* 1. item ID   2. Item name 3. Rop 4. Price 5. Available Quantity. */
     purchaseOrderItemLedger.setItemId(supplierItem.getItem().getId());
