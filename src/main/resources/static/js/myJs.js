@@ -359,7 +359,7 @@ $("#startDate, #endDate").bind('change',
                 swal({
                     title: "Could you accept those days.. !",
                     icon: "warning",
-                    text: "Please check your date \n Expire Date can not be less than Manufacture Date",
+                    text: "Please check your date \n range again",
                 })
                 $(`#endDate`).val($(`#startDate`).val());
             }
