@@ -57,3 +57,7 @@ input:focus{
 }
 
 /*login page start*/
+
+.form-row{
+    margin-top: 5px;
+}
