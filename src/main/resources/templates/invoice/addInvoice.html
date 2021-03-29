@@ -430,8 +430,6 @@
         for (let i = 0; i < selectedInvoiceLedger.length; i++) {
             html += tableRowCreate(i, selectedInvoiceLedger[i]);
         }
-        //$("#myTable tbody tr:last").after(html);
-
         $("#myTable tbody ").html(html);
         totalPrice();
     }
