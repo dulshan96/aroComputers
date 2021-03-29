@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" >
 <head data-th-replace="~{fragments/header :: headerFragment}" >
-
+<title></title>
 </head >
 
 <body class="sb-nav-fixed" >
 <nav data-th-replace="~{fragments/navBar :: navBarFragment}" ></nav >
+<div id="layoutSidenav" >
 
+  <div id="layoutSidenav_content" >
+    <main >
       <div class="container-fluid mainbody" >
         <div class="row cardrow" >
           <div class="col-4 " >
@@ -71,11 +74,12 @@
         </div >
 
       </div >
-
+    </main >
     <!--footer include-->
     <div data-th-replace="~{fragments/footer :: footerFragment}" ></div >
     <!--script include-->
     <div data-th-replace="~{fragments/script :: scriptFragment}" ></div >
-
+  </div >
+</div >
 </body >
 </html >

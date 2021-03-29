@@ -2,40 +2,52 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="~{fragments/header :: headerFragment}">
     <meta charset="UTF-8">
-    <title>Thymeleaf Springboot</title>
-
+    <title>Login Page</title>
 </head>
-<body id="loginPage">
-<div class="container px-4 py-4 mx-auto">
-    <div class="card card0">
-        <div class="d-flex flex-lg-row flex-column-reverse">
-            <div class="card card1">
-                <div class="row justify-content-center my-auto">
-                    <div class="col-md-8 col-10 my-5">
-                        <form  data-th-action="${'/login'}" method="post">
-                            <div class="row justify-content-center px-3 mb-3"> <img id="login1" data-th-src="@{/img/login1.png}"> </div>
-                            <h3 class="msg-info">Please login to your account</h3>
-                            <div class="form-group"> <label class="form-control-label text-muted">Username</label> <input type="text" id="username" data-th-name="${'username'}" class="form-control" placeholder="Type your username" required> </div>
-                            <div class="form-group"> <label class="form-control-label text-muted">Password</label> <input type="password" id="inputPassword" data-th-name="${'password'}" class="form-control" placeholder="Type your password" required> </div>
-                            <div class="row justify-content-center my-3 px-3"> <button class="btn-block btn-color" type="submit" id="btnLogin">Login</button> </div>
-                            <div class="row justify-content-center my-2"> <a href="/login/passwordChange"><small class="text-muted">Forgot Password?</small></a> </div>
-                            <div class="container-fluid "  data-th-if="${param.error}"> <p class="bg-white text-capitalize text-danger text-lg-center">Invalid username or password. </p> </div>
-                            <div class="container-fluid "><p id="errorMessage"  data-th-text="${err}" class="bg-white text-capitalize text-danger text-lg-center"></p></div>
-                        </form>
-                    </div>
-                </div>
+
+<body>
+<div class="container">
+    <div class="d-flex justify-content-center h-100">
+        <div class="card">
+            <div class="card-header">
+                <h3>Sign In</h3>
+
             </div>
-            <div class="card card2">
-                <div class="my-auto mx-md-5 px-md-5 right">
-                    <h3 class="text-white">We are more than just a company</h3> <small class="text-white">“All parts should go together without forcing.  You must remember that the parts you are reassembling were disassembled by you.  Therefore, if you can’t get them together again, there must be a reason.  By all means, do not use a hammer.”.</small><br>
-                    <em class="text-white">IBM Manual, 1925</em>
+            <div class="card-body">
+                <form data-th-action="${'/login'}" method="post">
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                        </div>
+                        <input type="text" id="username" data-th-name="${'username'}" class="form-control" placeholder="Username" required>
+
+                    </div>
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-key"></i></span>
+                        </div>
+                        <input type="password" id="inputPassword" data-th-name="${'password'}" class="form-control" placeholder="Password" required>
+                    </div>
+                    </br>
+                    <div class="form-group">
+                        <input type="submit" id="btnLogin" value="Login" class="btn float-right login_btn">
+                    </div>
+                    </br>
+                    </br>
+                    <div class="container-fluid "  data-th-if="${param.error}"> <p class="bg-white text-capitalize text-danger text-lg-center">Invalid username or password. </p> </div>
+                    <div class="container-fluid "><p id="errorMessage"  data-th-text="${err}" class="bg-white text-capitalize text-danger text-lg-center"></p></div>
+                </form>
+            </div>
+            <div class="card-footer">
+                <div class="d-flex justify-content-center links">
+                    Forgot your password?
+                </div>
+                <div class="d-flex justify-content-center">
+                    <a href="/passwordChange">Reset password?</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<div   data-th-replace="~{fragments/footer :: footerFragment}"></div>
-<!--script include-->
-<div  data-th-replace="~{fragments/script :: scriptFragment}"></div>
 </body>
 </html>
