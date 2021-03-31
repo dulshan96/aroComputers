@@ -3,14 +3,15 @@
 <head data-th-replace="~{fragments/header :: headerFragment}" >
   <meta charset="UTF-8" >
 </head >
-<body class="sb-nav-fixed">
+<body>
 
 <nav data-th-replace="~{fragments/navBar :: navBarFragment}" ></nav >
 
 
 <!--Form Content - start -->
 <div class="container-fluid" style="margin:30px 30px 30px 0px;" >
-  <div class="card m-4">
+  <div id="add employee">
+
   <div class="col-sm-12 flex-column " >
     <form id="form" class="form-horizontal" data-th-action="${addStatus==true?'/employee/save':'/employee/update'}"
           data-th-object="${employee}" method="POST" enctype="multipart/form-data" >
@@ -18,28 +19,25 @@
         <!--header-->
         <div class="container  form-Border" >
           <div class="row text-center   " >
-            <div class="col" >
-              <a class="btn btn-success" href="/home" >
-                Back To Home
-              </a >
-            </div >
-
-            <div class="col" >
-              <a href="/employee" class="btn btn-success" >
+            <!--view employee-->
+            <div class="col-2" >
+              <a href="/employee" class="btn btn-dark" >
                 View Employees
               </a >
             </div >
           </div >
-          <div class="row text-center" >
-            <div class="col" >
-              <h4 class="text text-center" >
-                <strong >
-                  <span data-th-text="${addStatus==true?'New Employee':'Update Employee Details'}" ></span >
-                </strong >
-              </h4 >
-            </div >
+          <!--new employee heading-->
+          <div class="col" >
+            <h4 class="text text-center" >
+              <strong >
+                <span data-th-text="${addStatus==true?'New Employee':'Update Employee Details'}" ></span >
+              </strong >
+            </h4 >
           </div >
+          <br>
+          <br>
         </div >
+
 
         <!--Left Side-->
         <div class="form-group col-md-6 col-sm-6 text-left flex-column" >
@@ -150,21 +148,7 @@
                     data-th-if="${#fields.hasErrors('dateOfBirth')}" class="error" >Error Birthday</span >
             </div >
           </div >
-          <!--Blood group-->
-          <!--<div class="form-row text-right">
-              <div class="col-md-4">
-                  <label class="control-label" for="bloodGroup">Blood Group :</label>
-              </div>
-              <div class="col-md-8">
-                  <select id="bloodGroup" data-th-field="*{bloodGroup}" class="form-control" tabindex="9" required>
-                      <option value="">Please select</option>
-                      <option data-th-each="bloodGroups : ${bloodGroup}"
-                              data-th-text="${bloodGroups.bloodGroup}"
-                              data-th-value="${bloodGroups}"
-                              data-th-selected="${bloodGroups==employee.bloodGroup?'selected':'unselected'}">Please select</option>
-                  </select>
-              </div>
-          </div>-->
+
           <!--Designation-->
           <div class="form-row text-right" >
             <div class="col-md-4" >
@@ -181,9 +165,30 @@
               </select >
             </div >
           </div >
+
+          <!--Image-->
+          <div class="form-row text-right" >
+            <div class="form-row " >
+              <div class="col-md-3 mr-5" >
+                <label class="control-label" >Image</label >
+                <input type="file" name="file" id="imgUpload"
+                       accept="image/png, image/jpeg" />
+              </div >
+              <div class="col-md-3" ></div >
+              <div class="col-md-3 ml-5" >
+                <!--photo details-->
+                <img class="img-fluid ml-5" data-th-if="${addStatus==false && file!=null}" data-th-src="${file.url}"
+                     id="image" alt=""
+                     style="height: 100px; width: 100%;" >
+                <img class="img-fluid ml-5" data-th-if="${addStatus==true}" src="" id="image" alt=""
+                     style="height: 100px; width: 100%" >
+              </div >
+            </div >
+          </div >
+
         </div >
         <!--Right Side-->
-        <div class="form-group col-md-6 col-sm-6 text-right flex-column" >
+        <div class="form-group col-md-5 col-sm-6 text-right flex-column" >
           <!--Civil status-->
           <div class="form-row text-right" >
             <div class="col-md-4" >
@@ -254,17 +259,7 @@
                     data-th-if="${#fields.hasErrors('land')}" id="landError" >Error Land Number</span >
             </div >
           </div >
-          <!--Email-->
-          <!--<div class="form-row text-right">
-              <div class="col-md-4">
-                  <label class="control-label" for="email">Email :</label>
-              </div>
-              <div class="col-md-8">
-                  <input id="email" data-th-field="*{email}" class="form-control" tabindex="16" type="email" required/>
-                  <span class="error" data-th-errors="*{email}"
-                        data-th-if="${#fields.hasErrors('email')}" id="emailError">Error Email</span>
-              </div>
-          </div>-->
+
           <!--Office email-->
           <div class="form-row text-right" >
             <div class="col-md-4" >
@@ -307,25 +302,7 @@
               </select >
             </div >
           </div >
-          <!--Image-->
-          <div class="form-row text-right" >
-            <div class="form-row " >
-              <div class="col-md-3 mr-5" >
-                <label class="control-label" >Image</label >
-                <input type="file" name="file" id="imgUpload"
-                       accept="image/png, image/jpeg" />
-              </div >
-              <div class="col-md-3" ></div >
-              <div class="col-md-3 ml-5" >
-                <!--photo details-->
-                <img class="img-fluid ml-5" data-th-if="${addStatus==false && file!=null}" data-th-src="${file.url}"
-                     id="image" alt=""
-                     style="height: 100px; width: 100%;" >
-                <img class="img-fluid ml-5" data-th-if="${addStatus==true}" src="" id="image" alt=""
-                     style="height: 100px; width: 100%" >
-              </div >
-            </div >
-          </div >
+
           <!--Created by and created at-->
           <div id="updateStatus" data-th-if="${addStatus==false}" >
             <div class="form-row text-right" >
@@ -348,15 +325,18 @@
             </div >
           </div >
         </div >
+
         <div class="form-group col-md-12 col-sm-12 text-left flex-column " >
+          <br>
+          <br>
           <!--Button-->
           <div class="form-group col-md-12 col-sm-12 text-center flex-column " >
-            <button class="btn btn-success" type="submit" tabindex="21" >
-              <i class="fa fa-save " style="font-size: 20px" ></i >&nbsp; &nbsp;<span id="submit"
-                                                                                      data-th-text="${addStatus==true?'Save': 'Update'}" ></span >
+            <button class="btn btn-success btn-space" type="submit" tabindex="21" >
+              <i class="fa fa-save "  ></i >&nbsp; &nbsp;<span id="submit"
+                data-th-text="${addStatus==true?'Save': 'Update'}" ></span >
             </button >
-            <button class="btn btn-danger" type="reset" >
-              <i class="fa fa-redo" ></i > <span id="reset" >Reset</span >
+            <button class="btn btn-warning btn-space" type="reset" >
+              <i class="fa fa-redo"  ></i > <span id="reset" >Clear</span >
             </button >
           </div >
         </div >
@@ -369,6 +349,7 @@
       </div >
     </form >
   </div >
+
   </div>
 </div >
 
