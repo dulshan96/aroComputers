@@ -9,10 +9,11 @@
 
 <!--Employee find-->
 <div class="container-fluid " id="employeeFindForm" data-th-if="${employeeDetailShow==false}">
+    <div class="card m-4">
     <div class="col-sm-12 flex-column ">
         <form id="form" method="POST" data-th-action="${'/user/workingPlace'}" data-th-object="${employee}"
               enctype="multipart/form-data">
-            <div class="form-row">
+            <div class="form-row ">
                 <div class="container-fluid ">
                     <div class="row text-center   ">
                         <div class="col">
@@ -21,7 +22,7 @@
                             </a>
                         </div>
                         <div class="col">
-                            <h4 class="text-light text-center">
+                            <h4 class="text text-center">
                                 <strong>
                                     <span id="formHeader"
                                           data-th-text="${addStatus==true?'New User':'Update User'}"></span>
@@ -78,6 +79,7 @@
                 </div>
             </div>
         </form>
+    </div>
     </div>
 </div>
 <!--Employee not fount message-->

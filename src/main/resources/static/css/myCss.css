@@ -76,3 +76,11 @@ input:focus{
 .form-row{
     margin-top: 5px;
 }
+.card {
+    background-color: rgba(0,0,0,0.1);
+}
+
+.row{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

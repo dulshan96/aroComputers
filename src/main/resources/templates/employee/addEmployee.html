@@ -3,15 +3,19 @@
 <head data-th-replace="~{fragments/header :: headerFragment}" >
   <meta charset="UTF-8" >
 </head >
-<body >
+<body class="sb-nav-fixed">
+
 <nav data-th-replace="~{fragments/navBar :: navBarFragment}" ></nav >
+
 
 <!--Form Content - start -->
 <div class="container-fluid" style="margin:30px 30px 30px 0px;" >
+  <div class="card m-4">
   <div class="col-sm-12 flex-column " >
     <form id="form" class="form-horizontal" data-th-action="${addStatus==true?'/employee/save':'/employee/update'}"
           data-th-object="${employee}" method="POST" enctype="multipart/form-data" >
-      <div class="row" >
+      <div class="row   " >
+        <!--header-->
         <div class="container  form-Border" >
           <div class="row text-center   " >
             <div class="col" >
@@ -28,7 +32,7 @@
           </div >
           <div class="row text-center" >
             <div class="col" >
-              <h4 class="text-light text-center" >
+              <h4 class="text text-center" >
                 <strong >
                   <span data-th-text="${addStatus==true?'New Employee':'Update Employee Details'}" ></span >
                 </strong >
@@ -59,7 +63,7 @@
                      type="text" required readonly/>
               <span id="codeE" data-th-errors="*{code}"
                     data-th-if="${#fields.hasErrors('code')}" class="error" >Error Employee code
-                            </span >
+              </span >
             </div >
           </div >
           <!--Tittle -->
@@ -105,7 +109,7 @@
             <div class="col-md-4" >
               <label class="control-label" for="nic" >NIC No :</label >
             </div >
-            <div class="col-md-4" >
+            <div class="col-md-8" >
               <input data-th-field="*{nic}" class="form-control" tabindex="6" type="text"
                      maxlength="12"
                      minlength="10" required />
@@ -365,47 +369,63 @@
       </div >
     </form >
   </div >
+  </div>
 </div >
+
 <!--footer include-->
 <div data-th-replace="~{fragments/footer :: footerFragment}" ></div >
 <!--script include-->
 <div data-th-replace="~{fragments/script :: scriptFragment}" ></div >
 
 <script >
-    $(document).ready(function () {
-        imageSrcAttributeCheck();
-    });
+  $(document).ready(function () {
+    imageSrcAttributeCheck();
 
-    function readURL(input) {
-        if (input.files && input.files[0]) {
-            let reader = new FileReader();
-
-            reader.onload = function (e) {
-                $('#image').attr('src', e.target.result);
-            }
-
-            reader.readAsDataURL(input.files[0]); // convert to base64 string
-        }
-    }
-
-    //display selected image
-    $("#imgUpload").change(function () {
-        $("#image").toggle('show');
-        readURL(this);
-
-    });
-
-    //image is not -> showing area hide
-    function imageSrcAttributeCheck() {
-        let attribute = $("#image").attr("src");
-        if (attribute === '') {
-            $("#image").toggle('hide');
-        }
-    }
-    //input type date can not be selected future date
     $('[type="date"]').prop('max', function () {
       return new Date().toJSON().split('T')[0];
     });
+
+  });
+
+  function readURL(input) {
+    if (input.files && input.files[0]) {
+      let reader = new FileReader();
+
+      reader.onload = function (e) {
+        $('#image').attr('src', e.target.result);
+      }
+
+      if (input.files[0].size < 10485760) {
+        reader.readAsDataURL(input.files[0]);
+      } else {
+        swal({
+          title: "Select file size was too large select less than 10MB file",
+          icon: "warning",
+        });
+      }
+    }
+  }
+
+  //display selected image
+  $("#imgUpload").change(function () {
+    $("#image").toggle('show');
+    readURL(this);
+
+  });
+
+  //image is not -> showing area hide
+  function imageSrcAttributeCheck() {
+    let attribute = $("#image").attr("src");
+    if (attribute === '') {
+      $("#image").toggle('hide');
+    }
+  }
+
+  //input type date can not be selected future date
+  $('[type="date"]').prop('max', function () {
+    return new Date().toJSON().split('T')[0];
+  });
+
 </script >
 </body >
 </html >
