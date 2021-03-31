@@ -5,20 +5,21 @@
 </head >
 
 <body >
-<nav class="navbar navbar-expand-sm navbar-dark " data-th-fragment="navBarFragment" >
+<nav class="navbar sticky-top navbar-expand-sm navbar-light " style="background-color: #e3f2fd;" data-th-fragment="navBarFragment" >
 
   <a class="navbar-brand" href="#" >
-    <img data-th-src="${'../img/logo.png'}" alt="Company log" style="width:50px;height:50px;" id="logo"
+    <img data-th-src="${'../img/login1.png'}" alt="Company log" style="width:50px;height:50px;" id="logo"
          class="animated-spin" >
   </a >
-  <a class="navbar-brand" data-th-href="${'/home'}" ><i class="fa fa-home" style="font-size: 18px" ></i ></a >
+  <a class="navbar-brand text-primary"  data-th-href="${'/home'}" ><i class="fa fa-home" style="font-size: 18px" ></i >
+  Home</a >
   <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
           aria-controls="collapsibleNavId"
           aria-expanded="false" aria-label="Toggle navigation" ></button >
   <div class="collapse navbar-collapse" id="collapsibleNavId" >
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0" >
       <li class="nav-itemBatch dropdown active" >
-        <a class="nav-link text-primary dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown"
+        <a class="nav-link navbar-brand text-primary dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown"
            aria-haspopup="true"
            aria-expanded="false" > <i class="fa fa-user" ></i > General</a >
         <div class="dropdown-menu" aria-labelledby="dropdownId" >
@@ -56,7 +57,7 @@
       </li >
 
       <li class="nav-itemBatch dropdown active" >
-        <a class="nav-link text-primary dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
+        <a class="nav-link navbar-brand text-primary dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
            aria-expanded="false" > <i class="fa fa-bell" ></i > Transaction</a >
         <div class="dropdown-menu" aria-labelledby="dropdownId" >
           <a data-sec-authorize="hasAnyAuthority('ROLE_MANAGER', 'ROLE_HR_MANAGER' ,'ROLE_ADMIN')"
@@ -85,7 +86,7 @@
       </li >
 
       <li class="nav-itemBatch dropdown active" >
-        <a class="nav-link text-primary dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
+        <a class="nav-link navbar-brand text-primary dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
            aria-expanded="false" > <i class="fa fa-book-open" ></i > Report</a >
         <div class="dropdown-menu" aria-labelledby="dropdownId" >
           <a data-sec-authorize="hasAnyAuthority('ROLE_MANAGER')" data-th-href="@{'/report/manager'}"
@@ -100,7 +101,7 @@
              data-th-href="@{'/report/perCashier'}" class="nav-link text-primary" > Per Cashier Report</a >
           <a data-sec-authorize="hasAnyAuthority('ROLE_MANAGER', 'ROLE_PROCUREMENT_MANAGER' )"
              data-th-href="@{'/report/perAccount'}" class="nav-link text-primary" > Per Account Department User
-                                                                                    Report</a >
+            Report</a >
           <a data-sec-authorize="hasAnyAuthority('ROLE_MANAGER', 'ROLE_PROCUREMENT_MANAGER' )"
              data-th-href="@{'/report/perItem'}" class="nav-link text-primary" > Per Item Report</a >
         </div >
@@ -112,7 +113,7 @@
   <div >
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0 justify-content-end" >
       <li class="nav-item dropdown" data-sec-authorize="isAuthenticated()" >
-        <a class="nav-link text-primary dropdown-toggle" href="#" id="navbarDropdown1" role="button"
+        <a class="nav-link navbar-brand text-primary dropdown-toggle" href="#" id="navbarDropdown1" role="button"
            data-toggle="dropdown"
            aria-haspopup="true" aria-expanded="false" >
           <i class="fas fa-user-tie fa-lg" ></i >&nbsp;&nbsp;
@@ -127,12 +128,12 @@
             <i class="fas fa-key " ></i >&nbsp;Change Password</a >
         </div >
       </li >
-      <li class="nav-item dropdown " data-sec-authorize="isAuthenticated()" >
-        <a href="/logout" class="nav-link text-primary" > <i class="fas fa-sign-out-alt" ></i >&nbsp;&nbsp; Log
-                                                                                               out</a >
+      <li class="nav-item  dropdown " data-sec-authorize="isAuthenticated()" >
+        <a href="/logout" class="nav-link navbar-brand text-danger" > <i class="fas fa-sign-out-alt" ></i >&nbsp;&nbsp; Log
+          out</a >
       </li >
-      <li class="nav-item dropdown " data-sec-authorize="!isAuthenticated()" >
-        <a href="/login" class="nav-link text-primary" ><i class="fas fa-sign-in-alt" ></i >&nbsp;&nbsp;Login</a >
+      <li class="nav-item  dropdown " data-sec-authorize="!isAuthenticated()" >
+        <a href="/login" class="nav-link   text-primary" ><i class="fas fa-sign-in-alt" ></i >&nbsp;&nbsp;Login</a >
       </li >
     </ul >
   </div >

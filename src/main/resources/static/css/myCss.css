@@ -1,6 +1,9 @@
 /*login page start*/
 
-html,body{
+.login1{
+    height: 100%;
+}
+.login2{
     background-image: url(../img/login2.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -12,7 +15,7 @@ html,body{
     align-content: center;
 }
 
-.card{
+.card1{
     height: 410px;
     margin-top: auto;
     margin-bottom: auto;
@@ -57,3 +60,27 @@ input:focus{
 }
 
 /*login page start*/
+
+/*reset page start*/
+
+.reset1{
+    height: 100%;
+}
+.reset2{
+    background-image: url(../img/login2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+.form-row{
+    margin-top: 5px;
+}
+.card {
+    background-color: rgba(0,0,0,0.1);
+}
+
+.row{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
