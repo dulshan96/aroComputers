@@ -20,20 +20,24 @@
         <div class="container  form-Border" >
           <div class="row text-center   " >
             <!--view employee-->
-            <div class="col-2" >
+            <div class="col" >
               <a href="/employee" class="btn btn-dark" >
-                View Employees
+                <i class="fa fa-user"></i> View Employees
               </a >
             </div >
+            <!--new employee heading-->
+            <div class="col" >
+              <h4 class="text text-center" >
+                <strong >
+                  <span data-th-text="${addStatus==true?'New Employee':'Update Employee Details'}" ></span >
+                </strong >
+              </h4 >
+            </div >
+            <div class="col">
+
+            </div>
           </div >
-          <!--new employee heading-->
-          <div class="col" >
-            <h4 class="text text-center" >
-              <strong >
-                <span data-th-text="${addStatus==true?'New Employee':'Update Employee Details'}" ></span >
-              </strong >
-            </h4 >
-          </div >
+
           <br>
           <br>
         </div >

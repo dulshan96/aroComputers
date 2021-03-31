@@ -54,7 +54,7 @@ public class ApplicationCreateRestController {
         employee.setTitle(Title.MR);
         employee.setGender(Gender.MALE);
         employee.setDesignation(Designation.ADMIN);
-        employee.setCivilStatus(CivilStatus.SINGLE);
+        employee.setCivilStatus(CivilStatus.UNMARRIED);
         employee.setEmployeeStatus(EmployeeStatus.WORKING);
         employee.setDateOfBirth(LocalDate.now().minusYears(18));
         employee.setDateOfAssignment(LocalDate.now());

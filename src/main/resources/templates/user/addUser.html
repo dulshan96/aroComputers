@@ -4,23 +4,25 @@
     <meta charset="UTF-8">
     <title>Thymeleaf Springboot </title>
 </head>
-<body class="sb-nav-fixed">
+<body>
 <nav data-th-replace="~{fragments/navBar :: navBarFragment}"></nav>
 
 <!--Employee find-->
 <div class="container-fluid " id="employeeFindForm" data-th-if="${employeeDetailShow==false}">
-    <div class="card m-4">
+    <div id="add user">
     <div class="col-sm-12 flex-column ">
         <form id="form" method="POST" data-th-action="${'/user/workingPlace'}" data-th-object="${employee}"
               enctype="multipart/form-data">
             <div class="form-row ">
                 <div class="container-fluid ">
                     <div class="row text-center   ">
+                        <!--view user-->
                         <div class="col">
-                            <a class="btn btn-success" href="/home">
-                                <i class="fa fa-home" style="font-size: 20px"></i> &nbsp; Home
+                            <a href="/user" class="btn btn-dark">
+                                <i class="fa fa-user-circle"></i>&nbsp; View User
                             </a>
                         </div>
+                        <!--new user heading-->
                         <div class="col">
                             <h4 class="text text-center">
                                 <strong>
@@ -30,10 +32,9 @@
                             </h4>
                         </div>
                         <div class="col">
-                            <a href="/user" class="btn btn-success">
-                                <i class="fa fa-list"></i>&nbsp; View List
-                            </a>
+
                         </div>
+
                     </div>
                 </div>
                 <div class="col-5 flex-column">
@@ -71,8 +72,8 @@
                             </div>
                             <div class="col-10 text-left" id="btnSearchEmployee">
                                 <button class="btn btn-success" tabindex="3" type="submit">
-                                    <i class="fa fa-search " style="font-size: 20px"></i>&nbsp; &nbsp;Search
-                                </button>
+                                    <i class="fa fa-search " ></i>&nbsp; &nbsp;Search
+                                </button><br><br><br><br>
                             </div>
                         </div>
                     </div>
@@ -94,10 +95,11 @@
 <!--User add from-->
 <div class="container-fluid  " data-th-if="${employeeDetailShow==true}" id="userFormShow">
     <form id="formUser" data-th-action="${addStatus==true?'/user/add':'/user/update'}" data-th-object="${user}"
-          class="form-horizontal" method="POST" autocomplete="false">
+          class="form-horizontal" method="POST" autocomplete="false"><br><br>
         <div class="row">
+
             <!--Left Side-->
-            <div class="form-group col-md-5 col-sm-7 text-left flex-column">
+            <div class="form-group col-md-6 col-sm-6 text-right flex-column">
                 <div id="idHide" data-th-if="${addStatus==false}" class="form-row">
                     <div class="col-md-4">
                         <label class="control-label" for="id">ID :</label>
@@ -152,7 +154,7 @@
                 </div>
             </div>
             <!--Right Side-->
-            <div class="form-group col-md-5 col-sm-7 text-left flex-column">
+            <div class="form-group col-md-6 col-sm-6 text-left flex-column ">
                 <!--Roles Display-->
                 <!--Roles Display-->
                 <div class="form-check" data-th-each="role : ${roleList}">
@@ -167,6 +169,7 @@
 
             <!--Button-->
             <div class="form-group col-md-12 col-sm-12 text-center flex-column">
+                <br>
                 <button class="btn btn-success" type="submit">
                     <i class="fa fa-save" style="font-size: 20px"></i>&nbsp; &nbsp;<span
                         id="submit" data-th-text="${addStatus==true?'Save': 'Update'}">                        </span>
