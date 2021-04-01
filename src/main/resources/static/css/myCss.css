@@ -73,14 +73,87 @@ input:focus{
     height: 100%;
 }
 
+/*all form styles*/
 .form-row{
     margin-top: 5px;
 }
 .card {
-    background-color: rgba(0,0,0,0.1);
+    background-color: rgba(0,0,0,0.2);
 }
 
 .row{
     margin-top: 20px;
     margin-bottom: 20px;
+}
+
+.control-label{
+    font-weight: bold;
+
+}
+
+
+.fa-save {
+    font-size: 20px
+}.fa-redo {
+    font-size: 20px
+}
+ .fa-search{
+     font-size: 20px
+ }
+ .fa-user{
+     font-size: 20px;
+ }.fa-user-circle{
+     font-size: 20px;
+ }
+
+/*all buttons*/
+ .btn-space{
+     margin-right: 15px;
+ }
+
+
+
+/*employee ad form start*/
+#add\ employee{
+    background-color: rgba(0,0,0,0.3);
+    margin-left: 50px;
+    margin-right: 40px;
+
+
+}
+/*user ad form start*/
+#add\ user{
+    background-color: rgba(0,0,0,0.3);
+    margin-top: 70px;
+    margin-left: 50px;
+    margin-right: 40px;
+
+
+
+}
+
+#formUser{
+    background-color: rgba(0,0,0,0.3);
+    margin-top: 70px;
+    margin-left: 50px;
+    margin-right: 40px;
+}
+/*ad role start*/
+#add\ role{
+    background-color: rgba(0,0,0,0.3);
+    margin-top: 70px;
+    margin-left: 50px;
+    margin-right: 40px;
+
+
+
+}/*ad role start*/
+#add\ category{
+    background-color: rgba(0,0,0,0.3);
+    margin-top: 70px;
+    margin-left: 50px;
+    margin-right: 40px;
+
+
+
 }
