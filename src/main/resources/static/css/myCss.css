@@ -112,7 +112,6 @@ input:focus{
  }
 
 
-
 /*employee ad form start*/
 #add\ employee{
     background-color: rgba(0,0,0,0.3);
@@ -147,8 +146,19 @@ input:focus{
 
 
 
-}/*ad role start*/
+}
+
+/*ad category start*/
 #add\ category{
+    background-color: rgba(0,0,0,0.3);
+    margin-top: 70px;
+    margin-left: 50px;
+    margin-right: 40px;
+
+
+
+}/*ad item color start*/
+#add\ color{
     background-color: rgba(0,0,0,0.3);
     margin-top: 70px;
     margin-left: 50px;
