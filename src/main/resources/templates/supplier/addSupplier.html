@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <title>addSupplier</title>
 </head>
-<body class="sb-nav-fixed">
+<body>
 <nav  data-th-replace="~{fragments/navBar :: navBarFragment}"></nav>
 
 <!--Form Content - start -->
 <div class="container-fluid  ">
+    <div id="add supplier">
     <div class="col-sm-12 flex-column ">
         <form id="form" class="form-horizontal"  data-th-action="${addStatus==true?'/supplier/save':'/supplier/update'}"
                data-th-object="${supplier}" method="POST" enctype="multipart/form-data">
@@ -17,13 +18,13 @@
                     <div class="row text-center   ">
                         <!--View List Button-->
                         <div class="col">
-                            <a href="/supplier" class="btn btn-success" tabindex="1">
-                                <i class="fa fa-list" style="font-size: 20px"></i>&nbsp;&nbsp;View List
+                            <a href="/supplier" class="btn btn-dark" tabindex="1">
+                                <i class="fa fa-truck" ></i>&nbsp;&nbsp;View Supplier
                             </a>
                         </div>
                         <!--Form Name-->
                         <div class="col">
-                            <h2 class="text-light text-center">
+                            <h2 class="text text-center">
                                 <strong>
                                     <span  data-th-text="${addStatus==true?'Add New Supplier':'Update Supplier Details'}"></span>
                                 </strong>
@@ -31,9 +32,9 @@
                         </div>
                         <!--Home Button-->
                         <div class="col">
-                            <a class="btn btn-success" href="/home" tabindex="2">
+                           <!-- <a class="btn btn-success" href="/home" tabindex="2">
                                 <i class="fa fa-home" style="font-size: 20px"></i> &nbsp;&nbsp;Home
-                            </a>
+                            </a>-->
                         </div>
                     </div>
                 </div>
@@ -63,7 +64,7 @@
                             </span >
                         </div >
                     </div >
-                    <!--Name-->
+                    <!--Company Name-->
                     <div class="form-row text-right">
                         <div class="col-md-4">
                             <label class="control-label" for="name">Company Name :</label>
@@ -85,10 +86,10 @@
                                    data-th-if="${#fields.hasErrors('brn')}" class="error">Error Name</span>
                         </div>
                     </div>
-                    <!--Contact Number One-->
+                    <!--Mobile Number -->
                     <div class="form-row text-right">
                         <div class="col-md-4">
-                            <label class="control-label" for="contactOne">Contact No1 :</label>
+                            <label class="control-label" for="contactOne">Mobile No :</label>
                         </div>
                         <div class="col-md-8">
                             <input id="contactOne" data-th-field="*{contactOne}" class="form-control mobile" tabindex="5" type="number" maxlength="10" min="9" required/>
@@ -96,10 +97,10 @@
                                    data-th-if="${#fields.hasErrors('contactOne')}" id="mobileOneError">Error Mobile Number</span>
                         </div>
                     </div>
-                    <!--Contact Number Two-->
+                    <!--Lan Number -->
                     <div class="form-row text-right">
                         <div class="col-md-4">
-                            <label class="control-label" for="contactTwo">Contact No2 :</label>
+                            <label class="control-label" for="contactTwo">Landline No :</label>
                         </div>
                         <div class="col-md-8">
                             <input id="contactTwo" data-th-field="*{contactTwo}" class="form-control mobile" tabindex="6" type="number" maxlength="10" min="9"/>
@@ -157,16 +158,17 @@
                 <!--Button-->
                 <div class="form-group col-md-12 col-sm-12 text-center flex-column ">
                     <!--Back Button-->
-                    <a class="btn btn-dark"  tabindex="11" href="/supplier">
+                   <!-- <a class="btn btn-dark"  tabindex="11" href="/supplier">
                         <i class="fas fa-arrow-circle-left" style="font-size: 20px"></i>&nbsp;&nbsp;Back
-                    </a>
+                    </a>-->
                     <!--Save Button-->
-                    <button class="btn btn-success ml-5" type="submit" tabindex="9">
-                        <i class="fa fa-save " style="font-size: 20px"></i>&nbsp;&nbsp;<span id="submit"  data-th-text="${addStatus==true?'Save': 'Update'}"></span>
+                    <button class="btn btn-success btn-space " type="submit" tabindex="9">
+                        <i class="fa fa-save " ></i>&nbsp;&nbsp;
+                        <span id="submit"  data-th-text="${addStatus==true?'Save': 'Update'}"></span>
                     </button>
-                    <!--Cancel Button-->
-                    <button class="btn btn-warning ml-5" type="reset" tabindex="10">
-                        <i class="far fa-times-circle" style="font-size: 20px"></i>&nbsp;&nbsp;Cancel
+                    <!--Clear Button-->
+                    <button class="btn btn-warning btn-space " type="reset" tabindex="10">
+                        <i class="fa fa-redo" ></i>&nbsp;&nbsp;Clear
                     </button>
                 </div>
                 <!--Error-->
@@ -178,6 +180,7 @@
                 </div>
             </div>
         </form>
+    </div>
     </div>
 </div>
 <div   data-th-replace="~{fragments/footer :: footerFragment}"></div>
