@@ -140,6 +140,7 @@ input:focus {
 /*employee add form start*/
 #add\ employee {
     background-color: rgba(0, 0, 0, 0.3);
+    margin-top: 40px;
     margin-left: 50px;
     margin-right: 40px;
 
@@ -197,6 +198,16 @@ input:focus {
 #add\ brand {
     background-color: rgba(0, 0, 0, 0.3);
     margin-top: 70px;
+    margin-left: 50px;
+    margin-right: 40px;
+
+
+}
+
+/*add brand start*/
+#add\ item {
+    background-color: rgba(0, 0, 0, 0.3);
+    margin-top: 40px;
     margin-left: 50px;
     margin-right: 40px;
 
