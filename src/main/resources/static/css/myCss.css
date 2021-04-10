@@ -119,15 +119,19 @@ input:focus {
     font-size: 20px;
 }
 
-.fa-laptop{
+.fa-laptop {
     font-size: 20px;
 }
 
-.fa-eye-dropper{
+.fa-eye-dropper {
     font-size: 20px;
 }
 
-.fa-tags{
+.fa-tags {
+    font-size: 20px;
+}
+
+.fa-percent {
     font-size: 20px;
 }
 
@@ -212,8 +216,20 @@ input:focus {
     margin-right: 40px;
 
 
-}/*add supplier start*/
-#add\ supplier{
+}
+
+/*add supplier start*/
+#add\ supplier {
+    background-color: rgba(0, 0, 0, 0.3);
+    margin-top: 70px;
+    margin-left: 50px;
+    margin-right: 40px;
+
+
+}
+
+/*add discount start*/
+#add\ discount {
     background-color: rgba(0, 0, 0, 0.3);
     margin-top: 70px;
     margin-left: 50px;
