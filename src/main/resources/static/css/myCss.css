@@ -135,6 +135,10 @@ input:focus {
     font-size: 20px;
 }
 
+.fa-address-card {
+    font-size: 20px;
+}
+
 /*all buttons*/
 .btn-space {
     margin-right: 15px;
@@ -230,6 +234,15 @@ input:focus {
 
 /*add discount start*/
 #add\ discount {
+    background-color: rgba(0, 0, 0, 0.3);
+    margin-top: 70px;
+    margin-left: 50px;
+    margin-right: 40px;
+
+
+}
+/*add customer start*/
+#add\ customer {
     background-color: rgba(0, 0, 0, 0.3);
     margin-top: 70px;
     margin-left: 50px;
