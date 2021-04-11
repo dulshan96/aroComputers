@@ -81,7 +81,10 @@ input:focus {
 }
 
 .card {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.3);
+    margin-top: 40px;
+    margin-left: 50px;
+    margin-right: 40px;
 }
 
 .row {
@@ -136,6 +139,10 @@ input:focus {
 }
 
 .fa-address-card {
+    font-size: 20px;
+}
+
+.fa-file-invoice-dollar {
     font-size: 20px;
 }
 
@@ -241,10 +248,21 @@ input:focus {
 
 
 }
+
 /*add customer start*/
 #add\ customer {
     background-color: rgba(0, 0, 0, 0.3);
     margin-top: 70px;
+    margin-left: 50px;
+    margin-right: 40px;
+
+
+}
+
+/*add invoice start*/
+#add\ invoice {
+    /*background-color: rgba(0, 0, 0, 0.3);*/
+    margin-top: 40px;
     margin-left: 50px;
     margin-right: 40px;
 

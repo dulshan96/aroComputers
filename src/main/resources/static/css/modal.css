@@ -3,8 +3,9 @@
     /*Hides pop-up when there is no "active" class*/
     visibility: hidden;
     z-index: 1050;
-    position:fixed;
+    position: fixed;
     top:0;
+    left: 1px;
     width:100vw;
     height:100vh;
     background-color: #181a1a;

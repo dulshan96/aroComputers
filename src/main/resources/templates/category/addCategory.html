@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>addCategory</title>
 </head>
-<body class="sb-nav-fixed">
+<body>
 <nav data-th-replace="~{fragments/navBar :: navBarFragment}"></nav>
 <!--Form Content-->
 <div class="col-sm-12 flex-column ">
@@ -24,8 +24,8 @@
                         <div class="col">
                             <h2 class="text text-center">
                                 <strong>
-                                    Category List
-                                    <!--<span  data-th-text="${addStatus==true?'Add New Category':'Update Category Details'}"></span>-->
+                                    <!--New Category-->
+                                    <span  data-th-text="${addStatus==true?'New Category':'Update Category Details'}"></span>
                                 </strong>
                             </h2>
                         </div>
@@ -82,8 +82,8 @@
                 <div class="form-group col-md-12 col-sm-12 text-center flex-column ">
                     <br>
                     <button class="btn btn-success btn-space" type="submit" tabindex="21">
-                        <i class="fa fa-save "></i>&nbsp;&nbsp;<span id="submit"
-                                                                     data-th-text="${addStatus==true?'Save': 'Update'}"></span>
+                        <i class="fa fa-save "></i>&nbsp;&nbsp;
+                        <span id="submit" data-th-text="${addStatus==true?'Save': 'Update'}"></span>
                     </button>
 
                     <button class="btn btn-warning btn-space" type="reset" tabindex="21">
