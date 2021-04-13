@@ -66,27 +66,29 @@
                         </div>
                     </div>
                     <!--Right Side-->
-                    <div class="form-group col-md-6 col-sm-6 text-right flex-column">
-                        <!--Created by and created at-->
-                        <div id="updateStatus" th:if="${addStatus==false}">
-                            <!--Created By-->
-                            <div class="form-row text-right">
-                                <div class="col-md-4">
-                                    <label class="control-label" for="createdBy">Created By :</label>
+                    <div class="form-group col-md-12 col-sm-12 text-right flex-column">
+                        <div class="col-sm-6 col-md-6 offset-2">
+                            <!--Created by and created at-->
+                            <div id="updateStatus" th:if="${addStatus==false}">
+                                <!--Created By-->
+                                <div class="form-row text-right">
+                                    <div class="col-md-4">
+                                        <label class="control-label" for="createdBy">Created By :</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <input id="createdBy" th:field="*{createdBy}" class="form-control" type="text"
+                                               readonly/>
+                                    </div>
                                 </div>
-                                <div class="col-md-8">
-                                    <input id="createdBy" th:field="*{createdBy}" class="form-control" type="text"
-                                           readonly/>
-                                </div>
-                            </div>
-                            <!--Created At-->
-                            <div class="form-row text-right">
-                                <div class="col-md-4">
-                                    <label class="control-label" for="createdAt">Created At :</label>
-                                </div>
-                                <div class="col-md-8">
-                                    <input id="createdAt" th:field="*{createdAt}" class="form-control" type="text"
-                                           readonly/>
+                                <!--Created At-->
+                                <div class="form-row text-right">
+                                    <div class="col-md-4">
+                                        <label class="control-label" for="createdAt">Created At :</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <input id="createdAt" th:field="*{createdAt}" class="form-control" type="text"
+                                               readonly/>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -96,8 +98,8 @@
 
                         <!--Save Button-->
                         <button class="btn btn-success btn-space " type="submit" tabindex="9">
-                            <i class="fa fa-save " ></i>&nbsp;&nbsp;<span id="submit"
-                             data-th-text="${addStatus==true?'Save': 'Update'}"></span>
+                            <i class="fa fa-save "></i>&nbsp;&nbsp;<span id="submit"
+                                                                         data-th-text="${addStatus==true?'Save': 'Update'}"></span>
                         </button>
                         <!--Cancel Button-->
                         <button class="btn btn-warning btn-space" type="reset" tabindex="10">
