@@ -45,7 +45,7 @@ $(document).ready(function () {
 
 
 // regex
-let nicRegex = /^([0-9]{9}[vV|xX])|^([0-9]{12})$/;
+let nicRegex = /^([0-9]{9}[|X|V]|[0-9]{12})$/;
 let mobileRegex = /^([0][7][\d]{8}$)|^([7][\d]{8})$/;
 let landRegex = /^0((11)|(2(1|[3-7]))|(3[1-8])|(4(1|5|7))|(5(1|2|4|5|7))|(6(3|[5-7]))|([8-9]1))([2-4]|5|7|9)[0-9]{6}$/;
 let nameRegex = /^[a-zA-Z .-]{3}[ a-zA-Z.-]+$/;
@@ -302,11 +302,11 @@ $("#invoiceNumber").bind("keyup", function () {
 
 //colour change function --start
 let backgroundColourChangeGood = function (id) {
-    $(id).css('background-color', '#00FFFF');
+    $(id).css('background-color', '#90EE90');
 };
 
 let backgroundColourChangeBad = function (id) {
-    $(id).css('background-color', '#FF00AA');
+    $(id).css('background-color', '#FF6347');
 };
 
 let backgroundColourChangeNothingToChange = function (id) {
@@ -558,6 +558,6 @@ function confirmDelete(obj) {
     });
 }
 
-$(".btn-warning").on('click', function (){
+$(".btn-warning").on('click', function () {
     location.reload();
 });
