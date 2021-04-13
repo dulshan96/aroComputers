@@ -155,12 +155,16 @@ input:focus {
     font-size: 20px;
 }
 
-.fa-edit{
+.fa-edit {
     font-size: 15px;
 }
 
-.fa-trash{
+.fa-trash {
     font-size: 15px;
+}
+
+.fa-truck {
+    font-size: 20px;
 }
 
 /*all buttons*/
