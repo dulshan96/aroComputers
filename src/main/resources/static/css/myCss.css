@@ -93,8 +93,13 @@ input:focus {
 }
 
 .control-label {
-    font-weight: bold;
+    font-weight: bolder;
 
+}
+
+.display_detail {
+    font-weight: bold;
+    color: darkred;
 }
 
 
@@ -275,6 +280,16 @@ input:focus {
 
 /*all management form*/
 #management {
+    background-color: rgba(0, 0, 0, 0.3);
+    margin-top: 40px;
+    margin-left: 50px;
+    margin-right: 40px;
+
+
+}
+
+/*all details form*/
+#details {
     background-color: rgba(0, 0, 0, 0.3);
     margin-top: 40px;
     margin-left: 50px;
