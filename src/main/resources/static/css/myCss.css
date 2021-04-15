@@ -178,6 +178,10 @@ input:focus {
     font-size: 20px;
 }
 
+.fa-check-circle {
+    font-size: 15px;
+}
+
 /*all buttons*/
 .btn-space {
     margin-right: 15px;
@@ -325,6 +329,16 @@ input:focus {
 #add\ purchase\ order {
     background-color: rgba(0, 0, 0, 0.3);
     margin-top: 70px;
+    margin-left: 50px;
+    margin-right: 40px;
+
+
+}
+
+/*add GRN start*/
+#add\ grn {
+    background-color: rgba(0, 0, 0, 0.3);
+    margin-top: 40px;
     margin-left: 50px;
     margin-right: 40px;
 
