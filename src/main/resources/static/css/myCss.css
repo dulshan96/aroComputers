@@ -102,15 +102,81 @@ input:focus {
     color: darkred;
 }
 
+.fa-cart-plus {
+    font-size: 20px;
+}
 
-.fa-save .fa-arrow-circle-left .fa-truck .fa-redo .fa-search .fa-user .fa-user-circle .fa-user-plus .fa-smile .fa-laptop .fa-eye-dropper .fa-tags .fa-percent .fa-address-card .fa-file-invoice-dollar {
+.fa-save {
     font-size: 20px
 }
 
-.fa-edit .fa-trash {
+.fa-redo {
+    font-size: 20px
+}
+
+.fa-search {
+    font-size: 20px
+}
+
+.fa-user {
+    font-size: 20px;
+}
+
+.fa-user-circle {
+    font-size: 20px;
+}
+
+.fa-user-plus {
+    font-size: 20px;
+}
+
+.fa-smile {
+    font-size: 20px;
+}
+
+.fa-laptop {
+    font-size: 20px;
+}
+
+.fa-eye-dropper {
+    font-size: 20px;
+}
+
+.fa-tags {
+    font-size: 20px;
+}
+
+.fa-percent {
+    font-size: 20px;
+}
+
+.fa-address-card {
+    font-size: 20px;
+}
+
+.fa-file-invoice-dollar {
+    font-size: 20px;
+}
+
+.fa-edit {
     font-size: 15px;
 }
 
+.fa-trash {
+    font-size: 15px;
+}
+
+.fa-truck {
+    font-size: 20px;
+}
+
+.fa-arrow-circle-left {
+    font-size: 20px;
+}
+
+.fa-print {
+    font-size: 20px;
+}
 
 /*all buttons*/
 .btn-space {
@@ -249,6 +315,16 @@ input:focus {
 #details {
     background-color: rgba(0, 0, 0, 0.3);
     margin-top: 40px;
+    margin-left: 50px;
+    margin-right: 40px;
+
+
+}
+
+/*add Purchase order start*/
+#add\ purchase\ order {
+    background-color: rgba(0, 0, 0, 0.3);
+    margin-top: 70px;
     margin-left: 50px;
     margin-right: 40px;
 

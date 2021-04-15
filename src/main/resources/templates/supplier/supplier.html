@@ -54,7 +54,7 @@
                         </tr>
                         </thead>
                         <tbody class="table-primary">
-                        <tr style="height: 130px" data-th-each="supplier, rowCount : ${suppliers}">
+                        <tr  data-th-each="supplier, rowCount : ${suppliers}">
                             <th data-th-text="  ${rowCount.count}"></th>
                             <th data-th-text="${supplier.code}"></th>
                             <th data-th-text="${supplier.name}"></th>
@@ -71,12 +71,11 @@
                                    data-th-href="${'/purchaseOrder/supplier/' + supplier.id}"><i
                                         class="fa fa-cart-arrow-down" style="font-size: 15px"></i> Purchase Order</a>
 
-                                <br/><br/>
-                                <a class="btn btn-light btn-sm" data-th-href="${'/supplier/' + supplier.id}"><i
+                                <a class="btn btn-light btn-sm mt-3 mb-3" data-th-href="${'/supplier/' + supplier.id}"><i
                                         class="fa fa-eye" style="font-size: 15px"></i>&nbsp;View</a>
-                                <a class="btn btn-success btn-sm" data-th-href="${'/supplier/edit/' + supplier.id}"><i
+                                <a class="btn btn-success btn-sm mt-3 mb-3" data-th-href="${'/supplier/edit/' + supplier.id}"><i
                                         class="fa fa-edit" style="font-size: 15px"></i>&nbsp;Edit Supplier</a>
-                                <a class="btn btn-danger btn-sm" data-th-href="${'/supplier/delete/' + supplier.id}">
+                                <a class="btn btn-danger btn-sm mt-3 mb-3" data-th-href="${'/supplier/delete/' + supplier.id}">
                                     <!--data-th-if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}"--> <i
                                         class="fa fa-trash" style="font-size: 15px"></i> Delete</a>
                             </th>
