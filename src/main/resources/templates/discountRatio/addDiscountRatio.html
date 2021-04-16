@@ -69,23 +69,24 @@
                                       data-th-if="${#fields.hasErrors('amount')}">Error Name</span>
                             </div>
                         </div>
-                    </div>
 
 
-                    <!--Discount Ratio status-->
-                    <div class="form-row text-right" data-th-if="${addStatus==false}">
-                        <div class="col-md-4">
-                            <label class="control-label" for="discountRatioStatus">Discount Ratio Status :</label>
-                        </div>
-                        <div class="col-md-8">
-                            <select id="discountRatioStatus" data-th-field="*{discountRatioStatus}" class="form-control"
-                                    tabindex="7"
-                                    required>
-                                <option value="">Please select</option>
-                                <option data-th-each="discountRatioStatus : ${discountRatioStatuses}"
-                                        data-th-text="${discountRatioStatus.discountRatioStatus}"
-                                        data-th-value="${discountRatioStatus}"></option>
-                            </select>
+                        <!--Discount Ratio status-->
+                        <div class="form-row text-right" data-th-if="${addStatus==false}">
+                            <div class="col-md-4">
+                                <label class="control-label" for="discountRatioStatus">Discount Ratio Status :</label>
+                            </div>
+                            <div class="col-md-8">
+                                <select id="discountRatioStatus" data-th-field="*{discountRatioStatus}"
+                                        class="form-control"
+                                        tabindex="7"
+                                        required>
+                                    <option value="">Please select</option>
+                                    <option data-th-each="discountRatioStatus : ${discountRatioStatuses}"
+                                            data-th-text="${discountRatioStatus.discountRatioStatus}"
+                                            data-th-value="${discountRatioStatus}"></option>
+                                </select>
+                            </div>
                         </div>
                     </div>
 
