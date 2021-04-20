@@ -4,6 +4,7 @@ package lk.aro_computers.asset.employee.service;
 import lk.aro_computers.asset.common_asset.model.enums.LiveDead;
 import lk.aro_computers.asset.employee.dao.EmployeeDao;
 import lk.aro_computers.asset.employee.entity.Employee;
+import lk.aro_computers.asset.employee.entity.enums.EmployeeStatus;
 import lk.aro_computers.util.interfaces.AbstractService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.*;
@@ -44,7 +45,8 @@ public class EmployeeService implements AbstractService< Employee, Integer > {
     @Transactional
     public Employee persist(Employee employee) {
         if(employee.getId()==null){
-            employee.setLiveDead(LiveDead.ACTIVE);}
+            employee.setLiveDead(LiveDead.ACTIVE);
+        employee.setEmployeeStatus(EmployeeStatus.WORKING);}
         return employeeDao.save(employee);
     }
 
@@ -82,7 +84,17 @@ public class EmployeeService implements AbstractService< Employee, Integer > {
     @Cacheable
     public Employee findByNic(String nic) {
         return employeeDao.findByNic(nic);
+
     }
+    @Cacheable
+    public Employee findByOfficeEmail(String officeEmail) {
+        return employeeDao.findByOfficeEmail(officeEmail);
+    }
+
+    public Employee findByMobileOne(String mobileOne) {
+        return employeeDao.findByMobileOne(mobileOne);
+    }
+
 
 
 }

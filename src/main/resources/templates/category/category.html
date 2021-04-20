@@ -44,7 +44,7 @@
                         <tr>
                             <th> Index</th>
                             <th> Main Category</th>
-                            <th> Name</th>
+                            <th> Sub Category</th>
                             <th> Modify</th>
                         </tr>
                         </thead>
@@ -59,7 +59,7 @@
                                         class="fa fa-eye"></i>&nbsp;View</a>
                                 <a id="categoryEdit" data-th-href="${'/category/edit/' + category.id}"
                                    class="btn btn-primary btn-sm"><i class="fa fa-edit"></i>&nbsp;Edit</a>
-                                <a id="categoryRemove" data-th-href="${'/category/remove/' + category.id}"
+                                <a id="categoryRemove" data-th-href="${'/category/delete/' + category.id}"
                                    class="btn btn-danger btn-sm"
                                    data-th-if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}">
                                     <i class="fa fa-trash"

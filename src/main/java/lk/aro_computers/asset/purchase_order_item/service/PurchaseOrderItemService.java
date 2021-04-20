@@ -34,15 +34,15 @@ public class PurchaseOrderItemService implements AbstractService< PurchaseOrderI
     }
 
     public PurchaseOrderItem persist(PurchaseOrderItem purchaseOrderItem) {
-        if(purchaseOrderItem.getId()==null){
-            purchaseOrderItem.setLiveDead(LiveDead.ACTIVE);}
+       /* if(purchaseOrderItem.getId()==null){
+            purchaseOrderItem.setLiveDead(LiveDead.ACTIVE);}*/
         return purchaseOrderItemDao.save(purchaseOrderItem);
     }
 
     public boolean delete(Integer id) {
         PurchaseOrderItem purchaseOrderItem =  purchaseOrderItemDao.getOne(id);
-        purchaseOrderItem.setLiveDead(LiveDead.STOP);
-        purchaseOrderItemDao.save(purchaseOrderItem);
+       /* purchaseOrderItem.setLiveDead(LiveDead.STOP);
+        purchaseOrderItemDao.save(purchaseOrderItem);*/
         return false;
     }
 

@@ -31,7 +31,8 @@ public class Category {
     @Enumerated(EnumType.STRING)
     private LiveDead liveDead;
 
-    @Size( min = 3, message = "Your name cannot be accepted" )
+    @Size( min = 4, message = "Your Sub category name cannot be accepted.Enter more than 4 characters!" )
+    @Column(unique = true)
     private String name;
 
     @OneToMany(mappedBy = "category")

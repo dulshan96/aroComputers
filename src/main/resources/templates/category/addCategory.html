@@ -68,9 +68,9 @@
                     <!--Name-->
                     <div class="form-row text-right">
                         <div class="col-md-4">
-                            <label class="control-label" for="name">Name :</label>
+                            <label class="control-label" for="name">Sub Category:</label>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-4 text-danger">
                             <input id="name" data-th-field="*{name}" class="form-control" tabindex="4" type="text"
                                    required/>
                             <span id="nameError" data-th-errors="*{name}"
@@ -92,7 +92,7 @@
 
                 </div>
                 <!--Error-->
-                <div class="form-row">
+                <div class="form-row ">
                     <label id="errorLabel" data-th-if="${#fields.hasErrors('*')}"
                            data-th-text="'Errors: '">Errors: </label>
                     <ul>

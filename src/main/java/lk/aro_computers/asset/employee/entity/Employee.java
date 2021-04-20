@@ -42,6 +42,7 @@ public class Employee extends AuditEntity {
     private String nic;
 
     @Size(max = 10, message = "Mobile number length should be contained 10 or 9")
+    @Column(unique = true)
     private String mobileOne;
 
     @Size(max = 10, message = "Mobile number length should be contained 10 or 9")

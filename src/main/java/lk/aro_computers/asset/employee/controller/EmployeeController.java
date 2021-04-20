@@ -122,6 +122,10 @@ public class EmployeeController {
   public String addEmployee(@Valid @ModelAttribute Employee employee, BindingResult result, Model model
                            ) {
     Employee employeeNic = null;
+    Employee officeEmail = null;
+    Employee mobileOne = null;
+
+
     if ( employee.getNic() != null && employee.getId() == null ) {
       employeeNic = employeeService.findByNic(employee.getNic());
     }
@@ -130,11 +134,37 @@ public class EmployeeController {
               "There is employee on same nic number . System message ");
       result.addError(error);
     }
+
+
+    if ( employee.getMobileOne() != null && employee.getId() == null ) {
+      mobileOne = employeeService.findByMobileOne(employee.getMobileOne());
+    }
+    if ( mobileOne != null ) {
+      ObjectError error = new ObjectError("employee",
+              "There is employee on same Mobile  . System message ");
+      result.addError(error);
+    }
+
+
+
+    if ( employee.getOfficeEmail() != null && employee.getId() == null ) {
+      officeEmail = employeeService.findByOfficeEmail(employee.getOfficeEmail());
+    }
+    if ( officeEmail != null ) {
+      ObjectError error = new ObjectError("employee",
+              "There is employee on same Office Email . System message ");
+      result.addError(error);
+    }
+
+
+
     if ( result.hasErrors() ) {
       model.addAttribute("addStatus", true);
       model.addAttribute("employee", employee);
       return commonThings(model);
     }
+
+
 
     employee.setMobileOne(makeAutoGenerateNumberService.phoneNumberLengthValidator(employee.getMobileOne()));
     employee.setMobileTwo(makeAutoGenerateNumberService.phoneNumberLengthValidator(employee.getMobileTwo()));
