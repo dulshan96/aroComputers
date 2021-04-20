@@ -1,61 +1,62 @@
 /*login page start*/
 
-.login1{
+.login1 {
     height: 100%;
 }
-.login2{
+
+.login2 {
     background-image: url(../img/login2.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     height: 100%;
 }
 
-.container{
+.container {
     height: 100%;
     align-content: center;
 }
 
-.card1{
+.card1 {
     height: 410px;
     margin-top: auto;
     margin-bottom: auto;
     width: 410px;
-    background-color: rgba(0,0,0,0.5) !important;
+    background-color: rgba(0, 0, 0, 0.5) !important;
 }
 
-.card-header h3{
+.card-header h3 {
     color: white;
 }
 
-.input-group-prepend span{
+.input-group-prepend span {
     width: 50px;
     background-color: #FFC312;
     color: black;
-    border:0 !important;
+    border: 0 !important;
 }
 
-input:focus{
-    outline: 0 0 0 0  !important;
+input:focus {
+    outline: 0 0 0 0 !important;
     box-shadow: 0 0 0 0 !important;
 
 }
 
-.login_btn{
+.login_btn {
     color: black;
     background-color: #FFC312;
     width: 100px;
 }
 
-.login_btn:hover{
+.login_btn:hover {
     color: black;
     background-color: white;
 }
 
-.links{
+.links {
     color: white;
 }
 
-.links a{
+.links a {
     margin-left: 4px;
 }
 
@@ -63,10 +64,11 @@ input:focus{
 
 /*reset page start*/
 
-.reset1{
+.reset1 {
     height: 100%;
 }
-.reset2{
+
+.reset2 {
     background-image: url(../img/login2.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -74,86 +76,289 @@ input:focus{
 }
 
 /*all form styles*/
-.form-row{
+.form-row {
     margin-top: 5px;
 }
+
 .card {
-    background-color: rgba(0,0,0,0.2);
+    background-color: rgba(0, 0, 0, 0.3);
+    margin-top: 40px;
+    margin-left: 50px;
+    margin-right: 40px;
 }
 
-.row{
+.row {
     margin-top: 20px;
     margin-bottom: 20px;
 }
 
-.control-label{
-    font-weight: bold;
+.control-label {
+    font-weight: bolder;
 
 }
 
+.display_detail {
+    font-weight: bold;
+    color: darkred;
+}
+
+.fa-cart-plus {
+    font-size: 20px;
+}
 
 .fa-save {
     font-size: 20px
-}.fa-redo {
+}
+
+.fa-redo {
     font-size: 20px
 }
- .fa-search{
-     font-size: 20px
- }
- .fa-user{
-     font-size: 20px;
- }.fa-user-circle{
-     font-size: 20px;
- }
+
+.fa-search {
+    font-size: 20px
+}
+
+.fa-user {
+    font-size: 20px;
+}
+
+.fa-user-circle {
+    font-size: 20px;
+}
+
+.fa-user-plus {
+    font-size: 20px;
+}
+
+.fa-smile {
+    font-size: 20px;
+}
+
+.fa-laptop {
+    font-size: 20px;
+}
+
+.fa-eye-dropper {
+    font-size: 20px;
+}
+
+.fa-tags {
+    font-size: 20px;
+}
+
+.fa-percent {
+    font-size: 20px;
+}
+
+.fa-address-card {
+    font-size: 20px;
+}
+
+.fa-file-invoice-dollar {
+    font-size: 20px;
+}
+
+.fa-edit {
+    font-size: 15px;
+}
+
+.fa-trash {
+    font-size: 15px;
+}
+
+.fa-truck {
+    font-size: 20px;
+}
+
+.fa-arrow-circle-left {
+    font-size: 20px;
+}
+
+.fa-print {
+    font-size: 20px;
+}
+
+.fa-check-circle {
+    font-size: 15px;
+}
+
+.fa-money-bill-wave{
+    font-size: 20px;
+}
+
+.fa-box{
+    font-size: 20px;
+}
 
 /*all buttons*/
- .btn-space{
-     margin-right: 15px;
- }
+.btn-space {
+    margin-right: 15px;
+}
 
 
-
-/*employee ad form start*/
-#add\ employee{
-    background-color: rgba(0,0,0,0.3);
+/*employee add form start*/
+#add\ employee {
+    background-color: rgba(0, 0, 0, 0.3);
+    margin-top: 40px;
     margin-left: 50px;
     margin-right: 40px;
 
 
 }
-/*user ad form start*/
-#add\ user{
-    background-color: rgba(0,0,0,0.3);
+
+/*user add form start*/
+#add\ user {
+    background-color: rgba(0, 0, 0, 0.3);
     margin-top: 70px;
     margin-left: 50px;
     margin-right: 40px;
-
 
 
 }
 
-#formUser{
-    background-color: rgba(0,0,0,0.3);
+#formUser {
+    background-color: rgba(0, 0, 0, 0.3);
     margin-top: 70px;
     margin-left: 50px;
     margin-right: 40px;
 }
-/*ad role start*/
-#add\ role{
-    background-color: rgba(0,0,0,0.3);
+
+/*add role start*/
+#add\ role {
+    background-color: rgba(0, 0, 0, 0.3);
     margin-top: 70px;
     margin-left: 50px;
     margin-right: 40px;
 
 
+}
 
-}/*ad role start*/
-#add\ category{
-    background-color: rgba(0,0,0,0.3);
+/*add category start*/
+#add\ category {
+    background-color: rgba(0, 0, 0, 0.3);
     margin-top: 70px;
     margin-left: 50px;
     margin-right: 40px;
 
+
+}
+
+/*add item color start*/
+#add\ color {
+    background-color: rgba(0, 0, 0, 0.3);
+    margin-top: 70px;
+    margin-left: 50px;
+    margin-right: 40px;
+
+
+}
+
+/*add brand start*/
+#add\ brand {
+    background-color: rgba(0, 0, 0, 0.3);
+    margin-top: 70px;
+    margin-left: 50px;
+    margin-right: 40px;
+
+
+}
+
+/*add item start*/
+#add\ item {
+    background-color: rgba(0, 0, 0, 0.3);
+    margin-top: 40px;
+    margin-left: 50px;
+    margin-right: 40px;
+
+
+}
+
+/*add supplier start*/
+#add\ supplier {
+    background-color: rgba(0, 0, 0, 0.3);
+    margin-top: 70px;
+    margin-left: 50px;
+    margin-right: 40px;
+
+
+}
+
+/*add discount start*/
+#add\ discount {
+    background-color: rgba(0, 0, 0, 0.3);
+    margin-top: 70px;
+    margin-left: 50px;
+    margin-right: 40px;
+
+
+}
+
+/*add customer start*/
+#add\ customer {
+    background-color: rgba(0, 0, 0, 0.3);
+    margin-top: 70px;
+    margin-left: 50px;
+    margin-right: 40px;
+
+
+}
+
+/*add invoice start*/
+#add\ invoice {
+    /*background-color: rgba(0, 0, 0, 0.3);*/
+    margin-top: 40px;
+    margin-left: 50px;
+    margin-right: 40px;
+
+
+}
+
+/*all management form*/
+#management {
+    background-color: rgba(0, 0, 0, 0.3);
+    margin-top: 40px;
+    margin-left: 50px;
+    margin-right: 40px;
+
+
+}
+
+/*all details form*/
+#details {
+    background-color: rgba(0, 0, 0, 0.3);
+    margin-top: 40px;
+    margin-left: 50px;
+    margin-right: 40px;
+
+
+}
+
+/*add Purchase order start*/
+#add\ purchase\ order {
+    background-color: rgba(0, 0, 0, 0.3);
+    margin-top: 70px;
+    margin-left: 50px;
+    margin-right: 40px;
+
+
+}
+
+/*add GRN start*/
+#add\ grn {
+    background-color: rgba(0, 0, 0, 0.3);
+    margin-top: 40px;
+    margin-left: 50px;
+    margin-right: 40px;
+
+
+}
+
+/*add payment start*/
+#add\ payment {
+    background-color: rgba(0, 0, 0, 0.3);
+    margin-top: 40px;
+    margin-left: 50px;
+    margin-right: 40px;
 
 
 }

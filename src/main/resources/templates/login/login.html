@@ -19,14 +19,16 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-user"></i></span>
                         </div>
-                        <input type="text" id="username" data-th-name="${'username'}" class="form-control" placeholder="Username" required>
+                        <input type="text" id="username" data-th-name="${'username'}" class="form-control"
+                               placeholder="Username" required>
 
                     </div>
                     <div class="input-group form-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-key"></i></span>
                         </div>
-                        <input type="password" id="inputPassword" data-th-name="${'password'}" class="form-control" placeholder="Password" required>
+                        <input type="password" id="inputPassword" data-th-name="${'password'}" class="form-control"
+                               placeholder="Password" required>
                     </div>
                     </br>
                     <div class="form-group">
@@ -34,8 +36,12 @@
                     </div>
                     </br>
                     </br>
-                    <div class="container-fluid "  data-th-if="${param.error}"> <p class="bg-white text-capitalize text-danger text-lg-center">Invalid username or password. </p> </div>
-                    <div class="container-fluid "><p id="errorMessage"  data-th-text="${err}" class="bg-white text-capitalize text-danger text-lg-center"></p></div>
+                    <div class="container-fluid " data-th-if="${param.error}"><p
+                            class="bg-white text-capitalize text-danger text-lg-center">Invalid username or
+                        password. </p></div>
+                    <div class="container-fluid "><p id="errorMessage" data-th-text="${err}"
+                                                     class="bg-white text-capitalize text-danger text-lg-center"></p>
+                    </div>
                 </form>
             </div>
             <!--<div class="card-footer">
