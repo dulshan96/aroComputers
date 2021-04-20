@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonFilter;
 import lk.aro_computers.asset.brand.entity.Brand;
 import lk.aro_computers.asset.category.entity.Category;
+import lk.aro_computers.asset.item.entity.enums.WarrantyPeriod;
 import lk.aro_computers.asset.item_color.entity.ItemColor;
 import lk.aro_computers.asset.common_asset.model.enums.LiveDead;
 import lk.aro_computers.asset.item.entity.enums.ItemStatus;
@@ -48,6 +49,9 @@ public class Item extends AuditEntity {
 
     @Enumerated(EnumType.STRING)
     private LiveDead liveDead;
+
+    @Enumerated(EnumType.STRING)
+    private WarrantyPeriod warrantyPeriod;
 
     @ManyToOne
     private Category category;

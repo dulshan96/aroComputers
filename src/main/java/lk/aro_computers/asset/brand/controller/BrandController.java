@@ -3,7 +3,6 @@ package lk.aro_computers.asset.brand.controller;
 
 import lk.aro_computers.asset.brand.entity.Brand;
 import lk.aro_computers.asset.brand.service.BrandService;
-import lk.aro_computers.asset.category.entity.Category;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -54,19 +53,30 @@ public class BrandController {
             name = brandService.findByName(brand.getName());
         }
         if ( name != null ) {
-            ObjectError error = new ObjectError("brand",
-                    "Their is alrady Brand on same name . System message ");
+            ObjectError error = new ObjectError("name",
+                                                "Their is already Brand on same name . System message ");
             bindingResult.addError(error);
         }
 
-
-
         if (bindingResult.hasErrors()) {
             model.addAttribute("addStatus", true);
-            model.addAttribute("brand", bindingResult);
+            model.addAttribute("brand", brand);
             return "brand/addBrand";
         }
-        brandService.persist(brand);
+
+        try {
+            brandService.persist(brand);
+        } catch ( Exception e ) {
+            ObjectError error = new ObjectError("brand",
+                                                "Please resolve following erros . System message "+e.getCause().getCause().getMessage());
+            bindingResult.addError(error);
+            e.printStackTrace();
+            if (bindingResult.hasErrors()) {
+                model.addAttribute("addStatus", true);
+                model.addAttribute("brand", brand);
+                return "brand/addBrand";
+            }
+        }
         return "redirect:/brand";
     }
 
