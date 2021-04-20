@@ -12,4 +12,6 @@ public interface InvoiceLedgerDao extends JpaRepository< InvoiceLedger, Integer 
   List< InvoiceLedger > findByCreatedAtIsBetween(LocalDateTime from, LocalDateTime to);
 
   InvoiceLedger findByWarrantyNumber(String warrantyNumber);
+
+  InvoiceLedger findFirstByOrderByIdDesc();
 }

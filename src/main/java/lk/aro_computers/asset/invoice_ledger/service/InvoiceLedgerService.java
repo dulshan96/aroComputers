@@ -22,4 +22,8 @@ public class InvoiceLedgerService {
   public InvoiceLedger findByWarrantyNumber(String warrantyNumber) {
     return invoiceLedgerDao.findByWarrantyNumber(warrantyNumber);
   }
+
+  public InvoiceLedger findByLastInvoiceLedger() {
+    return invoiceLedgerDao.findFirstByOrderByIdDesc();
+  }
 }

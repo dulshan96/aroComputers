@@ -11,6 +11,7 @@ import lk.aro_computers.asset.invoice.entity.enums.InvoiceValidOrNot;
 import lk.aro_computers.asset.invoice.entity.enums.PaymentMethod;
 import lk.aro_computers.asset.invoice.service.InvoiceService;
 import lk.aro_computers.asset.invoice_ledger.entity.InvoiceLedger;
+import lk.aro_computers.asset.invoice_ledger.service.InvoiceLedgerService;
 import lk.aro_computers.asset.item.service.ItemService;
 import lk.aro_computers.asset.ledger.controller.LedgerController;
 import lk.aro_computers.asset.ledger.entity.Ledger;
@@ -37,11 +38,13 @@ public class InvoiceController {
   private final DateTimeAgeService dateTimeAgeService;
   private final DiscountRatioService discountRatioService;
   private final MakeAutoGenerateNumberService makeAutoGenerateNumberService;
+  private final InvoiceLedgerService invoiceLedgerService;
 
   public InvoiceController(InvoiceService invoiceService, ItemService itemService, CustomerService customerService,
                            LedgerService ledgerService, DateTimeAgeService dateTimeAgeService,
                            DiscountRatioService discountRatioService,
-                           MakeAutoGenerateNumberService makeAutoGenerateNumberService) {
+                           MakeAutoGenerateNumberService makeAutoGenerateNumberService,
+                           InvoiceLedgerService invoiceLedgerService) {
     this.invoiceService = invoiceService;
     this.itemService = itemService;
     this.customerService = customerService;
@@ -49,6 +52,7 @@ public class InvoiceController {
     this.dateTimeAgeService = dateTimeAgeService;
     this.discountRatioService = discountRatioService;
     this.makeAutoGenerateNumberService = makeAutoGenerateNumberService;
+    this.invoiceLedgerService = invoiceLedgerService;
   }
 
   @GetMapping
@@ -66,7 +70,8 @@ public class InvoiceController {
     model.addAttribute("invoices",
                        invoiceService.findByCreatedAtIsBetween(dateTimeAgeService.dateTimeToLocalDateStartInDay(twoDate.getStartDate()), dateTimeAgeService.dateTimeToLocalDateEndInDay(twoDate.getEndDate())));
     model.addAttribute("firstInvoiceMessage", true);
-    model.addAttribute("message", "This view is belongs to following date range start date "+twoDate.getStartDate() +" to "+ twoDate.getEndDate());
+    model.addAttribute("message",
+                       "This view is belongs to following date range start date " + twoDate.getStartDate() + " to " + twoDate.getEndDate());
     model.addAttribute("messageView", true);
     return "invoice/invoice";
   }
@@ -117,8 +122,11 @@ public class InvoiceController {
         invoice.setCode("CTSI" + makeAutoGenerateNumberService.numberAutoGen(previousCode).toString());
       }
     }
-    invoice.getInvoiceLedgers().forEach(x ->{x.setInvoice(invoice);
-    x.setLiveDead(LiveDead.ACTIVE);} );
+    invoice.getInvoiceLedgers().forEach(x -> {
+      x.setInvoice(invoice);
+      x.setLiveDead(LiveDead.ACTIVE);
+      x.setWarrantyNumber("CTSW" +makeAutoGenerateNumberService.numberAutoGen(invoiceLedgerService.findByLastInvoiceLedger().getWarrantyNumber().substring(4)));
+    });
 
     invoice.setInvoiceValidOrNot(InvoiceValidOrNot.VALID);
 
