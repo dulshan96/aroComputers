@@ -31,8 +31,8 @@ public class PurchaseOrderItem extends AuditEntity {
     @Column( nullable = false, precision = 10, scale = 2 )
     private BigDecimal lineTotal;
 
-    @Enumerated( EnumType.STRING)
-    private LiveDead liveDead;
+    /*@Enumerated( EnumType.STRING)
+    private LiveDead liveDead;*/
 
     @ManyToOne
     private PurchaseOrder purchaseOrder;

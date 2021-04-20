@@ -30,6 +30,7 @@ $(document).ready(function () {
     /* Patient and employee Nic Validation - start*/
     $("#nic").bind('keyup', function () {
         let nic = $(this).val();
+        //window.alert(nic);
         $("#dateOfBirth").val(calculateDateOfBirth(nic));
         //access our front-end gender*/
         $("input:radio[name=gender]").filter(`[value=${calculateGender(nic)}]`).prop('checked', true);
@@ -45,13 +46,87 @@ $(document).ready(function () {
 
 
 // regex
+let officeEmailRegex = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
+let addressRegex = /^[0-9a-zA-Z\s,-,/]+$/;
 let nicRegex = /^([0-9]{9}[|X|V]|[0-9]{12})$/;
 let mobileRegex = /^([0][7][\d]{8}$)|^([7][\d]{8})$/;
 let landRegex = /^0((11)|(2(1|[3-7]))|(3[1-8])|(4(1|5|7))|(5(1|2|4|5|7))|(6(3|[5-7]))|([8-9]1))([2-4]|5|7|9)[0-9]{6}$/;
-let nameRegex = /^[a-zA-Z .-]{3}[ a-zA-Z.-]+$/;
+let callingNameRegex = /^[A-Za-z\\s]+$/;
+let nameRegex = /^[a-zA-Z.-]{3}[ a-zA-Z.-]+$/;
 let numberRegex = /^([eE][hH][sS][\d]+)$/;
 let invoiceNumberRegex = /^[0-9]{10}$/;
+let roleNameRegex = /^[a-zA-Z.-]{3}[ a-zA-Z.-]+$/;
+let iNameRegex = /^[a-zA-Z0-9.-]{3}[ a-zA-Z0-9.-]+$/;
+let ropRegex = /^[0-9]+$/;
+let sellPriceRegex = /^[0-9.]+$/;
 
+//sellPrice validation
+$("#sellPrice").bind("keyup", function () {
+    let sellPrice = $(this).val();
+    if (sellPriceRegex.test(sellPrice)) {
+        backgroundColourChangeGood($(this));
+    } else {
+        backgroundColourChangeBad($(this));
+    }
+});
+
+//ROP validation
+$("#rop").bind("keyup", function () {
+    let rop = $(this).val();
+    if (ropRegex.test(rop)) {
+        backgroundColourChangeGood($(this));
+    } else {
+        backgroundColourChangeBad($(this));
+    }
+});
+
+//Role Name validation
+$("#iName").bind("keyup", function () {
+    let iName = $(this).val();
+    if (iNameRegex.test(iName)) {
+        backgroundColourChangeGood($(this));
+    } else if (iName.length === 0) {
+        backgroundColourChangeNothingToChange($(this));
+    } else {
+        backgroundColourChangeBad($(this));
+    }
+});
+
+//Role Name validation
+$("#roleName").bind("keyup", function () {
+    let name = $(this).val();
+    if (roleNameRegex.test(name)) {
+        backgroundColourChangeGood($(this));
+    } else if (name.length === 0) {
+        backgroundColourChangeNothingToChange($(this));
+    } else {
+        backgroundColourChangeBad($(this));
+    }
+});
+
+//Email validation
+$("#officeEmail").bind("keyup", function () {
+    let officeEmail = $(this).val();
+    if (officeEmailRegex.test(officeEmail)) {
+        backgroundColourChangeGood($(this));
+    } else if (officeEmail.length === 0) {
+        backgroundColourChangeNothingToChange($(this));
+    } else {
+        backgroundColourChangeBad($(this));
+    }
+});
+
+//Address validation
+$("#address").bind("keyup", function () {
+    let address = $(this).val();
+    if (addressRegex.test(address)) {
+        backgroundColourChangeGood($(this));
+    } else if (address.length === 0) {
+        backgroundColourChangeNothingToChange($(this));
+    } else {
+        backgroundColourChangeBad($(this));
+    }
+});
 
 //Nic - data of birth - start
 let dateLengthValidate = function (day) {
@@ -279,17 +354,21 @@ $("#name").bind("keyup", function () {
         backgroundColourChangeBad($(this));
     }
 });
+
+
+
 //calling Name validation
 $("#callingName").bind("keyup", function () {
-    let name = $(this).val();
-    if (nameRegex.test(name)) {
+    let callingname = $(this).val();
+    if (callingNameRegex.test(callingname)) {
         backgroundColourChangeGood($(this));
-    } else if (name.length === 0) {
+    } else if (callingname.length === 0) {
         backgroundColourChangeNothingToChange($(this));
     } else {
         backgroundColourChangeBad($(this));
     }
-});
+})
+
 //invoiceNumber validation
 $("#invoiceNumber").bind("keyup", function () {
     let invoiceNumber = $(this).val();

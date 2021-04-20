@@ -2,6 +2,7 @@ package lk.aro_computers.asset.invoice.controller;
 
 
 import lk.aro_computers.asset.common_asset.model.TwoDate;
+import lk.aro_computers.asset.common_asset.model.enums.LiveDead;
 import lk.aro_computers.asset.customer.service.CustomerService;
 import lk.aro_computers.asset.discount_ratio.service.DiscountRatioService;
 import lk.aro_computers.asset.invoice.entity.Invoice;
@@ -116,7 +117,8 @@ public class InvoiceController {
         invoice.setCode("CTSI" + makeAutoGenerateNumberService.numberAutoGen(previousCode).toString());
       }
     }
-    invoice.getInvoiceLedgers().forEach(x -> x.setInvoice(invoice));
+    invoice.getInvoiceLedgers().forEach(x ->{x.setInvoice(invoice);
+    x.setLiveDead(LiveDead.ACTIVE);} );
 
     invoice.setInvoiceValidOrNot(InvoiceValidOrNot.VALID);
 

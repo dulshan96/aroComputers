@@ -71,7 +71,7 @@
                 </button>
             </div>
             <!--Error-->
-            <div class="form-row">
+            <div class="form-row text-danger " style="font-weight: bold">
                 <label id="errorLabel" data-th-if="${#fields.hasErrors('*')}" data-th-text="'Errors: '">Errors: </label>
                 <ul>
                     <li id="errorDisplay" data-th-each="err: ${#fields.errors('*')}" data-th-utext="${err}"

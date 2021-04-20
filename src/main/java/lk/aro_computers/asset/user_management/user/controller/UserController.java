@@ -1,6 +1,7 @@
 package lk.aro_computers.asset.user_management.user.controller;
 
 
+import lk.aro_computers.asset.category.entity.Category;
 import lk.aro_computers.asset.common_asset.model.enums.LiveDead;
 import lk.aro_computers.asset.employee.entity.Employee;
 import lk.aro_computers.asset.employee.entity.enums.Designation;
@@ -123,6 +124,18 @@ public class UserController {
       userService.persist(dbUser);
       return "redirect:/user";
     }
+
+    User username = null;
+
+    if ( user.getUsername() != null && user.getId() == null ) {
+      username = userService.findByUserName(user.getUsername());
+    }
+    if ( username != null ) {
+      ObjectError error = new ObjectError("username",
+              "Their is employee an same User name . System message ");
+      result.addError(error);
+    }
+
     if ( result.hasErrors() ) {
       System.out.println("result to string    " + result.toString());
       model.addAttribute("addStatus", false);

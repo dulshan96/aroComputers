@@ -102,6 +102,7 @@
                             </div>
                             <div class="col-md-8">
                                 <input id="callingName" data-th-field="*{callingName}" class="form-control" tabindex="5"
+                                       maxlength="15"
                                        type="text" minlength="4" required/>
                                 <span class="error" data-th-errors="*{callingName}"
                                       data-th-if="${#fields.hasErrors('callingName')}" id="callingNameError">Error Calling Name</span>
@@ -220,8 +221,8 @@
                                 <label class="control-label" for="address">Address :</label>
                             </div>
                             <div class="col-md-8">
-                            <textarea id="address" data-th-field="*{address}" class="form-control" tabindex="12"
-                                      required></textarea>
+                            <input id="address"  data-th-field="*{address}" class="form-control" tabindex="12"
+                                      required/>
                                 <span class="error" data-th-errors="*{address}"
                                       data-th-if="${#fields.hasErrors('address')}"
                                       id="addressError">Error Address</span>
@@ -235,7 +236,7 @@
                             <div class="col-md-8">
                                 <input id="mobileOne" data-th-field="*{mobileOne}" class="form-control mobile"
                                        tabindex="13"
-                                       type="number"
+                                       type="text"
                                        maxlength="10" min="9"
                                        required/>
                                 <span class="error" data-th-errors="*{mobileOne}"
@@ -249,7 +250,7 @@
                                 <label class="control-label" for="mobileTwo">Mobile Two No :</label>
                             </div>
                             <div class="col-md-8">
-                                <input id="mobileTwo" data-th-field="*{mobileTwo}" class="form-control mobile"
+                                <input id="mobileTwo"  data-th-field="*{mobileTwo}" class="form-control mobile"
                                        tabindex="14"
                                        type="number"
                                        maxlength="10" min="9"/>
@@ -301,7 +302,7 @@
                             </div>
                         </div>
                         <!--Employee status-->
-                        <div class="form-row text-right">
+                        <div class="form-row text-right" data-th-if="${addStatus==false}" >
                             <div class="col-md-4">
                                 <label class="control-label" for="employeeStatus">Employee Status :</label>
                             </div>
@@ -355,7 +356,7 @@
                             </button>
                         </div>
                     </div>
-                    <div class="form-row">
+                    <div class="form-row text-danger">
                         <label id="errorLabel" data-th-if="${#fields.hasErrors('*')}"
                                data-th-text="'Errors: '">Errors: </label>
                         <ul>
@@ -419,7 +420,7 @@
         }
     }
 
-    //input type date can not be selected future date
+    //input type date cannot be selected future date
     $('[type="date"]').prop('max', function () {
         return new Date().toJSON().split('T')[0];
     });

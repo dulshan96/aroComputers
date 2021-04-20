@@ -439,14 +439,15 @@
         $("#sellPriceModal").val(resp.sellPrice);
         $(".popup-overlay, .popup-content").addClass("active");
         addButtonDisable();
-
-        if (resp.mainCategory === "MOBILE_PHONE") {
+        $("#warrantyBlock").show();
+        totalPriceCard();
+        /*if (resp.mainCategory === "MOBILE_PHONE") {
             $("#requestCount").val(1).prop("disabled", true);
             $("#warrantyBlock").show();
             totalPriceCard();
         } else {
             $("#warrantyBlock").hide();
-        }
+        }*/
     }
 
     function addButtonDisable() {

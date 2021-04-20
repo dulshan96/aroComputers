@@ -1,6 +1,7 @@
 package lk.aro_computers.asset.user_management.user.dao;
 
 
+import lk.aro_computers.asset.category.entity.Category;
 import lk.aro_computers.asset.common_asset.model.enums.LiveDead;
 import lk.aro_computers.asset.employee.entity.Employee;
 import lk.aro_computers.asset.user_management.user.entity.User;
@@ -20,10 +21,14 @@ public interface UserDao extends JpaRepository< User, Integer > {
     @Query( "select id from User where username=?1" )
     Integer findUserIdByUserName(String userName);
 
-    User findByUsername(String name);
+
+
+    User findByUsername(String username);
 
     User findByEmployee(Employee employee);
 
     List<User> findByLiveDead(LiveDead live_dead);
+
+
 
    }

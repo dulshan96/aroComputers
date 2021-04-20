@@ -31,7 +31,7 @@ import java.util.List;
 @JsonFilter("Item")
 public class Item extends AuditEntity {
 
-    @Size( min = 5, message = "Your name cannot be accepted" )
+    @Size( min = 3, message = "Item name cannot be accepted. required more than 3 characters" )
     private String name;
 
     @NotEmpty

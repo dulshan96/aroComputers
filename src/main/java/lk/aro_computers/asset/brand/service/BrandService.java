@@ -4,9 +4,11 @@ package lk.aro_computers.asset.brand.service;
 
 import lk.aro_computers.asset.brand.dao.BrandDao;
 import lk.aro_computers.asset.brand.entity.Brand;
+import lk.aro_computers.asset.category.entity.Category;
 import lk.aro_computers.util.interfaces.AbstractService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.stereotype.Service;
@@ -53,5 +55,11 @@ public class BrandService implements AbstractService<Brand, Integer> {
                 .withStringMatcher(ExampleMatcher.StringMatcher.CONTAINING);
         Example<Brand> brandExample = Example.of(brand, matcher);
         return brandDao.findAll(brandExample);
+    }
+
+    @Cacheable
+    public Brand findByName(String name) {
+        return brandDao.findByName(name);
+
     }
 }

@@ -3,6 +3,7 @@ package lk.aro_computers.asset.item.service;
 import lk.aro_computers.asset.common_asset.model.enums.LiveDead;
 import lk.aro_computers.asset.item.dao.ItemDao;
 import lk.aro_computers.asset.item.entity.Item;
+import lk.aro_computers.asset.item.entity.enums.ItemStatus;
 import lk.aro_computers.util.interfaces.AbstractService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheConfig;
@@ -35,6 +36,7 @@ public class ItemService implements AbstractService<Item, Integer> {
 
     public Item persist(Item item) {
         if(item.getId()==null){
+            item.setItemStatus(ItemStatus.JUSTENTERED);
             item.setLiveDead(LiveDead.ACTIVE);}
         return itemDao.save(item);
     }
