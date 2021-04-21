@@ -134,14 +134,17 @@
             message += $(this).text();
         });
         console.log(message)
-        setTimeout(function () {
-            swal({
-                title: "System Errors  ",
-                icon: "warning",
-                text: message,
-            });
-        }, 1000);
 
+      if(message){
+
+        setTimeout(function () {
+          swal({
+            title: "System Errors  ",
+            icon: "warning",
+            text: message,
+          });
+        }, 1000);
+      }
     })
 
 

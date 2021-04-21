@@ -57,7 +57,7 @@ public class ProfileController {
             return "redirect:/home";
 
         }
-        redirectAttributes.addFlashAttribute("message", "Failed");
+        redirectAttributes.addFlashAttribute("message", "Given password is not match to previous password!!");
         redirectAttributes.addFlashAttribute("alertClass", "alert-danger");
         return "redirect:/passwordChange";
 

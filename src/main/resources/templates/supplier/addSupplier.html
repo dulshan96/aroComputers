@@ -84,27 +84,15 @@
                             </div>
                             <div class="col-md-8">
                                 <input id="brn" data-th-field="*{brn}" class="form-control" tabindex="4" type="text"
-                                       required/>
+                                />
                                 <span id="brnError" data-th-errors="*{brn}"
                                       data-th-if="${#fields.hasErrors('brn')}" class="error">Error Name</span>
                             </div>
                         </div>
-                        <!--Mobile Number -->
+                        <!--Company hotline -->
                         <div class="form-row text-right">
                             <div class="col-md-4">
-                                <label class="control-label" for="contactOne">Mobile No :</label>
-                            </div>
-                            <div class="col-md-8">
-                                <input id="contactOne" data-th-field="*{contactOne}" class="form-control mobile"
-                                       tabindex="5" type="number" maxlength="10" min="9" required/>
-                                <span class="error" data-th-errors="*{contactOne}"
-                                      data-th-if="${#fields.hasErrors('contactOne')}" id="mobileOneError">Error Mobile Number</span>
-                            </div>
-                        </div>
-                        <!--Lan Number -->
-                        <div class="form-row text-right">
-                            <div class="col-md-4">
-                                <label class="control-label" for="contactTwo">Landline No :</label>
+                                <label class="control-label" for="contactTwo">Company Hotline :</label>
                             </div>
                             <div class="col-md-8">
                                 <input id="contactTwo" data-th-field="*{contactTwo}" class="form-control mobile"
@@ -113,13 +101,40 @@
                                       data-th-if="${#fields.hasErrors('contactTwo')}" id="mobileTwoError">Error Mobile Number</span>
                             </div>
                         </div>
+
+                        <!--Supplier Name-->
+                        <div class="form-row text-right">
+                            <div class="col-md-4">
+                                <label class="control-label" for="suppliername">Supplier Name :</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input id="suppliername" data-th-field="*{suppliername}" class="form-control" tabindex="3" type="text"
+                                       required/>
+                                <span id="suppliernameError" data-th-errors="*{suppliername}"
+                                      data-th-if="${#fields.hasErrors('suppliername')}" class="error">Error Suppliername</span>
+                            </div>
+                        </div>
+
+                        <!--Mobile Number supplier -->
+                        <div class="form-row text-right">
+                            <div class="col-md-4">
+                                <label class="control-label" for="contactOne">Mobile No (Supplier) :</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input id="contactOne" data-th-field="*{contactOne}" class="form-control mobile"
+                                       tabindex="5" type="number" maxlength="10" min="9" required/>
+                                <span class="error" data-th-errors="*{contactOne}"
+                                      data-th-if="${#fields.hasErrors('contactOne')}" id="mobileOneError">Error Mobile Number</span>
+                            </div>
+                        </div>
+
                     </div>
                     <!--Right Side-->
                     <div class="form-group col-md-6 col-sm-6 text-right flex-column">
-                        <!--Email-->
+                        <!--Company Email-->
                         <div class="form-row text-right">
                             <div class="col-md-4">
-                                <label class="control-label" for="email">Email :</label>
+                                <label class="control-label" for="email">Company Email :</label>
                             </div>
                             <div class="col-md-8">
                                 <input id="email" data-th-field="*{email}" class="form-control" tabindex="7"
@@ -128,10 +143,10 @@
                                       data-th-if="${#fields.hasErrors('email')}" id="emailError">Error Email</span>
                             </div>
                         </div>
-                        <!--Address-->
+                        <!--Company Address-->
                         <div class="form-row text-right">
                             <div class="col-md-4">
-                                <label class="control-label" for="address">Address :</label>
+                                <label class="control-label" for="address">Company Address :</label>
                             </div>
                             <div class="col-md-8">
                                 <textarea id="address" data-th-field="*{address}" class="form-control" tabindex="8"
@@ -182,7 +197,7 @@
                         </button>
                     </div>
                     <!--Error-->
-                    <div class="form-row">
+                    <div class="form-row text-danger" style="font-weight: bolder">
                         <label id="errorLabel" data-th-if="${#fields.hasErrors('*')}"
                                data-th-text="'Errors: '">Errors: </label>
                         <ul>

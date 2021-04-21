@@ -47,12 +47,14 @@ $(document).ready(function () {
 
 // regex
 let officeEmailRegex = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
+let emailRegex = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
 let addressRegex = /^[0-9a-zA-Z\s,-,/]+$/;
 let nicRegex = /^([0-9]{9}[|X|V]|[0-9]{12})$/;
 let mobileRegex = /^([0][7][\d]{8}$)|^([7][\d]{8})$/;
 let landRegex = /^0((11)|(2(1|[3-7]))|(3[1-8])|(4(1|5|7))|(5(1|2|4|5|7))|(6(3|[5-7]))|([8-9]1))([2-4]|5|7|9)[0-9]{6}$/;
 let callingNameRegex = /^[A-Za-z\\s]+$/;
 let nameRegex = /^[a-zA-Z.-]{3}[ a-zA-Z.-]+$/;
+let suppliernameRegex = /^[a-zA-Z.-]{3}[ a-zA-Z.-]+$/;
 let numberRegex = /^([eE][hH][sS][\d]+)$/;
 let invoiceNumberRegex = /^[0-9]{10}$/;
 let roleNameRegex = /^[a-zA-Z.-]{3}[ a-zA-Z.-]+$/;
@@ -110,6 +112,18 @@ $("#officeEmail").bind("keyup", function () {
     if (officeEmailRegex.test(officeEmail)) {
         backgroundColourChangeGood($(this));
     } else if (officeEmail.length === 0) {
+        backgroundColourChangeNothingToChange($(this));
+    } else {
+        backgroundColourChangeBad($(this));
+    }
+});
+
+//Supplier Email validation
+$("#email").bind("keyup", function () {
+    let email = $(this).val();
+    if (emailRegex.test(email)) {
+        backgroundColourChangeGood($(this));
+    } else if (email.length === 0) {
         backgroundColourChangeNothingToChange($(this));
     } else {
         backgroundColourChangeBad($(this));
@@ -349,6 +363,18 @@ $("#name").bind("keyup", function () {
     if (nameRegex.test(name)) {
         backgroundColourChangeGood($(this));
     } else if (name.length === 0) {
+        backgroundColourChangeNothingToChange($(this));
+    } else {
+        backgroundColourChangeBad($(this));
+    }
+});
+
+//Suppliername validation
+$("#suppliername").bind("keyup", function () {
+    let suppliername = $(this).val();
+    if (suppliernameRegex.test(suppliername)) {
+        backgroundColourChangeGood($(this));
+    } else if (suppliername.length === 0) {
         backgroundColourChangeNothingToChange($(this));
     } else {
         backgroundColourChangeBad($(this));
