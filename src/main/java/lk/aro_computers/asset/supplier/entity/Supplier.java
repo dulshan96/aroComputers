@@ -27,7 +27,7 @@ public class Supplier extends AuditEntity {
     @Column( unique = true )
     private String name;
 
-    @Size( min = 5, message = "Your Company name cannot be accepted" )
+    @Size( min = 5, message = "Your Supplier name cannot be accepted" )
     private String suppliername;
 
     @Column( nullable = false, unique = true )

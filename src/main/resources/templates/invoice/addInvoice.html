@@ -466,12 +466,12 @@
         receivedLedgerItem.quantity = $("#abQuantity").val();
         receivedLedgerItem.sellPrice = $("#sellPriceModal").val();
         receivedLedgerItem.requestCount = $("#requestCount").val();
-        let warrantyNumber = $("#warrantyNumber").val();
+       /* let warrantyNumber = $("#warrantyNumber").val();
         if (warrantyNumber.length !== 0) {
             receivedLedgerItem.warrantyNumber = warrantyNumber;
         } else {
             receivedLedgerItem.warrantyNumber = "No warranty";
-        }
+        }*/
         receivedLedgerItem.totalModal = $("#totalModal").val();// to need to add
         selectedInvoiceLedger.push(receivedLedgerItem);
         $(".popup-overlay, .popup-content").removeClass("active");
