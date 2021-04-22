@@ -48,9 +48,10 @@ $(document).ready(function () {
 // regex
 let officeEmailRegex = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
 let emailRegex = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
-let addressRegex = /^[0-9a-zA-Z\s,-,/]+$/;
+let addressRegex = /^[0-9a-zA-Z\s,-,./]+$/;
 let nicRegex = /^([0-9]{9}[|X|V]|[0-9]{12})$/;
 let mobileRegex = /^([0][7][\d]{8}$)|^([7][\d]{8})$/;
+let contactTwo = /^([0][7][\d]{8}$)|^([7][\d]{8})$/;
 let landRegex = /^0((11)|(2(1|[3-7]))|(3[1-8])|(4(1|5|7))|(5(1|2|4|5|7))|(6(3|[5-7]))|([8-9]1))([2-4]|5|7|9)[0-9]{6}$/;
 let callingNameRegex = /^[A-Za-z\\s]+$/;
 let nameRegex = /^[a-zA-Z.-]{3}[ a-zA-Z.-]+$/;
@@ -82,7 +83,7 @@ $("#rop").bind("keyup", function () {
     }
 });
 
-//Role Name validation
+//Iname Name validation
 $("#iName").bind("keyup", function () {
     let iName = $(this).val();
     if (iNameRegex.test(iName)) {
@@ -369,12 +370,23 @@ $("#name").bind("keyup", function () {
     }
 });
 
-//Suppliername validation
+//Supplier name validation
 $("#suppliername").bind("keyup", function () {
     let suppliername = $(this).val();
     if (suppliernameRegex.test(suppliername)) {
         backgroundColourChangeGood($(this));
     } else if (suppliername.length === 0) {
+        backgroundColourChangeNothingToChange($(this));
+    } else {
+        backgroundColourChangeBad($(this));
+    }
+});
+//Supplier name validation
+$("#contactTwo").bind("keyup", function () {
+    let contactTwo = $(this).val();
+    if (landRegex.test(contactTwo)) {
+        backgroundColourChangeGood($(this));
+    } else if (contactTwo.length === 0) {
         backgroundColourChangeNothingToChange($(this));
     } else {
         backgroundColourChangeBad($(this));

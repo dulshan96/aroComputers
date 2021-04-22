@@ -213,6 +213,57 @@
 <div data-th-replace="~{fragments/footer :: footerFragment}"></div>
 <!--script include-->
 <div data-th-replace="~{fragments/script :: scriptFragment}"></div>
+<script>
+    $('#form').submit(function(e) {
+        e.preventDefault();
 
+        var confirmmassage =
+
+            "Company Name "+document.getElementById("name").value+
+            "\nBRN  : " + document.getElementById("brn").value  +
+            "\nSupplier Name : " + document.getElementById("suppliername").value+
+            "\nMobile (Supplier) : " + document.getElementById("contactOne").value+
+            "\nCompany Hotline : " + document.getElementById("contactTwo").value+
+            "\nCompany Email : " + document.getElementById("email").value+
+            "\nCompany Address : " + document.getElementById("address").value;
+
+        swal({
+            title: "Are you sure?",
+            text: confirmmassage,
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+
+                    swal("Processing.................");
+                    document.getElementById('form').submit();
+
+                } else {
+                    swal("Your imaginary file is safe!");
+                }
+            });
+
+    });
+
+    $(document).ready(function () {
+            let message = '';
+            $('.error').each(function (index) {
+                message += $(this).text();
+            });
+
+            if (message) {
+                setTimeout(function () {
+                    swal({
+                        title: "System Errors  ",
+                        icon: "warning",
+                        text: message,
+                    });
+                }, 500);
+            }
+        }
+    );
+</script>
 </body>
 </html>

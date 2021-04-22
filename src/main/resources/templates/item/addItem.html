@@ -303,6 +303,63 @@
     }
 
 
+
+
+    $('#form').submit(function(e) {
+      e.preventDefault();
+
+      let subCategory = $("#subCategory option:selected").text();
+      let brand = $("#brand option:selected").text();
+
+      var confirmmassage =
+
+              " Main Category "+document.getElementById("mainCategory").value+
+              "\nSub Category  : "+document.getElementById("subCategory").value+
+              "\nBrand: "+document.getElementById("brand").value+
+              "\nItem Color : " + document.getElementById("itemColor").value+
+              "\nItem Name : " + document.getElementById("name").value+
+              "\nReorder Point : " + document.getElementById("rop").value+
+              "\nSell Price : " + document.getElementById("sellPrice").value;
+
+      swal({
+        title: "Are you sure?",
+        text: confirmmassage,
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
+              .then((willDelete) => {
+                if (willDelete) {
+
+                  swal("Processing.................");
+                  document.getElementById('form').submit();
+
+                } else {
+                  swal("You cancel the submission!");
+                }
+              });
+
+    });
+
+    $(document).ready(function () {
+              let message = '';
+              $('.error').each(function (index) {
+                message += $(this).text();
+              });
+
+              if (message) {
+                setTimeout(function () {
+                  swal({
+                    title: "System Errors  ",
+                    icon: "warning",
+                    text: message,
+                  });
+                }, 500);
+              }
+            }
+    );
+
+
 </script >
 </body >
 </html >
