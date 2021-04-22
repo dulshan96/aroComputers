@@ -97,7 +97,7 @@ public class InvoiceService implements AbstractService< Invoice, Integer > {
     paragraph.setSpacingAfter(10);
     document.add(paragraph);
 
-//customer details and invoice main details
+    //customer details and invoice main details
     float[] columnWidths = {200f, 200f};//column amount{column 1 , column 2 }
     PdfPTable mainTable = new PdfPTable(columnWidths);
     // add cell to table
@@ -124,7 +124,7 @@ public class InvoiceService implements AbstractService< Invoice, Integer > {
 
     Rectangle page = document.getPageSize();
 
-    PdfPTable ledgerItemDisplay = new PdfPTable(6);//column amount
+    PdfPTable ledgerItemDisplay = new PdfPTable(7);//column amount
     ledgerItemDisplay.setWidthPercentage(100);
     ledgerItemDisplay.setSpacingBefore(10f);
     ledgerItemDisplay.setSpacingAfter(10);
@@ -150,7 +150,9 @@ public class InvoiceService implements AbstractService< Invoice, Integer > {
     pdfCellHeaderCommonStyle(quantityHeader);
     ledgerItemDisplay.addCell(quantityHeader);
 
-
+    PdfPCell warrantyNumberHeader = new PdfPCell(new Paragraph("WarrantyNumber", tableHeaderOnly));
+    pdfCellHeaderCommonStyle(warrantyNumberHeader);
+    ledgerItemDisplay.addCell(warrantyNumberHeader);
 
     PdfPCell warrantyPeriodHeader = new PdfPCell(new Paragraph("warrantyPeriod", tableHeaderOnly));
     pdfCellHeaderCommonStyle(warrantyPeriodHeader);
@@ -180,7 +182,9 @@ public class InvoiceService implements AbstractService< Invoice, Integer > {
       pdfCellBodyCommonStyle(quantity);
       ledgerItemDisplay.addCell(quantity);
 
-
+      PdfPCell warrantyNumber = new PdfPCell(new Paragraph(invoice.getInvoiceLedgers().get(i).getWarrantyNumber(), tableHeader));
+      pdfCellBodyCommonStyle(warrantyNumber);
+      ledgerItemDisplay.addCell(warrantyNumber);
 
       PdfPCell warrantyPeriod = new PdfPCell(new Paragraph(invoice.getInvoiceLedgers().get(i).getLedger().getItem().getWarrantyPeriod().getWarrantyPeriod(), tableHeader));
       pdfCellBodyCommonStyle(warrantyPeriod);

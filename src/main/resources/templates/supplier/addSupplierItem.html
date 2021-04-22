@@ -66,6 +66,7 @@
                 <div data-th-replace="~{supplier/supplier :: supplierFragment}"></div>
             </div>
             <!--Supplier List Show - end-->
+
             <!--Supplier Item add- start-->
             <div class="col-12 flex-column" data-th-if="${supplierDetailShow==false}">
                 <a href="#hrefCollapse" class="btn btn-primary col-12 mb-5" data-toggle="collapse" aria-expanded="false"
@@ -85,7 +86,7 @@
                                 <option value="" selected> Please Select</option>
                                 <option data-th-each="item : ${items}"
                                         data-th-value="${item.id}"
-                                        data-th-text="${item.name}"> Please Select
+                                        data-th-text="${item.name}+' - '+${'  Sell Price : ' +item.sellPrice}"> Please Select
                                 </option>
                             </select>
                         </div>

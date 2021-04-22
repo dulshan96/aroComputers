@@ -666,3 +666,4 @@ function confirmDelete(obj) {
 $(".btn-warning").on('click', function () {
     location.reload();
 });
+

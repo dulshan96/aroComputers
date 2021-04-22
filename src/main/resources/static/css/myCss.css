@@ -362,3 +362,9 @@ input:focus {
 
 
 }
+
+.requiredfield{
+    color: #FF0000;
+    font-size:18px;
+
+}
