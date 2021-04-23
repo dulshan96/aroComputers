@@ -67,7 +67,7 @@
                         </div>
                         <!--Company Name-->
                         <div class="form-row text-right">
-                            <div class="col-md-4">
+                            <div class="col-md-4"><span class="requiredfield">*</span>
                                 <label class="control-label" for="name">Company Name :</label>
                             </div>
                             <div class="col-md-8">
@@ -91,12 +91,12 @@
                         </div>
                         <!--Company hotline -->
                         <div class="form-row text-right">
-                            <div class="col-md-4">
+                            <div class="col-md-4"><span class="requiredfield">*</span>
                                 <label class="control-label" for="contactTwo">Company Hotline :</label>
                             </div>
                             <div class="col-md-8">
                                     <input id="contactTwo" data-th-field="*{contactTwo}" class="form-control mobile"
-                                       tabindex="3" type="text" maxlength="10" min="9"/>
+                                       tabindex="3" type="text" maxlength="10" min="9" required/>
                                 <span class="error" data-th-errors="*{contactTwo}"
                                       data-th-if="${#fields.hasErrors('contactTwo')}" id="mobileTwoError">Error Mobile Number</span>
                             </div>
@@ -104,7 +104,7 @@
 
                         <!--Supplier Name-->
                         <div class="form-row text-right">
-                            <div class="col-md-4">
+                            <div class="col-md-4"><span class="requiredfield">*</span>
                                 <label class="control-label" for="suppliername">Supplier Name :</label>
                             </div>
                             <div class="col-md-8">
@@ -117,7 +117,7 @@
 
                         <!--Mobile Number supplier -->
                         <div class="form-row text-right">
-                            <div class="col-md-4">
+                            <div class="col-md-4"><span class="requiredfield">*</span>
                                 <label class="control-label" for="contactOne">Mobile No (Supplier) :</label>
                             </div>
                             <div class="col-md-8">
@@ -133,7 +133,7 @@
                     <div class="form-group col-md-6 col-sm-6 text-right flex-column">
                         <!--Company Email-->
                         <div class="form-row text-right">
-                            <div class="col-md-4">
+                            <div class="col-md-4"><span class="requiredfield">*</span>
                                 <label class="control-label" for="email">Company Email :</label>
                             </div>
                             <div class="col-md-8">
@@ -145,7 +145,7 @@
                         </div>
                         <!--Company Address-->
                         <div class="form-row text-right">
-                            <div class="col-md-4">
+                            <div class="col-md-4"><span class="requiredfield">*</span>
                                 <label class="control-label" for="address">Company Address :</label>
                             </div>
                             <div class="col-md-8">

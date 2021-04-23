@@ -99,7 +99,7 @@
                     <form action="/invoice" method="post" data-th-object="${invoice}">
                         <!--customer list-->
                         <div class="form-group row">
-                            <div class="col-2 text-right">
+                            <div class="col-2 text-right"><span class="requiredfield">*</span>
                                 <label class="control-label" for="customer">Select Customer :</label>
                             </div>
                             <div class="col-6">
@@ -121,7 +121,7 @@
                         <hr>
                         <!--ledgers will list-->
                         <div class="form-group row">
-                            <div class="col-2 text-right">
+                            <div class="col-2 text-right"><span class="requiredfield">*</span>
                                 <label class="control-label" for="item">Select Items :</label>
                             </div>
                             <div class="col-6">
@@ -162,7 +162,7 @@
                                     <td colspan="4" class="text-right"><label for="total">Total</label></td>
                                     <td><input id="total" type="text" class="form-control form-control-sm"
                                                name="totalPrice"
-                                               placeholder="Total Price">
+                                               placeholder="Total Price" readonly>
                                     </td>
                                 </tr>
                                 </tfoot>
@@ -176,7 +176,7 @@
                                 <!--payment method-->
                                 <div class="col-md-6 ">
                                     <div class="form-row text-right">
-                                        <div class="col-md-4">
+                                        <div class="col-md-4"><span class="requiredfield">*</span>
                                             <label class="control-label" data-th-for="${paymentMethod}">Payment
                                                 Method:</label>
                                         </div>
@@ -199,7 +199,7 @@
                                 <!--Discount-->
                                 <div class="col-md-6 ">
                                     <div class="form-row text-right">
-                                        <div class="col-md-4">
+                                        <div class="col-md-4"><span class="requiredfield">*</span>
                                             <label class="control-label" for="discountRatio">Discount Ratio :</label>
                                         </div>
                                         <div class="col-md-8">
@@ -258,7 +258,7 @@
                                 <!--Amount Tendered-->
                                 <div class="col-md-6 ">
                                     <div class="form-row text-right">
-                                        <div class="col-md-4">
+                                        <div class="col-md-4"><span class="requiredfield">*</span>
                                             <label class="control-label" for="amountTendered">Amount Tendered :</label>
                                         </div>
                                         <div class="col-md-8">
@@ -308,7 +308,7 @@
                                 <!--card number-->
                                 <div class="col-md-6 ">
                                     <div class="form-row text-right">
-                                        <div class="col-md-4">
+                                        <div class="col-md-4"><span class="requiredfield">*</span>
                                             <label class="control-label" for="cardNumber">Card Number :</label>
                                         </div>
                                         <div class="col-md-8">
@@ -330,7 +330,7 @@
                                 <div class="col-md-6">
                                     <!--invoice print or not-->
                                     <div class="form-row text-right">
-                                        <div class="col-md-4">
+                                        <div class="col-md-4"><span class="requiredfield">*</span>
                                             <label class="control-label" data-th-for="${invoicePrintOrNot}">Print the
                                                 Invoice :</label>
                                         </div>

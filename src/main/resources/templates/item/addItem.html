@@ -65,7 +65,7 @@
             </div >
             <!--Main Category -->
             <div class="form-row text-right" >
-              <div class="col-md-4" >
+              <div class="col-md-4" ><span class="requiredfield">*</span>
                 <label class="control-label" for="mainCategory" >Main Category :</label >
               </div >
               <div class="col-md-4" >
@@ -82,7 +82,7 @@
             </div >
             <!--Sub Category -->
             <div class="form-row text-right" >
-              <div class="col-md-4" >
+              <div class="col-md-4" ><span class="requiredfield">*</span>
                 <label class="control-label" for="subCategory" >Sub Category :</label >
               </div >
               <div class="col-md-4" >
@@ -94,7 +94,7 @@
             </div >
             <!--Brand -->
             <div class="form-row text-right" >
-              <div class="col-md-4" >
+              <div class="col-md-4" ><span class="requiredfield">*</span>
                 <label class="control-label" for="brand" >Brand :</label >
               </div >
               <div class="col-md-4" >
@@ -111,7 +111,7 @@
             </div >
             <!--Item Color -->
             <div class="form-row text-right" >
-              <div class="col-md-4" >
+              <div class="col-md-4" ><span class="requiredfield">*</span>
                 <label class="control-label" for="itemColor" >Color :</label >
               </div >
               <div class="col-md-4" >
@@ -128,7 +128,7 @@
             </div >
             <!--Warranty Period-->
             <div class="form-row text-right" >
-              <div class="col-md-4" >
+              <div class="col-md-4" ><span class="requiredfield">*</span>
                 <label class="control-label" for="warrantyPeriod" >Warranty Period :</label >
               </div >
               <div class="col-md-4" >
@@ -142,20 +142,22 @@
                   </option >
                 </select >
               </div >
-            </div > <!--Name-->
-            <div class="form-row text-right" data-th-action="${addStatus==true}" >
-              <div class="col-md-4" >
-                <label class="control-label" for="eName" >Name :</label >
+            </div >
+            <!--Model Name-->
+            <div class="form-row text-right"
+                 data-th-action="${addStatus==true}" >
+              <div class="col-md-4" ><span class="requiredfield">*</span>
+                <label class="control-label" for="eName" >Model Name :</label >
               </div >
               <div class="col-md-4" >
                 <input id="eName" class="form-control" tabindex="6" type="text"
                        required />
               </div >
             </div >
-            <!--Name-->
+            <!--Item Name-->
             <div class="form-row text-right" >
-              <div class="col-md-4" >
-                <label class="control-label" for="iName" >Enter Name :</label >
+              <div class="col-md-4" ><span class="requiredfield">*</span>
+                <label class="control-label" for="iName" >Item Name :</label >
               </div >
               <div class="col-md-4" >
                 <input id="name" data-th-field="*{name}" class="form-control" tabindex="6" type="text"
@@ -166,7 +168,7 @@
             </div >
             <!--ReOrder Point-->
             <div class="form-row text-right" >
-              <div class="col-md-4" >
+              <div class="col-md-4" ><span class="requiredfield">*</span>
                 <label class="control-label" for="rop" >Reorder Point :</label >
               </div >
               <div class="col-md-4" >
@@ -178,7 +180,7 @@
             </div >
             <!--Sell Price-->
             <div class="form-row text-right" >
-              <div class="col-md-4" >
+              <div class="col-md-4" ><span class="requiredfield">*</span>
                 <label class="control-label" for="sellPrice" >Sell Price :</label >
               </div >
               <div class="col-md-4" >

@@ -78,12 +78,12 @@
                 <form data-th-action="${'/supplierItem'}" method="POST" class="mb-5" data-th-object="${supplier}">
                     <input type="hidden" id="supplierId" data-th-value="${supplierDetail.id}">
                     <div class="form-row col-md-6" data-th-if="${supplierItemEdit==false}">
-                        <div class="col-md-4">
-                            <label class="control-label" for="item">Select Items:</label>
+                        <div class="col-md-4"><span class="requiredfield">*</span>
+                            <label class="control-label" for="item">Select Items: </label>
                         </div>
                         <div class="text-left col-md-8">
-                            <select class="form-control" id="item">
-                                <option value="" selected> Please Select</option>
+                            <select class="form-control" id="item" required>
+                                <option value="" selected> Please Select </option>
                                 <option data-th-each="item : ${items}"
                                         data-th-value="${item.id}"
                                         data-th-text="${item.name}+' - '+${'  Sell Price : ' +item.sellPrice}"> Please Select
