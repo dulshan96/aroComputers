@@ -60,21 +60,25 @@ public  class SupplierController implements AbstractController< Supplier, Intege
         Supplier name = null;
         Supplier email = null;
 
+        //name duplicate validation
+
         if ( supplier.getName() != null && supplier.getId() == null ) {
             name = supplierService.findByName(supplier.getName());
         }
         if ( name != null ) {
             ObjectError error = new ObjectError("supplier",
-                    "This Supplier is already registered . System message ");
+                    "This Company Name is already registered . System message ");
             bindingResult.addError(error);
         }
 
-        if ( supplier.getName() != null && supplier.getId() == null ) {
-            email = supplierService.findByName(supplier.getName());
+        //Email duplicate validation
+
+        if ( supplier.getEmail() != null && supplier.getId() == null ) {
+            email = supplierService.findByEmail(supplier.getEmail());
         }
         if ( email != null ) {
             ObjectError error = new ObjectError("supplier",
-                    "Their is supplier on same email . System message ");
+                    "Their is supplier on same Email . System message ");
             bindingResult.addError(error);
         }
 

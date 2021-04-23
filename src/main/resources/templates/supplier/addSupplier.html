@@ -71,7 +71,7 @@
                                 <label class="control-label" for="name">Company Name :</label>
                             </div>
                             <div class="col-md-8">
-                                <input id="name" data-th-field="*{name}" class="form-control" tabindex="3" type="text"
+                                <input id="name" data-th-field="*{name}" class="form-control" tabindex="1" type="text"
                                        required/>
                                 <span id="nameError" data-th-errors="*{name}"
                                       data-th-if="${#fields.hasErrors('name')}" class="error">Error Name</span>
@@ -83,7 +83,7 @@
                                 <label class="control-label" for="brn">BRN :</label>
                             </div>
                             <div class="col-md-8">
-                                <input id="brn" data-th-field="*{brn}" class="form-control" tabindex="4" type="text"
+                                <input id="brn" data-th-field="*{brn}" class="form-control" tabindex="2" type="text"
                                 />
                                 <span id="brnError" data-th-errors="*{brn}"
                                       data-th-if="${#fields.hasErrors('brn')}" class="error">Error Name</span>
@@ -96,7 +96,7 @@
                             </div>
                             <div class="col-md-8">
                                     <input id="contactTwo" data-th-field="*{contactTwo}" class="form-control mobile"
-                                       tabindex="6" type="text" maxlength="10" min="9"/>
+                                       tabindex="3" type="text" maxlength="10" min="9"/>
                                 <span class="error" data-th-errors="*{contactTwo}"
                                       data-th-if="${#fields.hasErrors('contactTwo')}" id="mobileTwoError">Error Mobile Number</span>
                             </div>
@@ -108,7 +108,7 @@
                                 <label class="control-label" for="suppliername">Supplier Name :</label>
                             </div>
                             <div class="col-md-8">
-                                <input id="suppliername" data-th-field="*{suppliername}" class="form-control" tabindex="3" type="text"
+                                <input id="suppliername" data-th-field="*{suppliername}" class="form-control" tabindex="4" type="text"
                                        required/>
                                 <span id="suppliernameError" data-th-errors="*{suppliername}"
                                       data-th-if="${#fields.hasErrors('suppliername')}" class="error">Error Suppliername</span>
@@ -137,7 +137,7 @@
                                 <label class="control-label" for="email">Company Email :</label>
                             </div>
                             <div class="col-md-8">
-                                <input id="email" data-th-field="*{email}" class="form-control" tabindex="7"
+                                <input id="email" data-th-field="*{email}" class="form-control" tabindex="6"
                                        type="email" required/>
                                 <span class="error" data-th-errors="*{email}"
                                       data-th-if="${#fields.hasErrors('email')}" id="emailError">Error Email</span>
@@ -149,7 +149,7 @@
                                 <label class="control-label" for="address">Company Address :</label>
                             </div>
                             <div class="col-md-8">
-                                <textarea id="address" data-th-field="*{address}" class="form-control" tabindex="8"
+                                <textarea id="address" data-th-field="*{address}" class="form-control" tabindex="7"
                                           rows="4" style="font-size: medium" required></textarea>
                                 <span class="error" data-th-errors="*{address}"
                                       data-th-if="${#fields.hasErrors('address')}"
@@ -197,7 +197,7 @@
                         </button>
                     </div>
                     <!--Error-->
-                    <div class="form-row text-danger" style="font-weight: bolder">
+                    <div class="form-row text-hide" style="font-weight: bolder">
                         <label id="errorLabel" data-th-if="${#fields.hasErrors('*')}"
                                data-th-text="'Errors: '">Errors: </label>
                         <ul>
