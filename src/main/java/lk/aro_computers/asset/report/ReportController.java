@@ -11,9 +11,12 @@ import lk.aro_computers.asset.invoice.service.InvoiceService;
 import lk.aro_computers.asset.invoice_ledger.entity.InvoiceLedger;
 import lk.aro_computers.asset.invoice_ledger.service.InvoiceLedgerService;
 import lk.aro_computers.asset.item.entity.Item;
+import lk.aro_computers.asset.item.service.ItemService;
 import lk.aro_computers.asset.ledger.entity.Ledger;
+import lk.aro_computers.asset.ledger.service.LedgerService;
 import lk.aro_computers.asset.payment.entity.Payment;
 import lk.aro_computers.asset.payment.service.PaymentService;
+import lk.aro_computers.asset.purchase_order_item.service.PurchaseOrderItemService;
 import lk.aro_computers.asset.report.model.ItemSellPriceQuantityBuyingPrice;
 import lk.aro_computers.asset.report.model.LedgerQuantitySellPrice;
 import lk.aro_computers.asset.user_management.user.service.UserService;
@@ -45,14 +48,20 @@ public class ReportController {
   private final DateTimeAgeService dateTimeAgeService;
   private final UserService userService;
   private final InvoiceLedgerService invoiceLedgerService;
+  private final LedgerService ledgerService;
+  private final ItemService itemService;
+  private final PurchaseOrderItemService purchaseOrderItemService;
 
-  public ReportController(PaymentService paymentService, InvoiceService invoiceService, OperatorService operatorService, DateTimeAgeService dateTimeAgeService, UserService userService, InvoiceLedgerService invoiceLedgerService) {
+  public ReportController(PaymentService paymentService, InvoiceService invoiceService, OperatorService operatorService, DateTimeAgeService dateTimeAgeService, UserService userService, InvoiceLedgerService invoiceLedgerService, LedgerService ledgerService, ItemService itemService, PurchaseOrderItemService purchaseOrderItemService) {
     this.paymentService = paymentService;
     this.invoiceService = invoiceService;
     this.operatorService = operatorService;
     this.dateTimeAgeService = dateTimeAgeService;
     this.userService = userService;
     this.invoiceLedgerService = invoiceLedgerService;
+    this.ledgerService = ledgerService;
+    this.itemService = itemService;
+    this.purchaseOrderItemService = purchaseOrderItemService;
   }
 
   private String commonAll(List< Payment > payments, List< Invoice > invoices, Model model, String message,
