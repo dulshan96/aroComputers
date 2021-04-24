@@ -82,11 +82,11 @@
                     <input data-th-name="${'supplier'}" data-th-value="${supplierDetail.id}" id="supplier"
                            type="hidden">
                     <div class="form-row col-md-6" data-th-if="${purchaseOrderItemEdit==false}">
-                        <div class="col-md-4">
+                        <div class="col-md-4"><span class="requiredfield">*</span>
                             <label class="control-label" for="item">Select Items:</label>
                         </div>
                         <div class="text-left col-md-8">
-                            <select class="form-control" id="item">
+                            <select class="form-control" id="item" required>
                                 <option selected value=""> Please Select</option>
                                 <option data-th-each="item : ${items}"
                                         data-th-text="${item.name}"
@@ -142,7 +142,7 @@
                         </table>
                     </div>
                     <div class="form-row col-md-6" data-th-if="${purchaseOrderItemEdit==false}">
-                        <div class="col-md-4">
+                        <div class="col-md-4"><span class="requiredfield">*</span>
                             <label class="control-label" for="priority">Select Priority:</label>
                         </div>
                         <div class="text-left col-md-8">

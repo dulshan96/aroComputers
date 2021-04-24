@@ -1,3 +1,4 @@
+
 /*login page start*/
 
 .login1 {
@@ -360,5 +361,12 @@ input:focus {
     margin-left: 50px;
     margin-right: 40px;
 
+
+}
+
+.requiredfield{
+    color: #FF0000;
+    font-size:18px;
+    font-weight: bolder;
 
 }

@@ -118,9 +118,9 @@ public class PurchaseOrderController {
                         .append(item.getName())
                         .append("\t\t\t\t\t")
                         .append(purchaseOrderItem.getQuantity())
-                        .append("\t\t\t\t\t")
+                        .append("\t\t\t")
                         .append(item.getSellPrice())
-                        .append("\t\t\t\t\t")
+                        .append("\t\t\t")
                         .append(purchaseOrderItem.getLineTotal())
                         .append("\n");
             }
@@ -130,7 +130,7 @@ public class PurchaseOrderController {
                 try {
                   String mobileNumber = purchaseOrderSaved.getSupplier().getContactOne().substring(1,10);
                     twilioMessageService.sendSMS("+94"+mobileNumber, "There is immediate PO from " +
-                            "Samarasingher Super \nPlease Check Your Email Form Further Details");
+                            "Aro Computers  \nPlease Check Your Email Form Further Details");
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

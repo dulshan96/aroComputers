@@ -1,400 +1,401 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <!--/* Styles, meta data, and title are included */-->
-<head data-th-replace="~{fragments/header :: headerFragment}" >
-  <meta charset="UTF-8" >
-  <title >Thymeleaf Springboot </title >
-</head >
-<body >
-<link data-th-href="@{/css/combo-box-search.css}" media="all" rel="stylesheet" type="text/css" />
-<link data-th-href="@{/css/modal.css}" media="all" rel="stylesheet" type="text/css" />
+<head data-th-replace="~{fragments/header :: headerFragment}">
+    <meta charset="UTF-8">
+    <title>Thymeleaf Springboot </title>
+</head>
+<body>
+<link data-th-href="@{/css/combo-box-search.css}" media="all" rel="stylesheet" type="text/css"/>
+<link data-th-href="@{/css/modal.css}" media="all" rel="stylesheet" type="text/css"/>
 <!--/* Nav bar is included */-->
-<nav data-th-replace="~{fragments/navBar :: navBarFragment}" ></nav >
+<nav data-th-replace="~{fragments/navBar :: navBarFragment}"></nav>
 
 
-<div id="add invoice" >
-  <main >
-    <div class="container-fluid" >
-      <div class="card  " >
-        <div class="card-body" >
+<div id="add invoice">
+    <main>
+        <div class="container-fluid">
+            <div class="card  ">
+                <div class="card-body">
 
-          <div class="container-fluid " >
-            <div class="row text-center   " >
-              <!--ViewList Button-->
-              <div class="col" >
-                <a href="/invoice" class="btn btn-dark" tabindex="1" >
-                  <i class="fa fa-file-invoice-dollar" ></i >&nbsp;&nbsp;View Invoice
-                </a >
-              </div >
-              <!--Form Name-->
-              <div class="col" >
-                <h2 class="text text-center" >
-                  <strong >
-                    New Invoice
-                    <!--<span data-th-text="${addStatus==true?'Add New Customer':'Update Customer Details'}"></span>-->
-                  </strong >
-                </h2 >
-              </div >
-              <!--Home Button-->
-              <div class="col" >
-                <!-- <a class="btn btn-success" href="/home" tabindex="2" >
-                   <i class="fa fa-home" style="font-size: 20px" ></i > &nbsp;&nbsp;Home
-                 </a >-->
-              </div >
-            </div >
-            <hr >
-          </div >
-          <!--Creates the popup body-->
-          <div class="popup-overlay" >
-            <!--Creates the popup content-->
-            <div class="popup-content col-md-6 col-sm-6 text-center flex-column" >
-              <div class="form-row" >
-                <!--item name-->
-                <div class="form-group col-md-6" >
-                  <label for="itemName" class="text-dark control-label" >Item Name :</label >
-                  <input id="itemName" class="form-control" type="text" readonly />
-                </div >
-                <!--Available Quantity-->
-                <div class="form-group col-md-6" >
-                  <label for="abQuantity" class="text-dark control-label" >Available Quantity :</label >
-                  <input id="abQuantity" class="form-control" type="text" readonly />
-                </div >
-              </div >
-              <div class="form-row" >
-                <!--Request count-->
-                <div class="form-group col-md-6" >
-                  <label for="sellPriceModal" class="text-dark control-label" >Sell Price :</label >
-                  <input id="sellPriceModal" class="form-control" type="number" step="0.01" readonly />
-                </div >
-                <!--warranty filed-->
-                <div class="form-group col-md-6" id="warrantyBlock" >
-                  <label for="warrantyNumber" class="text-dark control-label" >Warranty No:</label >
-                  <input id="warrantyNumber" class="form-control" type="number" />
-                </div >
-              </div >
-              <div class="form-row" >
-                <!--Expired date-->
-                <div class="form-group col-md-6" >
-                  <label for="requestCount" class="text-dark control-label" >Request Count :</label >
-                  <input id="requestCount" class="form-control" type="number" min="0" step="1" />
-                </div >
-                <!--Total -->
-                <div class="form-group col-md-6" >
-                  <label for="totalModal" class="text-dark control-label" >Total:</label >
-                  <input id="totalModal" class="form-control" type="number" step="0.01" readonly />
-                  <input id="ledgerId" class="form-control" type="hidden" hidden />
-                </div >
-              </div >
-              <!--button area-->
-              <div class="form-group col-md-12 col-sm-12 text-center flex-column " >
+                    <div class="container-fluid ">
+                        <div class="row text-center   ">
+                            <!--ViewList Button-->
+                            <div class="col">
+                                <a href="/invoice" class="btn btn-dark" tabindex="1">
+                                    <i class="fa fa-file-invoice-dollar"></i>&nbsp;&nbsp;View Invoice
+                                </a>
+                            </div>
+                            <!--Form Name-->
+                            <div class="col">
+                                <h2 class="text text-center">
+                                    <strong>
+                                        New Invoice
+                                        <!--<span data-th-text="${addStatus==true?'Add New Customer':'Update Customer Details'}"></span>-->
+                                    </strong>
+                                </h2>
+                            </div>
+                            <!--Home Button-->
+                            <div class="col">
+                                <!-- <a class="btn btn-success" href="/home" tabindex="2" >
+                                   <i class="fa fa-home" style="font-size: 20px" ></i > &nbsp;&nbsp;Home
+                                 </a >-->
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                    <!--Creates the popup body-->
+                    <div class="popup-overlay">
+                        <!--Creates the popup content-->
+                        <div class="popup-content col-md-6 col-sm-6 text-center flex-column">
+                            <div class="form-row">
+                                <!--item name-->
+                                <div class="form-group col-md-6">
+                                    <label for="itemName" class="text-dark control-label">Item Name :</label>
+                                    <input id="itemName" class="form-control" type="text" readonly/>
+                                </div>
+                                <!--Available Quantity-->
+                                <div class="form-group col-md-6">
+                                    <label for="abQuantity" class="text-dark control-label">Available Quantity :</label>
+                                    <input id="abQuantity" class="form-control" type="text" readonly/>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <!--Request count-->
+                                <div class="form-group col-md-6">
+                                    <label for="sellPriceModal" class="text-dark control-label">Sell Price :</label>
+                                    <input id="sellPriceModal" class="form-control" type="number" step="0.01" readonly/>
+                                </div>
+                                <!--warranty filed-->
+                                <div class="form-group col-md-6" id="warrantyBlock">
+                                    <label for="warrantyNumber" class="text-dark control-label">Warranty No:</label>
+                                    <input id="warrantyNumber" class="form-control" type="number"/>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <!--Request Count-->
+                                <div class="form-group col-md-6">
+                                    <label for="requestCount" class="text-dark control-label">Request Count :</label>
+                                    <input id="requestCount" class="form-control "
+                                           onkeyup=" if(requestCount.value<=0){ requestCount.value = '';}"                         type="number" min="1" step="1"/>
+                                </div>
+                                <!--Total -->
+                                <div class="form-group col-md-6">
+                                    <label for="totalModal" class="text-dark control-label">Total:</label>
+                                    <input id="totalModal" class="form-control" type="number" step="0.01" readonly/>
+                                    <input id="ledgerId" class="form-control" type="hidden" hidden/>
+                                </div>
+                            </div>
+                            <!--button area-->
+                            <div class="form-group col-md-12 col-sm-12 text-center flex-column ">
 
-                <button class="btn btn-success  btn-space" id="addModal" >Add</button >
-                <button class="btn btn-danger  btn-space" id="close" >Close</button >
+                                <button class="btn btn-success  btn-space" id="addModal">Add</button>
+                                <button class="btn btn-danger  btn-space" id="close">Close</button>
 
-              </div >
-            </div >
-          </div >
+                            </div>
+                        </div>
+                    </div>
 
-          <form action="/invoice" method="post" data-th-object="${invoice}" >
-            <!--customer list-->
-            <div class="form-group row" >
-              <div class="col-2 text-right" >
-                <label class="control-label" for="customer" >Select Customer :</label >
-              </div >
-              <div class="col-6" >
-                <select id="customer" data-th-field="*{customer}" class="form-control" tabindex="9"
-                        required >
-                  <option value="" >Please select</option >
-                  <option data-th-each="customer : ${customers}"
-                          data-th-text="${customer.name+'  '+customer.mobile}"
-                          data-th-value="${customer.id}" >
-                    Please select
-                  </option >
-                </select >
-              </div >
-              <div class="col-4" >
-                <a class="btn btn-sm btn-info float-left" href="/customer/add" >
-                  <i class="fa fa-user-plus" ></i > Add Customer</a >
-              </div >
-            </div >
-            <hr >
-            <!--ledgers will list-->
-            <div class="form-group row" >
-              <div class="col-2 text-right" >
-                <label class="control-label" for="item" >Select Items :</label >
-              </div >
-              <div class="col-6" >
-                <select id="item" class="form-control form-control-sm" tabindex="9" >
-                  <option value="" >Please select</option >
-                  <option data-th-each="ledger : ${ledgers}"
-                          data-th-text="${'Item Name: '+ledger.item.name+'  Sell Price : '+ledger.item.sellPrice+'  Available quantity : '+ledger.quantity+ ' Warranty period : '+ledger.item.warrantyPeriod.warrantyPeriod}"
-                          data-th-value="${ledger.id}" >Please select
-                  </option >
-                </select >
-              </div >
-              <div class="col-4" >
-                <a class="btn btn-sm btn-info float-left" href="/item/add" >
-                  <i class="fa fa-box" ></i > Add Item</a >
-              </div >
-            </div >
-            <!--selected ledger items-->
-            <div class="table-responsive-md text-center" >
-              <table class="table table-hover table-striped table-bordered table-sm" id="myTable" >
-                <thead class="thead-dark" >
-                <tr class="" >
-                  <th >Index</th >
-                  <th style="width: 170px" >Item Name</th >
-                  <th >Available Quantity</th >
-                  <th style="width: 150px" >Unit Price</th >
-                  <th >Quantity</th >
-                  <th >Line Total</th >
-                  <th >Modify</th >
-                </tr >
-                </thead >
-                <tbody class="table-primary" >
+                    <form action="/invoice" method="post" data-th-object="${invoice}">
+                        <!--customer list-->
+                        <div class="form-group row">
+                            <div class="col-2 text-right"><span class="requiredfield">*</span>
+                                <label class="control-label" for="customer">Select Customer :</label>
+                            </div>
+                            <div class="col-6">
+                                <select id="customer" data-th-field="*{customer}" class="form-control" tabindex="9"
+                                        required>
+                                    <option value="">Please select</option>
+                                    <option data-th-each="customer : ${customers}"
+                                            data-th-text="${customer.name+'  '+customer.mobile}"
+                                            data-th-value="${customer.id}">
+                                        Please select
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="col-4">
+                                <a class="btn btn-sm btn-info float-left" href="/customer/add">
+                                    <i class="fa fa-user-plus"></i> Add Customer</a>
+                            </div>
+                        </div>
+                        <hr>
+                        <!--ledgers will list-->
+                        <div class="form-group row">
+                            <div class="col-2 text-right"><span class="requiredfield">*</span>
+                                <label class="control-label" for="item">Select Items :</label>
+                            </div>
+                            <div class="col-6">
+                                <select id="item" class="form-control form-control-sm" tabindex="9">
+                                    <option value="">Please select</option>
+                                    <option data-th-each="ledger : ${ledgers}"
+                                            data-th-text="${'Item Name: '+ledger.item.name+'  Sell Price : '+ledger.item.sellPrice+'  Available quantity : '+ledger.quantity+ ' Warranty period : '+ledger.item.warrantyPeriod.warrantyPeriod}"
+                                            data-th-value="${ledger.id}">Please select
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="col-4">
+                                <a class="btn btn-sm btn-info float-left" href="/item/add">
+                                    <i class="fa fa-box"></i> Add Item</a>
+                            </div>
+                        </div>
+                        <!--selected ledger items-->
+                        <div class="table-responsive-md text-center">
+                            <table class="table table-hover table-striped table-bordered table-sm" id="myTable">
+                                <thead class="thead-dark">
+                                <tr class="">
+                                    <th>Index</th>
+                                    <th style="width: 170px">Item Name</th>
+                                    <th>Available Quantity</th>
+                                    <th style="width: 150px">Unit Price</th>
+                                    <th>Quantity</th>
+                                    <th>Line Total</th>
+                                    <th>Modify</th>
+                                </tr>
+                                </thead>
+                                <tbody class="table-primary">
 
-                </tbody >
-                <tfoot >
-                <tr class="table-danger" >
-                  <td ></td >
-                  <td ></td >
-                  <td colspan="4" class="text-right" ><label for="total" >Total</label ></td >
-                  <td ><input id="total" type="text" class="form-control form-control-sm"
-                              name="totalPrice"
-                              placeholder="Total Price" >
-                  </td >
-                </tr >
-                </tfoot >
-              </table >
-            </div >
-            <hr >
-            <!--Payment Section-->
-            <div class="form-group" >
-              <!--Payment method and total amount-->
-              <div class="form-row text-right" >
-                <!--payment method-->
-                <div class="col-md-6 " >
-                  <div class="form-row text-right" >
-                    <div class="col-md-4" >
-                      <label class="control-label" data-th-for="${paymentMethod}" >Payment
-                                                                                   Method:</label >
-                    </div >
-                    <div class="col-md-8 text-left" >
-                      <div class="custom-control custom-checkbox custom-control-inline "
-                           data-th-each="paymentMethod,index : ${paymentMethods}" >
-                        <input class="custom-control-input" required
-                               data-th-name="${'paymentMethod'}"
-                               data-th-value="${paymentMethod}"
-                               data-th-id="${index.index}+${paymentMethod}" type="radio"
-                        />
-                        <label class="custom-control-label"
-                               data-th-for="${index.index}+${paymentMethod}"
-                               data-th-text="${paymentMethod.paymentMethod}" > radio
-                        </label >
-                      </div >
-                    </div >
-                  </div >
-                </div >
-                <!--Discount-->
-                <div class="col-md-6 " >
-                  <div class="form-row text-right" >
-                    <div class="col-md-4" >
-                      <label class="control-label" for="discountRatio" >Discount Ratio :</label >
-                    </div >
-                    <div class="col-md-8" >
-                      <select id="discountRatio" data-th-field="*{discountRatio}"
-                              class="form-control"
-                              tabindex="9"
-                              required >
-                        <option value="" >Please select</option >
-                        <option data-th-each="discountRatio : ${discountRatios}"
-                                data-th-text="${discountRatio.amount}"
-                                data-th-value="${discountRatio.id}" >
-                          Please select
-                        </option >
-                      </select >
-                    </div >
-                  </div >
-                </div >
-              </div >
-              <div class="form-row" >
-                <!--Total Amount-->
-                <div class="col-md-6 " >
-                  <div class="form-row text-right" >
-                    <div class="col-md-4" >
-                      <label class="control-label" for="totalAmount" >Total Amount :</label >
-                    </div >
-                    <div class="col-md-8" >
-                      <input id="totalAmount" data-th-field="*{totalAmount}" class="form-control"
-                             tabindex="6"
-                             type="text"
-                             required readonly />
-                      <span class="error" id="totalAmountError" data-th-errors="*{balance}"
-                            data-th-if="${#fields.hasErrors('totalAmount')}" ></span >
-                    </div >
-                  </div >
-                </div >
-                <!--Discount Amount-->
-                <div class="col-md-6 " >
-                  <div class="form-row text-right" >
-                    <div class="col-md-4" >
-                      <label class="control-label" for="discountAmount" >Discount Amount :</label >
-                    </div >
-                    <div class="col-md-8" >
-                      <input id="discountAmount" data-th-field="*{discountAmount}"
-                             class="form-control" tabindex="6"
-                             type="text"
-                             required readonly />
-                      <span class="error" id="nicError" data-th-errors="*{discountAmount}"
-                            data-th-if="${#fields.hasErrors('discountAmount')}" >Error
-                                                                             Discount Amount</span >
-                    </div >
-                  </div >
-                </div >
-              </div >
-              <!--Amount tendered and balance  -->
-              <div class="form-row text-right" id="cashPaymentBlock" >
-                <!--Amount Tendered-->
-                <div class="col-md-6 " >
-                  <div class="form-row text-right" >
-                    <div class="col-md-4" >
-                      <label class="control-label" for="amountTendered" >Amount Tendered :</label >
-                    </div >
-                    <div class="col-md-8" >
-                      <input id="amountTendered" data-th-field="*{amountTendered}"
-                             class="form-control"
-                             tabindex="6" type="text"
-                             required />
-                      <span class="error" data-th-errors="*{amountTendered}"
-                            data-th-if="${#fields.hasErrors('amountTendered')}" ></span >
-                    </div >
-                  </div >
-                </div >
-                <!--Balance-->
-                <div class="col-md-6 " >
-                  <div class="form-row text-right" >
-                    <div class="col-md-4" >
-                      <label class="control-label" for="balance" >Balance :</label >
-                    </div >
-                    <div class="col-md-8" >
-                      <input id="balance" data-th-field="*{balance}" class="form-control"
-                             tabindex="6"
-                             type="text"
-                             required readonly />
-                      <span class="error" id="balanceError" data-th-errors="*{balance}"
-                            data-th-if="${#fields.hasErrors('balance')}" ></span >
-                    </div >
-                  </div >
-                </div >
-              </div >
-              <!-- Card Payment -> Bank and card Number -->
-              <div class="form-row text-right" id="bankNameBlock" >
-                <!--Bank -->
-                <div class="col-md-6 " >
-                  <div class="form-row text-right" >
-                    <div class="col-md-4" >
-                      <label class="control-label" for="bankName" >Bank Name Tendered :</label >
-                    </div >
-                    <div class="col-md-8" >
-                      <input id="bankName" data-th-field="*{bankName}"
-                             class="form-control"
-                             tabindex="6" type="text" />
-                      <span class="error" data-th-errors="*{bankName}"
-                            data-th-if="${#fields.hasErrors('bankName')}" ></span >
-                    </div >
-                  </div >
-                </div >
-                <!--card number-->
-                <div class="col-md-6 " >
-                  <div class="form-row text-right" >
-                    <div class="col-md-4" >
-                      <label class="control-label" for="cardNumber" >Card Number :</label >
-                    </div >
-                    <div class="col-md-8" >
-                      <input id="cardNumber" data-th-field="*{cardNumber}" class="form-control"
-                             tabindex="6"
-                             type="text" />
-                      <span class="error" data-th-errors="*{cardNumber}"
-                            data-th-if="${#fields.hasErrors('cardNumber')}" ></span >
-                    </div >
-                  </div >
-                </div >
-              </div >
-            </div >
-            <hr >
+                                </tbody>
+                                <tfoot>
+                                <tr class="table-danger">
+                                    <td></td>
+                                    <td></td>
+                                    <td colspan="4" class="text-right"><label for="total">Total</label></td>
+                                    <td><input id="total" type="text" class="form-control form-control-sm"
+                                               name="totalPrice"
+                                               placeholder="Total Price" readonly>
+                                    </td>
+                                </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                        <hr>
+                        <!--Payment Section-->
+                        <div class="form-group">
+                            <!--Payment method and total amount-->
+                            <div class="form-row text-right">
+                                <!--payment method-->
+                                <div class="col-md-6 ">
+                                    <div class="form-row text-right">
+                                        <div class="col-md-4"><span class="requiredfield">*</span>
+                                            <label class="control-label" data-th-for="${paymentMethod}">Payment
+                                                Method:</label>
+                                        </div>
+                                        <div class="col-md-8 text-left">
+                                            <div class="custom-control custom-checkbox custom-control-inline "
+                                                 data-th-each="paymentMethod,index : ${paymentMethods}">
+                                                <input class="custom-control-input" required
+                                                       data-th-name="${'paymentMethod'}"
+                                                       data-th-value="${paymentMethod}"
+                                                       data-th-id="${index.index}+${paymentMethod}" type="radio"
+                                                />
+                                                <label class="custom-control-label"
+                                                       data-th-for="${index.index}+${paymentMethod}"
+                                                       data-th-text="${paymentMethod.paymentMethod}"> radio
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Discount-->
+                                <div class="col-md-6 ">
+                                    <div class="form-row text-right">
+                                        <div class="col-md-4"><span class="requiredfield">*</span>
+                                            <label class="control-label" for="discountRatio">Discount Ratio :</label>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <select id="discountRatio" data-th-field="*{discountRatio}"
+                                                    class="form-control"
+                                                    tabindex="9"
+                                                    required>
+                                                <option value="">Please select</option>
+                                                <option data-th-each="discountRatio : ${discountRatios}"
+                                                        data-th-text="${discountRatio.amount}"
+                                                        data-th-value="${discountRatio.id}">
+                                                    Please select
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <!--Total Amount-->
+                                <div class="col-md-6 ">
+                                    <div class="form-row text-right">
+                                        <div class="col-md-4">
+                                            <label class="control-label" for="totalAmount">Total Amount :</label>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <input id="totalAmount" data-th-field="*{totalAmount}" class="form-control"
+                                                   tabindex="6"
+                                                   type="text"
+                                                   required readonly/>
+                                            <span class="error" id="totalAmountError" data-th-errors="*{balance}"
+                                                  data-th-if="${#fields.hasErrors('totalAmount')}"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Discount Amount-->
+                                <div class="col-md-6 ">
+                                    <div class="form-row text-right">
+                                        <div class="col-md-4">
+                                            <label class="control-label" for="discountAmount">Discount Amount :</label>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <input id="discountAmount" data-th-field="*{discountAmount}"
+                                                   class="form-control" tabindex="6"
+                                                   type="text"
+                                                   required readonly/>
+                                            <span class="error" id="nicError" data-th-errors="*{discountAmount}"
+                                                  data-th-if="${#fields.hasErrors('discountAmount')}">Error
+                                                                             Discount Amount</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Amount tendered and balance  -->
+                            <div class="form-row text-right" id="cashPaymentBlock">
+                                <!--Amount Tendered-->
+                                <div class="col-md-6 ">
+                                    <div class="form-row text-right">
+                                        <div class="col-md-4"><span class="requiredfield">*</span>
+                                            <label class="control-label" for="amountTendered">Amount Tendered :</label>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <input id="amountTendered" data-th-field="*{amountTendered}"
+                                                   class="form-control"
+                                                   tabindex="6" type="text"
+                                                   required/>
+                                            <span class="error" data-th-errors="*{amountTendered}"
+                                                  data-th-if="${#fields.hasErrors('amountTendered')}"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Balance-->
+                                <div class="col-md-6 ">
+                                    <div class="form-row text-right">
+                                        <div class="col-md-4">
+                                            <label class="control-label" for="balance">Balance :</label>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <input id="balance" data-th-field="*{balance}" class="form-control"
+                                                   tabindex="6"
+                                                   type="text"
+                                                   required readonly/>
+                                            <span class="error" id="balanceError" data-th-errors="*{balance}"
+                                                  data-th-if="${#fields.hasErrors('balance')}"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card Payment -> Bank and card Number -->
+                            <div class="form-row text-right" id="bankNameBlock">
+                                <!--Bank -->
+                                <div class="col-md-6 ">
+                                    <div class="form-row text-right">
+                                        <div class="col-md-4">
+                                            <label class="control-label" for="bankName">Bank Name Tendered :</label>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <input id="bankName" data-th-field="*{bankName}"
+                                                   class="form-control"
+                                                   tabindex="6" type="text"/>
+                                            <span class="error" data-th-errors="*{bankName}"
+                                                  data-th-if="${#fields.hasErrors('bankName')}"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--card number-->
+                                <div class="col-md-6 ">
+                                    <div class="form-row text-right">
+                                        <div class="col-md-4"><span class="requiredfield">*</span>
+                                            <label class="control-label" for="cardNumber">Card Number :</label>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <input id="cardNumber" data-th-field="*{cardNumber}" class="form-control"
+                                                   tabindex="6"
+                                                   type="text"/>
+                                            <span class="error" data-th-errors="*{cardNumber}"
+                                                  data-th-if="${#fields.hasErrors('cardNumber')}"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
 
-            <!--remarks and invoice print or not-->
-            <div class="form-group" >
-              <div class="form-row" >
-                <div class="col-md-6" >
-                  <!--invoice print or not-->
-                  <div class="form-row text-right" >
-                    <div class="col-md-4" >
-                      <label class="control-label" data-th-for="${invoicePrintOrNot}" >Print the
-                                                                                       Invoice :</label >
-                    </div >
-                    <div class="col-md-8 text-left" >
-                      <div class="custom-control custom-checkbox custom-control-inline "
-                           data-th-each="invoicePrintOrNot,index : ${invoicePrintOrNots}" >
-                        <input class="custom-control-input" required
-                               data-th-name="${'invoicePrintOrNot'}"
-                               data-th-value="${invoicePrintOrNot}"
-                               data-th-id="${index.index}+${invoicePrintOrNot}" type="radio"
-                        />
-                        <label class="custom-control-label"
-                               data-th-for="${index.index}+${invoicePrintOrNot}"
-                               data-th-text="${invoicePrintOrNot.invoicePrintOrNot}" > radio
-                        </label >
-                      </div >
-                    </div >
-                  </div >
-                </div >
-                <!--Remarks-->
-                <div class="col-md-6" >
-                  <div class="form-row text-right" >
-                    <div class="col-md-4" >
-                      <label class="control-label" for="remarks" >Remarks :</label ></div >
-                    <div class="col-md-8" >
+                        <!--remarks and invoice print or not-->
+                        <div class="form-group">
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <!--invoice print or not-->
+                                    <div class="form-row text-right">
+                                        <div class="col-md-4"><span class="requiredfield">*</span>
+                                            <label class="control-label" data-th-for="${invoicePrintOrNot}">Print the
+                                                Invoice :</label>
+                                        </div>
+                                        <div class="col-md-8 text-left">
+                                            <div class="custom-control custom-checkbox custom-control-inline "
+                                                 data-th-each="invoicePrintOrNot,index : ${invoicePrintOrNots}">
+                                                <input class="custom-control-input" required
+                                                       data-th-name="${'invoicePrintOrNot'}"
+                                                       data-th-value="${invoicePrintOrNot}"
+                                                       data-th-id="${index.index}+${invoicePrintOrNot}" type="radio"
+                                                />
+                                                <label class="custom-control-label"
+                                                       data-th-for="${index.index}+${invoicePrintOrNot}"
+                                                       data-th-text="${invoicePrintOrNot.invoicePrintOrNot}"> radio
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Remarks-->
+                                <div class="col-md-6">
+                                    <div class="form-row text-right">
+                                        <div class="col-md-4">
+                                            <label class="control-label" for="remarks">Remarks :</label></div>
+                                        <div class="col-md-8">
                                                     <textarea id="remarks" class="form-control"
                                                               data-th-field="*{remarks}"
-                                                              rows="2" ></textarea >
-                    </div >
-                  </div >
-                </div >
-              </div >
-            </div >
-            <hr >
-            <!--button-->
-            <div class="form-group col-md-12 col-sm-12 text-center flex-column" >
+                                                              rows="2"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <!--button-->
+                        <div class="form-group col-md-12 col-sm-12 text-center flex-column">
 
-              <!--Save Button-->
-              <button class="btn btn-success btn-space " tabindex="12" type="submit" >
-                <i class="fa fa-save" ></i >&nbsp;&nbsp;<span
-                    data-th-text="${'Save'}"
-                    id="submit" ></span >
-              </button >
-              <!--Cancel Button-->
-              <button class="btn btn-warning btn-space " tabindex="13" type="reset" >
-                <i class="fa fa-redo" ></i >&nbsp;&nbsp;Cancel
-              </button >
+                            <!--Save Button-->
+                            <button class="btn btn-success btn-space " tabindex="12" type="submit">
+                                <i class="fa fa-save"></i>&nbsp;&nbsp;<span
+                                    data-th-text="${'Save'}"
+                                    id="submit"></span>
+                            </button>
+                            <!--Cancel Button-->
+                            <button class="btn btn-warning btn-space " tabindex="13" type="reset">
+                                <i class="fa fa-redo"></i>&nbsp;&nbsp;Cancel
+                            </button>
 
-            </div >
+                        </div>
 
-          </form >
+                    </form>
 
-          <input type="hidden" data-th-value="${ledgerItemURL}" id="ledgerItemURL" >
-        </div >
-      </div >
-    </div >
-  </main >
-</div >
+                    <input type="hidden" data-th-value="${ledgerItemURL}" id="ledgerItemURL">
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
 
 <!--/* footer is */-->
-<div data-th-replace="~{fragments/footer :: footerFragment}" ></div >
+<div data-th-replace="~{fragments/footer :: footerFragment}"></div>
 <!--/* script is included */-->
-<div data-th-replace="~{fragments/script :: scriptFragment}" ></div >
-<script data-th-src="@{/js/combo-box-search.js}" ></script >
-<script >
+<div data-th-replace="~{fragments/script :: scriptFragment}"></div>
+<script data-th-src="@{/js/combo-box-search.js}"></script>
+<script>
     //removes the "active" class to .popup and .popup-content when the "Close" button is clicked
     $("#close, .popup-overlay body").on("click", function () {
         $(".popup-overlay, .popup-content").removeClass("active");
@@ -466,12 +467,12 @@
         receivedLedgerItem.quantity = $("#abQuantity").val();
         receivedLedgerItem.sellPrice = $("#sellPriceModal").val();
         receivedLedgerItem.requestCount = $("#requestCount").val();
-        let warrantyNumber = $("#warrantyNumber").val();
-        if (warrantyNumber.length !== 0) {
-            receivedLedgerItem.warrantyNumber = warrantyNumber;
-        } else {
-            receivedLedgerItem.warrantyNumber = "No warranty";
-        }
+        /* let warrantyNumber = $("#warrantyNumber").val();
+         if (warrantyNumber.length !== 0) {
+             receivedLedgerItem.warrantyNumber = warrantyNumber;
+         } else {
+             receivedLedgerItem.warrantyNumber = "No warranty";
+         }*/
         receivedLedgerItem.totalModal = $("#totalModal").val();// to need to add
         selectedInvoiceLedger.push(receivedLedgerItem);
         $(".popup-overlay, .popup-content").removeClass("active");
@@ -650,8 +651,9 @@
                         </option>`;
     }
 
-</script >
+
+</script>
 
 
-</body >
-</html >
+</body>
+</html>

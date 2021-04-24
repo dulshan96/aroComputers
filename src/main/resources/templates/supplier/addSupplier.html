@@ -67,11 +67,11 @@
                         </div>
                         <!--Company Name-->
                         <div class="form-row text-right">
-                            <div class="col-md-4">
+                            <div class="col-md-4"><span class="requiredfield">*</span>
                                 <label class="control-label" for="name">Company Name :</label>
                             </div>
                             <div class="col-md-8">
-                                <input id="name" data-th-field="*{name}" class="form-control" tabindex="3" type="text"
+                                <input id="name" data-th-field="*{name}" class="form-control" tabindex="1" type="text"
                                        required/>
                                 <span id="nameError" data-th-errors="*{name}"
                                       data-th-if="${#fields.hasErrors('name')}" class="error">Error Name</span>
@@ -83,16 +83,42 @@
                                 <label class="control-label" for="brn">BRN :</label>
                             </div>
                             <div class="col-md-8">
-                                <input id="brn" data-th-field="*{brn}" class="form-control" tabindex="4" type="text"
-                                       required/>
+                                <input id="brn" data-th-field="*{brn}" class="form-control" tabindex="2" type="text"
+                                />
                                 <span id="brnError" data-th-errors="*{brn}"
                                       data-th-if="${#fields.hasErrors('brn')}" class="error">Error Name</span>
                             </div>
                         </div>
-                        <!--Mobile Number -->
+                        <!--Company hotline -->
                         <div class="form-row text-right">
-                            <div class="col-md-4">
-                                <label class="control-label" for="contactOne">Mobile No :</label>
+                            <div class="col-md-4"><span class="requiredfield">*</span>
+                                <label class="control-label" for="contactTwo">Company Hotline :</label>
+                            </div>
+                            <div class="col-md-8">
+                                    <input id="contactTwo" data-th-field="*{contactTwo}" class="form-control mobile"
+                                       tabindex="3" type="text" maxlength="10" min="9" required/>
+                                <span class="error" data-th-errors="*{contactTwo}"
+                                      data-th-if="${#fields.hasErrors('contactTwo')}" id="mobileTwoError">Error Mobile Number</span>
+                            </div>
+                        </div>
+
+                        <!--Supplier Name-->
+                        <div class="form-row text-right">
+                            <div class="col-md-4"><span class="requiredfield">*</span>
+                                <label class="control-label" for="suppliername">Supplier Name :</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input id="suppliername" data-th-field="*{suppliername}" class="form-control" tabindex="4" type="text"
+                                       required/>
+                                <span id="suppliernameError" data-th-errors="*{suppliername}"
+                                      data-th-if="${#fields.hasErrors('suppliername')}" class="error">Error Suppliername</span>
+                            </div>
+                        </div>
+
+                        <!--Mobile Number supplier -->
+                        <div class="form-row text-right">
+                            <div class="col-md-4"><span class="requiredfield">*</span>
+                                <label class="control-label" for="contactOne">Mobile No (Supplier) :</label>
                             </div>
                             <div class="col-md-8">
                                 <input id="contactOne" data-th-field="*{contactOne}" class="form-control mobile"
@@ -101,40 +127,29 @@
                                       data-th-if="${#fields.hasErrors('contactOne')}" id="mobileOneError">Error Mobile Number</span>
                             </div>
                         </div>
-                        <!--Lan Number -->
-                        <div class="form-row text-right">
-                            <div class="col-md-4">
-                                <label class="control-label" for="contactTwo">Landline No :</label>
-                            </div>
-                            <div class="col-md-8">
-                                <input id="contactTwo" data-th-field="*{contactTwo}" class="form-control mobile"
-                                       tabindex="6" type="number" maxlength="10" min="9"/>
-                                <span class="error" data-th-errors="*{contactTwo}"
-                                      data-th-if="${#fields.hasErrors('contactTwo')}" id="mobileTwoError">Error Mobile Number</span>
-                            </div>
-                        </div>
+
                     </div>
                     <!--Right Side-->
                     <div class="form-group col-md-6 col-sm-6 text-right flex-column">
-                        <!--Email-->
+                        <!--Company Email-->
                         <div class="form-row text-right">
-                            <div class="col-md-4">
-                                <label class="control-label" for="email">Email :</label>
+                            <div class="col-md-4"><span class="requiredfield">*</span>
+                                <label class="control-label" for="email">Company Email :</label>
                             </div>
                             <div class="col-md-8">
-                                <input id="email" data-th-field="*{email}" class="form-control" tabindex="7"
+                                <input id="email" data-th-field="*{email}" class="form-control" tabindex="6"
                                        type="email" required/>
                                 <span class="error" data-th-errors="*{email}"
                                       data-th-if="${#fields.hasErrors('email')}" id="emailError">Error Email</span>
                             </div>
                         </div>
-                        <!--Address-->
+                        <!--Company Address-->
                         <div class="form-row text-right">
-                            <div class="col-md-4">
-                                <label class="control-label" for="address">Address :</label>
+                            <div class="col-md-4"><span class="requiredfield">*</span>
+                                <label class="control-label" for="address">Company Address :</label>
                             </div>
                             <div class="col-md-8">
-                                <textarea id="address" data-th-field="*{address}" class="form-control" tabindex="8"
+                                <textarea id="address" data-th-field="*{address}" class="form-control" tabindex="7"
                                           rows="4" style="font-size: medium" required></textarea>
                                 <span class="error" data-th-errors="*{address}"
                                       data-th-if="${#fields.hasErrors('address')}"
@@ -182,7 +197,7 @@
                         </button>
                     </div>
                     <!--Error-->
-                    <div class="form-row">
+                    <div class="form-row text-hide" style="font-weight: bolder">
                         <label id="errorLabel" data-th-if="${#fields.hasErrors('*')}"
                                data-th-text="'Errors: '">Errors: </label>
                         <ul>
@@ -198,6 +213,57 @@
 <div data-th-replace="~{fragments/footer :: footerFragment}"></div>
 <!--script include-->
 <div data-th-replace="~{fragments/script :: scriptFragment}"></div>
+<script>
+    $('#form').submit(function(e) {
+        e.preventDefault();
 
+        var confirmmassage =
+
+            "Company Name "+document.getElementById("name").value+
+            "\nBRN  : " + document.getElementById("brn").value  +
+            "\nSupplier Name : " + document.getElementById("suppliername").value+
+            "\nMobile (Supplier) : " + document.getElementById("contactOne").value+
+            "\nCompany Hotline : " + document.getElementById("contactTwo").value+
+            "\nCompany Email : " + document.getElementById("email").value+
+            "\nCompany Address : " + document.getElementById("address").value;
+
+        swal({
+            title: "Are you sure?",
+            text: confirmmassage,
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+
+                    swal("Processing.................");
+                    document.getElementById('form').submit();
+
+                } else {
+                    swal("Your imaginary file is safe!");
+                }
+            });
+
+    });
+
+    $(document).ready(function () {
+            let message = '';
+            $('.error').each(function (index) {
+                message += $(this).text();
+            });
+
+            if (message) {
+                setTimeout(function () {
+                    swal({
+                        title: "System Errors  ",
+                        icon: "warning",
+                        text: message,
+                    });
+                }, 500);
+            }
+        }
+    );
+</script>
 </body>
 </html>

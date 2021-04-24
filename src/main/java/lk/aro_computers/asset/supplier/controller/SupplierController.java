@@ -2,6 +2,7 @@ package lk.aro_computers.asset.supplier.controller;
 
 
 import lk.aro_computers.asset.common_asset.model.enums.LiveDead;
+import lk.aro_computers.asset.employee.entity.Employee;
 import lk.aro_computers.asset.supplier.entity.Supplier;
 import lk.aro_computers.asset.supplier.service.SupplierService;
 import lk.aro_computers.util.interfaces.AbstractController;
@@ -10,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -54,6 +56,35 @@ public  class SupplierController implements AbstractController< Supplier, Intege
 
     @PostMapping(value = {"/save", "/update"})
     public String persist(@Valid @ModelAttribute Supplier supplier, BindingResult bindingResult, RedirectAttributes redirectAttributes, Model model) {
+
+        Supplier name = null;
+        Supplier email = null;
+
+        //name duplicate validation
+
+        if ( supplier.getName() != null && supplier.getId() == null ) {
+            name = supplierService.findByName(supplier.getName());
+        }
+        if ( name != null ) {
+            ObjectError error = new ObjectError("supplier",
+                    "This Company Name is already registered . System message ");
+            bindingResult.addError(error);
+        }
+
+        //Email duplicate validation
+
+        if ( supplier.getEmail() != null && supplier.getId() == null ) {
+            email = supplierService.findByEmail(supplier.getEmail());
+        }
+        if ( email != null ) {
+            ObjectError error = new ObjectError("supplier",
+                    "Their is supplier on same Email . System message ");
+            bindingResult.addError(error);
+        }
+
+
+
+
         if (bindingResult.hasErrors()) {
             return commonThings(model, supplier, true);
         }
@@ -79,7 +110,7 @@ public  class SupplierController implements AbstractController< Supplier, Intege
             }
             //send welcome message and email
             if (supplier.getEmail() != null) {
-                //  emailService.sendEmail(supplier.getEmail(), "Welcome Message", "Welcome to Kmart Super...");
+                //  emailService.sendEmail(supplier.getEmail(), "Welcome Message", "Welcome to ARO Computers...");
             }
         }
         redirectAttributes.addFlashAttribute("supplierDetail",

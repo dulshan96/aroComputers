@@ -24,6 +24,12 @@ public class Payment extends AuditEntity {
 
     private String bankName;
 
+    private String branchName;
+
+    private String accountNumber;
+
+    private String bankHolderName;
+
     private String remarks;
 
     @Column(nullable = false, unique = true)
