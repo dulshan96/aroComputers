@@ -26,4 +26,8 @@ public class InvoiceLedgerService {
   public InvoiceLedger findByLastInvoiceLedger() {
     return invoiceLedgerDao.findFirstByOrderByIdDesc();
   }
+
+  public InvoiceLedger persist(InvoiceLedger invoiceLedger) {
+    return invoiceLedgerDao.save(invoiceLedger);
+  }
 }

@@ -69,7 +69,7 @@ public class Invoice extends AuditEntity {
     @ManyToOne
     private DiscountRatio discountRatio;
 
-    @OneToMany(cascade = CascadeType.PERSIST, mappedBy = "invoice")
+    @OneToMany(mappedBy = "invoice")
     private List< InvoiceLedger > invoiceLedgers;
 
 
