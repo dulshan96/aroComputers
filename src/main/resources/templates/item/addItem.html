@@ -299,12 +299,10 @@
         let color = $("#itemColor option:selected").text();
         let eName = $("#eName").val();
 
-        if (subCategory && brand && color && eName) {
-            $("#name").val(subCategory + "-" + brand + "-" + color + "-" + eName);
+        if (subCategory && brand && eName && color) {
+            $("#name").val(subCategory + "-" + brand + "-" + eName + "-" + color);
         }
     }
-
-
 
 
     $('#form').submit(function(e) {

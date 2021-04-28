@@ -6,6 +6,8 @@
 <body>
 <nav data-th-replace="~{fragments/navBar :: navBarFragment}"></nav>
 
+<link data-th-href="@{/css/combo-box-search.css}" media="all" rel="stylesheet" type="text/css" />
+
 <!--Multi CSS-->
 <link data-th-href="@{/css/multi.css}" media="all" rel="stylesheet" type="text/css"/>
 <!--Heading Area -->
@@ -82,7 +84,7 @@
                             <label class="control-label" for="item">Select Items: </label>
                         </div>
                         <div class="text-left col-md-8">
-                            <select class="form-control" id="item" required>
+                            <select class="form-control" id="item" >
                                 <option value="" selected> Please Select </option>
                                 <option data-th-each="item : ${items}"
                                         data-th-value="${item.id}"
@@ -187,7 +189,7 @@
                             <i class="fas fa-arrow-circle-left"></i>&nbsp;&nbsp;Back
                         </a>
                         <!--Save Button-->
-                        <button class="btn btn-success ml-5" type="submit" tabindex="9">
+                        <button class="btn btn-success ml-5" type="submit" tabindex="9" id="submit">
                             <i class="fa fa-save "></i>&nbsp;&nbsp;Save
                         </button>
                         <!--Cancel Button-->
@@ -205,14 +207,26 @@
 <!--Supplier Item add - end-->
 <div data-th-replace="~{fragments/footer :: footerFragment}"></div>
 <div data-th-replace="~{fragments/script :: scriptFragment}"></div>
+<!--<script data-th-src="@{/js/combo-box-search.js}" ></script >-->
 
 <script>
     $(document).ready(function () {
+        $("#submit").prop('disabled', true);
+
+
+
+
 //when search criteria add
         $("#searchCriteria").bind("change", function () {
             $("#searchValue").attr("name", $(this).val());
         });
+      /*  $("#item").select2({
+            data: $(this).val()
+        });*/
     });
+
+
+
     //add new item and price
     $("#item").bind('change', function () {
         let valueA = optionElementRemove("#item");
@@ -222,6 +236,8 @@
     let tableRowRemove = function (obj) {
 
         let itemIndex = obj.parentNode.parentNode.rowIndex;
+        console.log(itemIndex);
+
         let itemSelected = document.getElementById("selectedItemInTable").rows.item(itemIndex).cells;
 
         let removeItemValue = itemSelected[1].childNodes[1].nextSibling.nextSibling.attributes.value.nodeValue;
@@ -247,7 +263,7 @@
         let supplierId = $("#supplierId").val();
         let rowCount = rows - 1;
         // let rowCount = itemCount + 1;
-
+        $("#submit").prop('disabled', false);
         let html = `<tr>
                         <td class="table-primary">${rows}</td>
                         <td class="table-primary">

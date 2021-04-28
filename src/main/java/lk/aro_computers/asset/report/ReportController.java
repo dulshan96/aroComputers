@@ -123,8 +123,7 @@ public class ReportController {
   @GetMapping( "/cashier" )
   public String getCashierToday(Model model) {
     LocalDate localDate = LocalDate.now();
-    String message = "This report is belongs to " + localDate.toString() + " and \n congratulation all are done by " +
-        "you.";
+    String message = "This report is belongs to " + localDate.toString() ;
     LocalDateTime startDateTime = dateTimeAgeService.dateTimeToLocalDateStartInDay(localDate);
     LocalDateTime endDateTime = dateTimeAgeService.dateTimeToLocalDateEndInDay(localDate);
     commonInvoices(invoiceService.findByCreatedAtIsBetweenAndCreatedBy(startDateTime, endDateTime,
@@ -136,7 +135,7 @@ public class ReportController {
   @PostMapping( "/cashier/search" )
   public String getCashierSearch(@ModelAttribute( "twoDate" ) TwoDate twoDate, Model model) {
     String message =
-        "This report is between from " + twoDate.getStartDate().toString() + " to " + twoDate.getEndDate().toString() + " and \n congratulation all are done by you.";
+        "This report is between from " + twoDate.getStartDate().toString() + " to " + twoDate.getEndDate().toString();
     LocalDateTime startDateTime = dateTimeAgeService.dateTimeToLocalDateStartInDay(twoDate.getStartDate());
     LocalDateTime endDateTime = dateTimeAgeService.dateTimeToLocalDateEndInDay(twoDate.getEndDate());
     commonInvoices(invoiceService.findByCreatedAtIsBetweenAndCreatedBy(startDateTime, endDateTime,
@@ -177,8 +176,7 @@ public class ReportController {
   @GetMapping( "/payment" )
   public String getPaymentToday(Model model) {
     LocalDate localDate = LocalDate.now();
-    String message = "This report is belongs to " + localDate.toString() + " and \n congratulation all are done by " +
-        "you.";
+    String message = "This report is belongs to " + localDate.toString();
     LocalDateTime startDateTime = dateTimeAgeService.dateTimeToLocalDateStartInDay(localDate);
     LocalDateTime endDateTime = dateTimeAgeService.dateTimeToLocalDateEndInDay(localDate);
     commonPayment(paymentService.findByCreatedAtIsBetweenAndCreatedBy(startDateTime, endDateTime,
@@ -190,7 +188,7 @@ public class ReportController {
   @PostMapping( "/payment/search" )
   public String getPaymentSearch(@ModelAttribute( "twoDate" ) TwoDate twoDate, Model model) {
     String message =
-        "This report is between from " + twoDate.getStartDate().toString() + " to " + twoDate.getEndDate().toString() + " and \n congratulation all are done by you.";
+        "This report is between from " + twoDate.getStartDate().toString() + " to " + twoDate.getEndDate().toString();
     LocalDateTime startDateTime = dateTimeAgeService.dateTimeToLocalDateStartInDay(twoDate.getStartDate());
     LocalDateTime endDateTime = dateTimeAgeService.dateTimeToLocalDateEndInDay(twoDate.getEndDate());
     commonPayment(paymentService.findByCreatedAtIsBetweenAndCreatedBy(startDateTime, endDateTime,
@@ -237,7 +235,7 @@ public class ReportController {
   @PostMapping( "/perCashier/search" )
   public String getPerCashierSearch(@ModelAttribute( "twoDate" ) TwoDate twoDate, Model model) {
     String message =
-        "This report is between from " + twoDate.getStartDate().toString() + " to " + twoDate.getEndDate().toString() + " and \n congratulation all are done by you.";
+        "This report is between from " + twoDate.getStartDate().toString() + " to " + twoDate.getEndDate().toString();
     LocalDateTime startDateTime = dateTimeAgeService.dateTimeToLocalDateStartInDay(twoDate.getStartDate());
     LocalDateTime endDateTime = dateTimeAgeService.dateTimeToLocalDateEndInDay(twoDate.getEndDate());
     commonPerCashier(invoiceService.findByCreatedAtIsBetween(startDateTime, endDateTime), model);
@@ -284,7 +282,7 @@ public class ReportController {
   @PostMapping( "/perAccount/search" )
   public String getPerAccountSearch(@ModelAttribute( "twoDate" ) TwoDate twoDate, Model model) {
     String message =
-        "This report is between from " + twoDate.getStartDate().toString() + " to " + twoDate.getEndDate().toString() + " and \n congratulation all are done by you.";
+        "This report is between from " + twoDate.getStartDate().toString() + " to " + twoDate.getEndDate().toString();
     LocalDateTime startDateTime = dateTimeAgeService.dateTimeToLocalDateStartInDay(twoDate.getStartDate());
     LocalDateTime endDateTime = dateTimeAgeService.dateTimeToLocalDateEndInDay(twoDate.getEndDate());
     commonPerAccountUser(paymentService.findByCreatedAtIsBetween(startDateTime, endDateTime), model);
@@ -327,7 +325,7 @@ public class ReportController {
   @PostMapping( "/perItem/search" )
   public String getPerItemSearch(@ModelAttribute( "twoDate" ) TwoDate twoDate, Model model) {
     String message =
-        "This report is between from " + twoDate.getStartDate().toString() + " to " + twoDate.getEndDate().toString() + " and \n congratulation all are done by you.";
+        "This report is between from " + twoDate.getStartDate().toString() + " to " + twoDate.getEndDate().toString();
     LocalDateTime startDateTime = dateTimeAgeService.dateTimeToLocalDateStartInDay(twoDate.getStartDate());
     LocalDateTime endDateTime = dateTimeAgeService.dateTimeToLocalDateEndInDay(twoDate.getEndDate());
     commonPerItem(startDateTime, endDateTime, model);
