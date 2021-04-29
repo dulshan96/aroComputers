@@ -2,7 +2,6 @@ package lk.aro_computers.asset.ledger.entity;
 
 
 import com.fasterxml.jackson.annotation.JsonFilter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lk.aro_computers.asset.common_asset.model.enums.LiveDead;
 import lk.aro_computers.asset.good_received_note.entity.GoodReceivedNote;
 import lk.aro_computers.asset.invoice_ledger.entity.InvoiceLedger;
@@ -40,7 +39,6 @@ public class Ledger extends AuditEntity {
     private Item item;
 
     @ManyToOne
-    @JsonIgnore
     private GoodReceivedNote goodReceivedNote;
 
 
