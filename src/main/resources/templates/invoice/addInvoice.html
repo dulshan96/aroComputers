@@ -72,6 +72,17 @@
                   <input id="warrantyNumber" class="form-control" type="number"/>
                 </div>
               </div>
+
+              <!--Serial No-->
+              <div class="form-row">
+
+                <div class="form-group col-md-6" id="serialBlock" >
+                  <label for="serialnumber" class="text-dark" >Serial No:</label >
+                  <input id="serialnumber" class="form-control" type="text"  />
+                </div >
+
+              </div>
+
               <div class="form-row">
                 <!--Request Count-->
                 <div class="form-group col-md-6">
@@ -149,6 +160,7 @@
                   <th style="width: 150px">Unit Price</th>
                   <th>Quantity</th>
                   <th>Line Total</th>
+                  <th>Serial Number</th>
                   <th>Modify</th>
                 </tr>
                 </thead>
@@ -437,6 +449,7 @@
     $("#itemName").val(resp.item.name);
     $("#abQuantity").val(resp.quantity);
     $("#sellPriceModal").val(resp.sellPrice);
+    $("#serialnumber").val(resp.serialnumber);
     $(".popup-overlay, .popup-content").addClass("active");
     addButtonDisable();
 
@@ -467,6 +480,7 @@
     receivedLedgerItem.quantity = $("#abQuantity").val();
     receivedLedgerItem.sellPrice = $("#sellPriceModal").val();
     receivedLedgerItem.requestCount = $("#requestCount").val();
+    receivedLedgerItem.serialnumber = $("#serialnumber").val();
     /* let warrantyNumber = $("#warrantyNumber").val();
      if (warrantyNumber.length !== 0) {
          receivedLedgerItem.warrantyNumber = warrantyNumber;
@@ -511,6 +525,9 @@
                           </th >
                           <th >
                           <input type="number" id="lt${id}" class="form-control lineTotal" name="invoiceLedgers[${id}].lineTotal" value="${invoiceLedger.totalModal}" readonly>
+                          </th >
+                          <th >
+                          <input type="text" id="rq${id}" class="form-control"   name="invoiceLedgers[${id}].serialnumber"  value="${invoiceLedger.serialnumber}"  readonly>
                           </th >
                           <th>
                           <button type="button" id="rm${id}" class="btn btn-danger" onclick="removeItem(this)">Remove</button>
