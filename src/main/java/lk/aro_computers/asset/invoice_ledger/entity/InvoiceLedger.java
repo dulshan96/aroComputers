@@ -34,6 +34,9 @@ public class InvoiceLedger extends AuditEntity {
     @Column( nullable = false, precision = 10, scale = 2 )
     private BigDecimal lineTotal;
 
+    @Column( nullable = false)
+    private String serialnumber;
+
     @Enumerated( EnumType.STRING )
     private LiveDead liveDead;
 

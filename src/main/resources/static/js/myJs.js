@@ -63,11 +63,22 @@ let roleNameRegex = /^[a-zA-Z.-]{3}[ a-zA-Z.-]+$/;
 let iNameRegex = /^[a-zA-Z0-9.-]{3}[ a-zA-Z0-9.-]+$/;
 let ropRegex = /^[0-9]+$/;
 let sellPriceRegex = /^[0-9.]+$/;
+let serialnumberRegex = /^[a-zA-Z0-9]+$/;
 
 //sellPrice validation
 $("#sellPrice").bind("keyup", function () {
     let sellPrice = $(this).val();
     if (sellPriceRegex.test(sellPrice)) {
+        backgroundColourChangeGood($(this));
+    } else {
+        backgroundColourChangeBad($(this));
+    }
+});
+
+//Serial Number validation
+$("#serialnumber").bind("keyup", function () {
+    let serialnumber = $(this).val();
+    if (serialnumberRegex.test(serialnumber)) {
         backgroundColourChangeGood($(this));
     } else {
         backgroundColourChangeBad($(this));

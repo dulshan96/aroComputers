@@ -138,6 +138,11 @@ public class InvoiceService implements AbstractService< Invoice, Integer > {
     pdfCellHeaderCommonStyle(indexHeader);
     ledgerItemDisplay.addCell(indexHeader);
 
+    //serial number pdf
+    PdfPCell serialHeader = new PdfPCell(new Paragraph("Serial No", tableHeaderOnly));
+    pdfCellHeaderCommonStyle(serialHeader);
+    ledgerItemDisplay.addCell(serialHeader);
+
     PdfPCell itemNameHeader = new PdfPCell(new Paragraph("Item Name", tableHeaderOnly));
     pdfCellHeaderCommonStyle(itemNameHeader);
     ledgerItemDisplay.addCell(itemNameHeader);
@@ -166,6 +171,13 @@ public class InvoiceService implements AbstractService< Invoice, Integer > {
       PdfPCell index = new PdfPCell(new Paragraph(Integer.toString(i+1), tableHeader));
       pdfCellBodyCommonStyle(index);
       ledgerItemDisplay.addCell(index);
+
+
+      PdfPCell serialnumber =
+              new PdfPCell(new Paragraph(invoice.getInvoiceLedgers().get(i).getSerialnumber(), tableHeader));
+      pdfCellBodyCommonStyle(serialnumber);
+      ledgerItemDisplay.addCell(serialnumber);
+
 
       PdfPCell itemName =
               new PdfPCell(new Paragraph(invoice.getInvoiceLedgers().get(i).getLedger().getItem().getName(), tableHeader));

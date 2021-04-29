@@ -21,7 +21,7 @@ import java.util.List;
 @NoArgsConstructor
 @JsonFilter("GoodReceivedNote")
 public class GoodReceivedNote extends AuditEntity {
-    private String remarks;
+    private String remark;
 
     @Column( precision = 10, scale = 2 )
     private BigDecimal totalAmount;
