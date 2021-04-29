@@ -135,20 +135,30 @@ public class InvoiceController {
     invoice.setInvoiceValidOrNot(InvoiceValidOrNot.VALID);
 //invoices saved
     Invoice saveInvoice = invoiceService.persist(invoice);
+
+    InvoiceLedger lastInvoiceLedger = invoiceLedgerService.findByLastInvoiceLedger();
+    int warrantyNumber;
+    if ( lastInvoiceLedger != null ) {
+      warrantyNumber =
+          makeAutoGenerateNumberService.numberAutoGen(invoiceLedgerService.findByLastInvoiceLedger().getWarrantyNumber().substring(4));
+    } else {
+      warrantyNumber = makeAutoGenerateNumberService.numberAutoGen(null);
+    }
     //invoice item saved
-      invoice.getInvoiceLedgers().forEach(x -> {
-          x.setInvoice(saveInvoice);
-          x.setLiveDead(LiveDead.ACTIVE);
-          if ( invoiceLedgerService.findByLastInvoiceLedger() != null ) {
-              x.setWarrantyNumber("CTSW" + makeAutoGenerateNumberService.numberAutoGen(invoiceLedgerService.findByLastInvoiceLedger().getWarrantyNumber().substring(4)));
-          } else {
-              x.setWarrantyNumber("CTSW" + makeAutoGenerateNumberService.numberAutoGen(null));
-          }
-          invoiceLedgerService.persist(x);
-      });
+    for ( int i = 0; i < invoice.getInvoiceLedgers().size(); i++ ) {
+      invoice.getInvoiceLedgers().get(i).setInvoice(saveInvoice);
+      invoice.getInvoiceLedgers().get(i).setLiveDead(LiveDead.ACTIVE);
+      invoice.getInvoiceLedgers().get(i).setWarrantyNumber("CTSW" + (warrantyNumber + i));
+
+      invoiceLedgerService.persist(invoice.getInvoiceLedgers().get(i));
+    }
+
+    invoice.getInvoiceLedgers().forEach(x -> {
+
+    });
 
 //ledgers item reduce and save
-      for ( InvoiceLedger invoiceLedger : saveInvoice.getInvoiceLedgers() ) {
+    for ( InvoiceLedger invoiceLedger : saveInvoice.getInvoiceLedgers() ) {
       Ledger ledger = ledgerService.findById(invoiceLedger.getLedger().getId());
       String quantity = invoiceLedger.getQuantity();
       int availableQuantity = Integer.parseInt(ledger.getQuantity());
